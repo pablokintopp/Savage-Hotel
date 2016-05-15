@@ -9,21 +9,78 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using Savage_Hotel_System.Data;
+using Savage_Hotel_System.Models;
+using Savage_Hotel_System.Views;
 
 namespace Savage_Hotel_System
 {
     public partial class formLogin : Form
     {
-        //Necessário para conectar com o banco de dados
-        SqlConnection connection;
-        string connectionUrl;
+        
 
         public formLogin()
         {
             InitializeComponent();
+            
+        }
 
-            //Salvando o caminho do DataBase
-            connectionUrl = ConfigurationManager.ConnectionStrings["Savage_Hotel_System.Properties.Settings.DatabaseHotelConnectionString"].ConnectionString;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            DataBase.Disconnect();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //TODO: VALIDAR INPUTS
+
+            string login = textBoxLogin.Text;
+            string pass = textBoxPassword.Text;
+
+            List<object> parValues = new List<object>()
+            {
+                login,
+                pass
+
+            };
+
+            List<string> parName = new List<string>()
+            {
+                "@Login",
+                "@Password"
+
+            };
+
+            string queryString = "SELECT * FROM "+ DataBase.tableFuncionario +
+                "  WHERE Login = @Login and Password = @Password";
+            SqlDataReader dr = DataBase.SqlCommand(queryString, parName, parValues);
+
+            if (dr.Read())
+            {
+
+                Employee user = new Employee() {
+                    ID = (int)dr["Id"],
+                    Name = (string)dr["Name"],
+                    LastName = (string)dr["LastName"],                   
+                    IsManager = (int)dr["IsManager"]
+                };
+                Form formMainMenu = new MenuMain(this, user);
+
+                textBoxLogin.Text = "";
+                textBoxPassword.Text = "";
+                labelStatus.Text = "";
+                labelStatus.Visible = false;
+                this.Hide();
+                formMainMenu.Show();
+            }
+            else
+            {
+                labelStatus.Text = "Senha ou Login inválidos!";
+                labelStatus.Visible = true;                
+
+            }
+            dr.Close();
         }
     }
 }

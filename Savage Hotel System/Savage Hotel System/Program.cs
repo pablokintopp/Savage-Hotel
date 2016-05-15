@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Savage_Hotel_System.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace Savage_Hotel_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            DataBase.Connect();
             Application.Run(new formLogin());
         }
     }
