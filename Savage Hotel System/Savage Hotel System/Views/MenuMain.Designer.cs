@@ -34,14 +34,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.labelGreetings = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iconReserve = new System.Windows.Forms.PictureBox();
-            this.labelGreetings = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -104,6 +106,37 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Fornecedores";
             // 
+            // labelGreetings
+            // 
+            this.labelGreetings.AutoSize = true;
+            this.labelGreetings.Location = new System.Drawing.Point(11, 9);
+            this.labelGreetings.Name = "labelGreetings";
+            this.labelGreetings.Size = new System.Drawing.Size(121, 13);
+            this.labelGreetings.TabIndex = 12;
+            this.labelGreetings.Text = "Bem Vindo/a : Fulano/a";
+            // 
+            // button1
+            // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.Location = new System.Drawing.Point(520, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Sair";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = global::Savage_Hotel_System.Properties.Resources.exit;
+            this.pictureBox6.Location = new System.Drawing.Point(628, 377);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox6.TabIndex = 14;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -144,6 +177,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(130, 130);
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -154,6 +188,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(130, 130);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // iconReserve
             // 
@@ -165,30 +200,13 @@
             this.iconReserve.TabIndex = 0;
             this.iconReserve.TabStop = false;
             // 
-            // labelGreetings
-            // 
-            this.labelGreetings.AutoSize = true;
-            this.labelGreetings.Location = new System.Drawing.Point(11, 9);
-            this.labelGreetings.Name = "labelGreetings";
-            this.labelGreetings.Size = new System.Drawing.Size(121, 13);
-            this.labelGreetings.TabIndex = 12;
-            this.labelGreetings.Text = "Bem Vindo/a : Fulano/a";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(520, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Sair";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // MenuMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(672, 421);
+            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelGreetings);
             this.Controls.Add(this.label4);
@@ -206,6 +224,7 @@
             this.Name = "MenuMain";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.MenuMain_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -233,5 +252,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label labelGreetings;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

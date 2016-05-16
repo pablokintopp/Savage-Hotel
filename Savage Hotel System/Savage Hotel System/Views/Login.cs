@@ -82,5 +82,10 @@ namespace Savage_Hotel_System
             }
             dr.Close();
         }
+
+        private void formLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -62,6 +62,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Funcoes.cs" />
+    <Compile Include="DatabaseHotelDataSet.cs">
+      <DependentUpon>DatabaseHotelDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseHotelDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,6 +73,24 @@
     </Compile>
     <Compile Include="Data\DataBase.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Views\Cli_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Cli_Menu.Designer.cs">
+      <DependentUpon>Cli_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Func_Cad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Func_Cad.Designer.cs">
+      <DependentUpon>Func_Cad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Func_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Func_Menu.Designer.cs">
+      <DependentUpon>Func_Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +115,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Cli_Menu.resx">
+      <DependentUpon>Cli_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Func_Cad.resx">
+      <DependentUpon>Func_Cad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Func_Menu.resx">
+      <DependentUpon>Func_Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +163,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DatabaseHotel.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\cli_lista.png" />
+    <None Include="Resources\cli_busca.png" />
+    <None Include="Resources\cli_add.png" />
+    <None Include="Resources\func_lista.png" />
+    <None Include="Resources\func_add.png" />
+    <None Include="Resources\func_busca.png" />
+    <None Include="Resources\lupa-32.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\lista.png" />
+    <None Include="Resources\Img-lupa.png" />
+    <None Include="Resources\img-add.png" />
+    <None Include="Resources\back.png" />
     <None Include="Resources\img-deliver-truck.png" />
     <None Include="Resources\img-bottle.png" />
     <None Include="Resources\img-room.png" />

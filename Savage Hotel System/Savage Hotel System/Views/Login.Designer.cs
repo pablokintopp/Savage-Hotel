@@ -44,6 +44,7 @@
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(211, 20);
             this.textBoxLogin.TabIndex = 0;
+            this.textBoxLogin.Text = "pablo";
             // 
             // textBoxPassword
             // 
@@ -52,6 +53,7 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(211, 20);
             this.textBoxPassword.TabIndex = 1;
+            this.textBoxPassword.Text = "123456";
             this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // label1
@@ -109,8 +111,10 @@
             // 
             // formLogin
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(611, 387);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.button2);
@@ -121,6 +125,7 @@
             this.Controls.Add(this.textBoxLogin);
             this.Name = "formLogin";
             this.Text = "Hotel Selvagem - Login";
+            this.Load += new System.EventHandler(this.formLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
