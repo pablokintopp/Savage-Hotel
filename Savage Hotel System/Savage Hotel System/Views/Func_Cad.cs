@@ -57,6 +57,9 @@ namespace Savage_Hotel_System.Views
             label3.Show();
             label4.Show();
             label5.Show();
+            label14.Show();
+            label16.Show();
+            label17.Show();
 
             //Verifica Nome
             aux = textBox1.Text;
@@ -92,7 +95,7 @@ namespace Savage_Hotel_System.Views
                     break;
                 case 1:
                     textBox2.BackColor = Color.IndianRed;
-                    label2.Text = "Preencha apensa com números";
+                    label2.Text = "Preencha apenas com números";
                     break;
                 case 2:
                     textBox2.BackColor = Color.IndianRed ;
@@ -112,13 +115,42 @@ namespace Savage_Hotel_System.Views
                     break;
                 case 1:
                     textBox3.BackColor = Color.IndianRed;
-                    label3.Text = "Preencha apensa com números";
+                    label3.Text = "Preencha apenas com números";
                     break;
                 case 2:
                     textBox3.BackColor = Color.IndianRed;
                     label3.Text = "O Tamanho do Campo é Inválido";
                     break;
             }
+
+            //Verifica Sexo
+            String sexo;
+            if (radioButton1.Checked == true)
+            {
+                sexo = "M";
+            }
+            else {
+                if (radioButton2.Checked == true) {
+                    sexo = "F";
+                }
+            }
+
+            //Verifica Data
+            label4.Text = dateTimePicker1.Text;
+
+
+            //Cargo
+            String Cargo;
+            Cargo = comboBox1.Text;
+            if (Cargo.Length == 0)
+            {
+                label14.Text = "Selecione um cargo";
+                somaretornos += 1;
+            }
+            else {
+                label14.Text = "";
+            }
+                       
 
             //Verifica Salário
             aux = textBox5.Text;
@@ -139,6 +171,40 @@ namespace Savage_Hotel_System.Views
                     label5.Text = "Digite pelo menos um número";
                     break;
             }
+
+            //Verificar Login
+            aux = textBox4.Text;
+            if (aux.Length < 5)
+            {
+                textBox4.BackColor = Color.IndianRed;
+                label16.Text = "Insira pelo menos 5 caracteres";
+                somaretornos += 1;
+            }
+            else {
+                label16.Text = "";
+                textBox4.BackColor = Color.LightGreen;
+            }
+
+            //Verificar Password
+            aux = textBox6.Text;
+            if (aux.Length < 5)
+            {
+                textBox6.BackColor = Color.IndianRed;
+                label17.Text = "Insira pelo menos 5 caracteres";
+                somaretornos += 1;
+            }
+            else
+            {
+                label17.Text = "";
+                textBox6.BackColor = Color.LightGreen;
+            }
+
+            if (somaretornos == 0) {
+                //Adicionar ao Banco
+                this.Close();
+                this.JanelaAnterior.Show();
+            }
+
 
 
 
@@ -165,6 +231,16 @@ namespace Savage_Hotel_System.Views
             textBox5.BackColor = Color.White;
         }
 
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            textBox4.BackColor = Color.White;
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            textBox6.BackColor = Color.White;
+        }
+
         private void label5_Click(object sender, EventArgs e)
         {
 
@@ -184,5 +260,17 @@ namespace Savage_Hotel_System.Views
         {
 
         }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

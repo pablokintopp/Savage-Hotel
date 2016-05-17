@@ -101,7 +101,7 @@ namespace Savage_Hotel_System.Class
             //Caso contrário retorna 1
             //Caso contrário retorna 2 (Tamanho Mínino 1)
             int tam = entrada.Length;
-            if (tam<=1)
+            if (tam<1)
             {
                 return 2;
             }
