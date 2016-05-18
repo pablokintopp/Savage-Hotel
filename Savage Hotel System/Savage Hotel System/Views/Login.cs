@@ -51,7 +51,8 @@ namespace Savage_Hotel_System
                 "@Password"
 
             };
-
+            //Abre conexao
+           
             string queryString = "SELECT * FROM "+ DataBase.tableFuncionario +
                 "  WHERE Login = @Login and Password = @Password";
             SqlDataReader dr = DataBase.SqlCommand(queryString, parName, parValues);
@@ -61,8 +62,7 @@ namespace Savage_Hotel_System
 
                 Employee user = new Employee() {
                     ID = (int)dr["Id"],
-                    Name = (string)dr["Name"],
-                    LastName = (string)dr["LastName"],                   
+                    Name = (string)dr["Name"],                                      
                     IsManager = (int)dr["IsManager"]
                 };
                 Form formMainMenu = new MenuMain(this, user);
@@ -81,6 +81,7 @@ namespace Savage_Hotel_System
 
             }
             dr.Close();
+            
         }
 
         private void formLogin_Load(object sender, EventArgs e)

@@ -44,7 +44,7 @@ namespace Savage_Hotel_System.Views
 
         private void MenuMain_Load(object sender, EventArgs e)
         {
-            labelGreetings.Text = "Bem Vindo " + user.Name + " " + user.LastName;
+            labelGreetings.Text = "Bem Vindo " + user.Name;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

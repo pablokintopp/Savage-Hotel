@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Savage_Hotel_System.Class;
+using Savage_Hotel_System.Data;
 
 namespace Savage_Hotel_System.Views
 {
@@ -40,7 +41,7 @@ namespace Savage_Hotel_System.Views
         private void Func_Cad_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseHotelDataSet.Funcionario' table. You can move, or remove it, as needed.
-            this.funcionarioTableAdapter.Fill(this.databaseHotelDataSet.Funcionario);
+           // this.funcionarioTableAdapter.Fill(this.databaseHotelDataSet.Funcionario);
 
         }
 
@@ -50,7 +51,7 @@ namespace Savage_Hotel_System.Views
             int somaretornos = 0;
             Funcoes auxfunc = new Funcoes();
             String aux;
-
+            
             //Mostra Labels
             label1.Show();
             label2.Show();
@@ -62,21 +63,21 @@ namespace Savage_Hotel_System.Views
             label17.Show();
 
             //Verifica Nome
-            aux = textBox1.Text;
+            aux = textBoxNome.Text;
             retorno = auxfunc.verificanome(aux);
             somaretornos += retorno;
             switch (retorno)
             {
                 case 0:
-                    textBox1.BackColor = Color.LightGreen;
+                    textBoxNome.BackColor = Color.LightGreen;
                     label1.Text = "";
                     break;
                 case 1:
-                    textBox1.BackColor = Color.IndianRed;
+                    textBoxNome.BackColor = Color.IndianRed;
                     label1.Text = "Presença de Caracteres Inválidos";
                     break;
                 case 2:
-                    textBox1.BackColor = Color.IndianRed;
+                    textBoxNome.BackColor = Color.IndianRed;
                     label1.Text = "Digite pelo menos o primeiro nome";
                     break;
             }
@@ -85,40 +86,40 @@ namespace Savage_Hotel_System.Views
 
 
             //Verifica Telefone
-            aux = textBox2.Text;
+            aux = textBoxPhone.Text;
             retorno=auxfunc.verificatelefone(aux);
             somaretornos += retorno;
             switch (retorno) {
                 case 0:
-                    textBox2.BackColor = Color.LightGreen;
+                    textBoxPhone.BackColor = Color.LightGreen;
                     label2.Text = "";
                     break;
                 case 1:
-                    textBox2.BackColor = Color.IndianRed;
+                    textBoxPhone.BackColor = Color.IndianRed;
                     label2.Text = "Preencha apenas com números";
                     break;
                 case 2:
-                    textBox2.BackColor = Color.IndianRed ;
+                    textBoxPhone.BackColor = Color.IndianRed ;
                     label2.Text = "O Tamanho do Campo é Inválido";
                     break;
             }
 
             //Verifica CPF
-            aux = textBox3.Text;
+            aux = textBoxCPF.Text;
             retorno = auxfunc.verificacpf(aux);
             somaretornos += retorno;
             switch (retorno)
             {
                 case 0:
-                    textBox3.BackColor = Color.LightGreen;
+                    textBoxCPF.BackColor = Color.LightGreen;
                     label3.Text = "";
                     break;
                 case 1:
-                    textBox3.BackColor = Color.IndianRed;
+                    textBoxCPF.BackColor = Color.IndianRed;
                     label3.Text = "Preencha apenas com números";
                     break;
                 case 2:
-                    textBox3.BackColor = Color.IndianRed;
+                    textBoxCPF.BackColor = Color.IndianRed;
                     label3.Text = "O Tamanho do Campo é Inválido";
                     break;
             }
@@ -136,12 +137,12 @@ namespace Savage_Hotel_System.Views
             }
 
             //Verifica Data
-            label4.Text = dateTimePicker1.Text;
+            label4.Text = dateTimeNascimento.Text;
 
 
             //Cargo
             String Cargo;
-            Cargo = comboBox1.Text;
+            Cargo = comboBoxCargo.Text;
             if (Cargo.Length == 0)
             {
                 label14.Text = "Selecione um cargo";
@@ -153,92 +154,95 @@ namespace Savage_Hotel_System.Views
                        
 
             //Verifica Salário
-            aux = textBox5.Text;
+            aux = textBoxSalario.Text;
             retorno = auxfunc.verificasalario(aux);
             somaretornos += retorno;
             switch (retorno)
             {
                 case 0:
-                    textBox5.BackColor = Color.LightGreen;
+                    textBoxSalario.BackColor = Color.LightGreen;
                     label5.Text = "";
                     break;
                 case 1:
-                    textBox5.BackColor = Color.IndianRed;
+                    textBoxSalario.BackColor = Color.IndianRed;
                     label5.Text = "Preencha apensa com números";
                     break;
                 case 2:
-                    textBox5.BackColor = Color.IndianRed;
+                    textBoxSalario.BackColor = Color.IndianRed;
                     label5.Text = "Digite pelo menos um número";
                     break;
             }
 
             //Verificar Login
-            aux = textBox4.Text;
+            aux = textBoxLogin.Text;
             if (aux.Length < 5)
             {
-                textBox4.BackColor = Color.IndianRed;
+                textBoxLogin.BackColor = Color.IndianRed;
                 label16.Text = "Insira pelo menos 5 caracteres";
                 somaretornos += 1;
             }
             else {
                 label16.Text = "";
-                textBox4.BackColor = Color.LightGreen;
+                textBoxLogin.BackColor = Color.LightGreen;
             }
 
             //Verificar Password
-            aux = textBox6.Text;
+            aux = textBoxSenha.Text;
             if (aux.Length < 5)
             {
-                textBox6.BackColor = Color.IndianRed;
+                textBoxSenha.BackColor = Color.IndianRed;
                 label17.Text = "Insira pelo menos 5 caracteres";
                 somaretornos += 1;
             }
             else
             {
                 label17.Text = "";
-                textBox6.BackColor = Color.LightGreen;
+                textBoxSenha.BackColor = Color.LightGreen;
             }
 
             if (somaretornos == 0) {
-                //Adicionar ao Banco
+
+                if (InserirBanco() > 0)
+                    MessageBox.Show("Inserido com Sucesso!");
+                else
+                    MessageBox.Show("Houve alguma falha na insercao!");
+
+
                 this.Close();
                 this.JanelaAnterior.Show();
             }
 
-
-
-
-
         }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            textBox1.BackColor = Color.White;
+            textBoxNome.BackColor = Color.White;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            textBox2.BackColor = Color.White;
+            textBoxPhone.BackColor = Color.White;
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            textBox3.BackColor = Color.White;
+            textBoxCPF.BackColor = Color.White;
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            textBox5.BackColor = Color.White;
+            textBoxSalario.BackColor = Color.White;
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            textBox4.BackColor = Color.White;
+            textBoxLogin.BackColor = Color.White;
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            textBox6.BackColor = Color.White;
+            textBoxSenha.BackColor = Color.White;
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -271,6 +275,44 @@ namespace Savage_Hotel_System.Views
 
         }
 
+
+        //Metodo que chama a insercao do banco passando como parametros o nome da tabela a ser inserido, os nomes das colunas e respectivos valores
+        private int InserirBanco()
+        {
+            //pega os valores das entradas para serem inseridos 
+            List<object> parametrosValores = new List<object>()
+            {
+                textBoxNome.Text,
+                textBoxPhone.Text,
+                textBoxCPF.Text,
+                radioButton1.Checked ? "M":"F",
+                dateTimeNascimento.Text,
+                "0",
+                textBoxSalario.Text,
+                textBoxLogin.Text,
+                textBoxSenha.Text
+
+            };
+
+            //Estes parametros devem ter o mesmo NOME das colunas da Tabela
+            //E devem seguir a mesma ordem de insercao na lista dos valores acima
+            List<string> parametrosNomes = new List<string>()
+            {
+                "Name",
+                "Phone",
+                "CPF",
+                "Gender",
+                "Birthday",
+                "IsManager",
+                "Salary",
+                "Login",
+                "Password"
+
+            };
+            string nomeDaTabela = DataBase.tableFuncionario;
+            return DataBase.SqlCommandInsert(nomeDaTabela, parametrosNomes, parametrosValores);
+
+        }
 
     }
 }
