@@ -201,17 +201,16 @@ namespace Savage_Hotel_System.Views
             }
 
             if (somaretornos == 0) {
-
-                if (InserirBanco() > 0)
+                if (InserirBanco() > 0) {
                     MessageBox.Show("Inserido com Sucesso!");
+                    this.Close();
+                    this.JanelaAnterior.Show();
+                }
                 else
+                {
                     MessageBox.Show("Houve alguma falha na insercao!");
-
-
-                this.Close();
-                this.JanelaAnterior.Show();
+                } 
             }
-
         }
 
 
@@ -245,36 +244,8 @@ namespace Savage_Hotel_System.Views
             textBoxSenha.BackColor = Color.White;
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
 
         //Metodo que chama a insercao do banco passando como parametros o nome da tabela a ser inserido, os nomes das colunas e respectivos valores
         private int InserirBanco()

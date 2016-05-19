@@ -79,6 +79,12 @@
     <Compile Include="Views\Cli_Menu.Designer.cs">
       <DependentUpon>Cli_Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Cli_Cad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Cli_Cad.Designer.cs">
+      <DependentUpon>Cli_Cad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Func_Cad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </Compile>
     <EmbeddedResource Include="Views\Cli_Menu.resx">
       <DependentUpon>Cli_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Cli_Cad.resx">
+      <DependentUpon>Cli_Cad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Func_Cad.resx">
       <DependentUpon>Func_Cad.cs</DependentUpon>

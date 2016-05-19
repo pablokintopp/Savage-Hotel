@@ -224,7 +224,7 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "label5";
             this.label5.Visible = false;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+
             // 
             // label6
             // 
@@ -235,7 +235,6 @@
             this.label6.Size = new System.Drawing.Size(51, 20);
             this.label6.TabIndex = 10;
             this.label6.Text = "Nome";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -276,7 +275,6 @@
             this.label11.Size = new System.Drawing.Size(52, 20);
             this.label11.TabIndex = 16;
             this.label11.Text = "Cargo";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -321,7 +319,6 @@
             this.label13.Size = new System.Drawing.Size(45, 20);
             this.label13.TabIndex = 14;
             this.label13.Text = "Sexo";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label14
             // 
@@ -333,7 +330,6 @@
             this.label14.TabIndex = 22;
             this.label14.Text = "label14";
             this.label14.Visible = false;
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // textBoxLogin
             // 
@@ -385,7 +381,6 @@
             this.label15.Size = new System.Drawing.Size(56, 20);
             this.label15.TabIndex = 27;
             this.label15.Text = "Senha";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // label16
             // 
