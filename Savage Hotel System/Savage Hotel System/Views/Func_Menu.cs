@@ -37,5 +37,12 @@ namespace Savage_Hotel_System.Views
             this.Hide();
             Cadastro.Show();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Form Lista = new Func_List(this);
+            this.Hide();
+            Lista.Show();
+        }
     }
 }

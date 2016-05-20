@@ -71,6 +71,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseHotelDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseHotelDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseHotelDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\DataBase.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Views\Cli_Menu.cs">
@@ -90,6 +95,12 @@
     </Compile>
     <Compile Include="Views\Func_Cad.Designer.cs">
       <DependentUpon>Func_Cad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Func_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Func_List.Designer.cs">
+      <DependentUpon>Func_List.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Func_Menu.cs">
       <SubType>Form</SubType>
@@ -130,6 +141,9 @@
     <EmbeddedResource Include="Views\Func_Cad.resx">
       <DependentUpon>Func_Cad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Func_List.resx">
+      <DependentUpon>Func_List.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Func_Menu.resx">
       <DependentUpon>Func_Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +163,17 @@
     </None>
     <None Include="DatabaseHotelDataSet.xss">
       <DependentUpon>DatabaseHotelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseHotelDataSet1.xsc">
+      <DependentUpon>DatabaseHotelDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseHotelDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseHotelDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseHotelDataSet1.xss">
+      <DependentUpon>DatabaseHotelDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
