@@ -66,5 +66,19 @@ namespace Savage_Hotel_System.Views
             this.Hide();
             Menucliente.Show();
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Form Fornecedor = new Fornecedor_Menu(this);
+            this.Hide();
+            Fornecedor.Show();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Form Quarto = new Quarto_Menu(this);
+            this.Hide();
+            Quarto.Show();
+        }
     }
 }

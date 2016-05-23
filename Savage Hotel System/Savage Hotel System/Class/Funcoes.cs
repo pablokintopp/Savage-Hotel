@@ -94,6 +94,33 @@ namespace Savage_Hotel_System.Class
             return 0;
         }
 
+        public int verificacnpj(String entrada)
+        {
+            //Verifica CPF
+            //Se tudo estiver ok, retorna 0
+            //Caso contrário retorna 1
+            //Se o tamanho da entrada for diferente de 14 retorna 2 (Casas incompletas ou maior que a necessária)
+            int tam = entrada.Length;
+            for (int i = 0; i < tam; i++)
+            {
+                if (entrada[i] > 47 && entrada[i] < 58)
+                {
+                    //cout<<entrada[i]<<endl;
+                }
+                else
+                {
+                    //cout<<entrada[i];
+                    //cout<<" caracter invalido"<<endl;
+                    return 1;
+                }
+            }
+            if (tam != 14)
+            {
+                return 2;
+            }
+            return 0;
+        }
+
         public int verificasalario(String entrada)
         {
             //Verifica Salário
@@ -117,6 +144,33 @@ namespace Savage_Hotel_System.Class
                     //cout<<" caracter invalido"<<endl;
                     return 1;
                 }
+            }
+            return 0;
+        }
+
+        public int verificanumeroquarto(String entrada)
+        {
+            //Verifica Numero do Quarto
+            //Se tudo estiver ok, retorna 0
+            //Caso contrário retorna 1
+            //Se o tamanho da entrada for diferente de 4 retorna 2 (Casas incompletas ou maior que a necessária)
+            int tam = entrada.Length;
+            for (int i = 0; i < tam; i++)
+            {
+                if (entrada[i] > 47 && entrada[i] < 58)
+                {
+                    //cout<<entrada[i]<<endl;
+                }
+                else
+                {
+                    //cout<<entrada[i];
+                    //cout<<" caracter invalido"<<endl;
+                    return 1;
+                }
+            }
+            if (tam != 4)
+            {
+                return 2;
             }
             return 0;
         }

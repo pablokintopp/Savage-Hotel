@@ -90,6 +90,30 @@
     <Compile Include="Views\Cli_Cad.Designer.cs">
       <DependentUpon>Cli_Cad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Quarto_Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Quarto_Cadastro.designer.cs">
+      <DependentUpon>Quarto_Cadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Fornecedor_Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Fornecedor_Cadastro.designer.cs">
+      <DependentUpon>Fornecedor_Cadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Quarto_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Quarto_Menu.designer.cs">
+      <DependentUpon>Quarto_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Fornecedor_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Fornecedor_Menu.designer.cs">
+      <DependentUpon>Fornecedor_Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Func_Cad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +161,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Cli_Cad.resx">
       <DependentUpon>Cli_Cad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Quarto_Cadastro.resx">
+      <DependentUpon>Quarto_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Fornecedor_Cadastro.resx">
+      <DependentUpon>Fornecedor_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Quarto_Menu.resx">
+      <DependentUpon>Quarto_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Fornecedor_Menu.resx">
+      <DependentUpon>Fornecedor_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Func_Cad.resx">
       <DependentUpon>Func_Cad.cs</DependentUpon>
@@ -197,6 +233,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DatabaseHotel.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Quarto_lista.png" />
+    <None Include="Resources\Quarto_busca.png" />
+    <None Include="Resources\Quarto_add.png" />
+    <None Include="Resources\Quarto.png" />
+    <None Include="Resources\Fornecedor_lista.png" />
+    <None Include="Resources\Fornecedor_busca.png" />
+    <None Include="Resources\Fornecedor_add.png" />
+    <None Include="Resources\Fornecedor.png" />
     <None Include="Resources\cli_lista.png" />
     <None Include="Resources\cli_busca.png" />
     <None Include="Resources\cli_add.png" />

@@ -118,20 +118,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="img-bottle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img-bottle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_hotel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_hotel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_room" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img-room.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Img-lupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Img-lupa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Quarto_busca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Quarto_busca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fornecedor_lista" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fornecedor_lista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lista" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="func_busca" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\func_busca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="img_phone2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img_phone2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Fornecedor_busca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fornecedor_busca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Quarto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Quarto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,32 +154,29 @@
   <data name="img_customer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img_customer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lupa-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lupa-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Fornecedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fornecedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="img-buy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img-buy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lista" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Fornecedor_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fornecedor_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cli_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cli_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="img-add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img-add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="img-deliver-truck" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img-deliver-truck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cli_lista" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cli_lista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="func_lista" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\func_lista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cli_lista" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cli_lista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="img_phone2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_phone2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="func_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\func_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Quarto_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Quarto_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="img_employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img_employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,10 +184,10 @@
   <data name="cli_busca" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cli_busca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="img-room" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img-room.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="img_bottle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img-bottle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_hotel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_hotel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Quarto_lista" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Quarto_lista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
