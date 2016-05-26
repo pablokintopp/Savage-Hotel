@@ -449,7 +449,7 @@ namespace Savage_Hotel_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FuncionarioRow AddFuncionarioRow(string Name, string Login, string Password, decimal Salary, int IsManager, string Gender, string CPF, string Phone, string Birthday) {
+            public FuncionarioRow AddFuncionarioRow(string Name, string Login, string Password, decimal Salary, int IsManager, string Gender, string CPF, string Phone, System.DateTime Birthday) {
                 FuncionarioRow rowFuncionarioRow = ((FuncionarioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -524,7 +524,7 @@ namespace Savage_Hotel_System {
                 base.Columns.Add(this.columnCPF);
                 this.columnPhone = new global::System.Data.DataColumn("Phone", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPhone);
-                this.columnBirthday = new global::System.Data.DataColumn("Birthday", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnBirthday = new global::System.Data.DataColumn("Birthday", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBirthday);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
@@ -542,10 +542,6 @@ namespace Savage_Hotel_System {
                 this.columnPassword.MaxLength = 50;
                 this.columnSalary.AllowDBNull = false;
                 this.columnIsManager.AllowDBNull = false;
-                this.columnGender.MaxLength = 1;
-                this.columnCPF.MaxLength = 11;
-                this.columnPhone.MaxLength = 20;
-                this.columnBirthday.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -802,10 +798,10 @@ namespace Savage_Hotel_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Birthday {
+            public System.DateTime Birthday {
                 get {
                     try {
-                        return ((string)(this[this.tableFuncionario.BirthdayColumn]));
+                        return ((global::System.DateTime)(this[this.tableFuncionario.BirthdayColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Birthday\' in table \'Funcionario\' is DBNull.", e);

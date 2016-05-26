@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Savage_Hotel_System.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ namespace Savage_Hotel_System.Views
     public partial class Func_List : Form
     {
         private Func_Menu func_Menu;
-        private string cellLastValue;
+        private string valorQuandoEntrou;
 
         public Func_List()
         {
@@ -25,7 +26,7 @@ namespace Savage_Hotel_System.Views
             InitializeComponent();
             this.func_Menu = func_Menu;
             //CARREGA UM EVENTHANDLER NO LOAD
-            this.Load += new EventHandler(Func_List_Load);
+            //this.Load += new EventHandler(Func_List_Load);
         }
 
         private void Func_List_Load(object sender, EventArgs e)
@@ -33,43 +34,65 @@ namespace Savage_Hotel_System.Views
             // TODO: This line of code loads data into the 'databaseHotelDataSet1.Funcionario' table. You can move, or remove it, as needed.
             this.funcionarioTableAdapter.Fill(this.databaseHotelDataSet1.Funcionario);
 
-            //Linkando um evento para lidar com mudanças nos campos da DataGridView
-            this.dataGridView1.CellValidating += new
-            DataGridViewCellValidatingEventHandler(dataGridView1_CellValidating);
-            this.dataGridView1.CellEndEdit += new DataGridViewCellEventHandler(dataGridView1_CellEndEdit);
-                      
-        }
-
-        private void dataGridView1_CellValidating(object sender,
-        DataGridViewCellValidatingEventArgs e)
-        {
-            //nome da coluna
-            string headerText =
-                dataGridView1.Columns[e.ColumnIndex].HeaderText;
-
-            string cellValue = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-            if(e.ColumnIndex > 0)
-                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Red;
-
-            //TODO IMPEDIR A MUDANCA NO BANCO SEM A PERMIÇAO DESTE METÓDO
-            //TODO DESATIVAR BINDING com o bancoAUTOMATICO
-            //TODO Verficar nome/index da Coluna e validade de acordo e validar de acordo
-            // MessageBox.Show("Validando "+headerText);
-        }
-        void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.White;
+            //Desabilitando o update automatico do banco pois queremos validar antes.
+            this.dataGridView1.DataBindings.DefaultDataSourceUpdateMode = DataSourceUpdateMode.Never;
         }
 
         private void funcionarioBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-                    }
+        }
 
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            //SALVADO TEMPORARIAMENTO O VALOR DE CADA CELULA QUE ESTEJA EM FOCO
+            
             //Para CASO a pessoa desista de editar a coluna            
-            cellLastValue = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();            
+            valorQuandoEntrou = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+
+            Console.WriteLine("Entrou: "+ valorQuandoEntrou);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            func_Menu.Show();
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            
+           //valor atual do campo
+            string valorEditado = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+            Console.WriteLine("Editou: "+ valorEditado);
+            //verifica o valor atual com o de quando entrou na celula para ver se foi alterado algo
+            //caso sim entra na verificacao
+            if (String.Equals(valorEditado, valorQuandoEntrou))
+            {
+                //Pegando o nome da coluna onde houve alteração
+                string colTitulo = dataGridView1.Columns[e.ColumnIndex].HeaderText;
+                Funcoes auxfunc = new Funcoes();
+
+
+                switch (colTitulo)
+                {
+                    case "Nome":
+                        int verifica = auxfunc.verificanome(valorEditado);
+                        if (verifica != 0)
+                        {
+                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.FromArgb(100, 200, 10, 10);
+
+                        }
+                        break;
+                    case "CPF":
+                        //MessageBox.Show("CPF Editado");
+                        break;
+
+                }
+
+            }
+
+                
+            
+        }
+            
     }
 }
