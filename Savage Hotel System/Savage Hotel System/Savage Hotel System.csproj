@@ -235,6 +235,7 @@
       <DependentUpon>DatabaseHotel.mdf</DependentUpon>
     </Content>
     <Content Include="Resources\apply.png" />
+    <None Include="Resources\delete2.png" />
     <None Include="Resources\delete1.png" />
     <None Include="Resources\apply1.png" />
     <None Include="Resources\apply2.png" />

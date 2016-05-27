@@ -52,11 +52,13 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewDateTimeColumn1 = new Savage_Hotel_System.Class.DataGridViewDateTimeColumn();
+            this.labelTip = new System.Windows.Forms.Label();
+            this.labelAlteracoes = new System.Windows.Forms.Label();
+            this.labelErros = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet1)).BeginInit();
@@ -87,7 +89,7 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(698, 193);
+            this.dataGridView1.Size = new System.Drawing.Size(754, 193);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
@@ -257,15 +259,58 @@
             this.dataGridViewDateTimeColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewDateTimeColumn1.Width = 105;
             // 
+            // labelTip
+            // 
+            this.labelTip.AutoSize = true;
+            this.labelTip.Location = new System.Drawing.Point(28, 25);
+            this.labelTip.Name = "labelTip";
+            this.labelTip.Size = new System.Drawing.Size(313, 13);
+            this.labelTip.TabIndex = 6;
+            this.labelTip.Text = "*Todas alterações devem ser confirmadas com o Botão SALVAR";
+            // 
+            // labelAlteracoes
+            // 
+            this.labelAlteracoes.AutoSize = true;
+            this.labelAlteracoes.ForeColor = System.Drawing.Color.ForestGreen;
+            this.labelAlteracoes.Location = new System.Drawing.Point(28, 46);
+            this.labelAlteracoes.Name = "labelAlteracoes";
+            this.labelAlteracoes.Size = new System.Drawing.Size(181, 13);
+            this.labelAlteracoes.TabIndex = 7;
+            this.labelAlteracoes.Text = "*Existem Alterações não confirmadas";
+            // 
+            // labelErros
+            // 
+            this.labelErros.AutoSize = true;
+            this.labelErros.ForeColor = System.Drawing.Color.Red;
+            this.labelErros.Location = new System.Drawing.Point(28, 69);
+            this.labelErros.Name = "labelErros";
+            this.labelErros.Size = new System.Drawing.Size(322, 13);
+            this.labelErros.TabIndex = 8;
+            this.labelErros.Text = "*Erros encotrados, posiocione o mouse sobre eles para saber mais.";
+            // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = global::Savage_Hotel_System.Properties.Resources.delete;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.Location = new System.Drawing.Point(503, 25);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(150, 52);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "CANCELAR";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // button2
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::Savage_Hotel_System.Properties.Resources.delete;
+            this.button2.Image = global::Savage_Hotel_System.Properties.Resources.delete2;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(590, 25);
+            this.button2.Location = new System.Drawing.Point(659, 25);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 52);
+            this.button2.Size = new System.Drawing.Size(126, 52);
             this.button2.TabIndex = 4;
             this.button2.Text = "DELETAR";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -277,13 +322,14 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::Savage_Hotel_System.Properties.Resources.apply1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(417, 25);
+            this.button1.Location = new System.Drawing.Point(368, 25);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 52);
+            this.button1.Size = new System.Drawing.Size(120, 52);
             this.button1.TabIndex = 3;
             this.button1.Text = "SALVAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -296,38 +342,22 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(143, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "LABEL TITULO";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "label status";
-            // 
             // Func_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 349);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(826, 363);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.labelErros);
+            this.Controls.Add(this.labelAlteracoes);
+            this.Controls.Add(this.labelTip);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Func_List";
-            this.Text = "Func_List";
+            this.Text = "Lista Funcionarios";
             this.Load += new System.EventHandler(this.Func_List_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).EndInit();
@@ -366,7 +396,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelTip;
+        private System.Windows.Forms.Label labelAlteracoes;
+        private System.Windows.Forms.Label labelErros;
+        private System.Windows.Forms.Button button3;
     }
 }
