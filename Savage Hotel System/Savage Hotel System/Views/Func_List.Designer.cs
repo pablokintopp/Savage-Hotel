@@ -59,6 +59,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet1)).BeginInit();
@@ -135,8 +136,8 @@
             this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
             this.genderDataGridViewTextBoxColumn.HeaderText = "Genero";
             this.genderDataGridViewTextBoxColumn.Items.AddRange(new object[] {
-            "m",
-            "f",
+            "M",
+            "F",
             " "});
             this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
             this.genderDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -262,29 +263,31 @@
             // labelTip
             // 
             this.labelTip.AutoSize = true;
-            this.labelTip.Location = new System.Drawing.Point(28, 25);
+            this.labelTip.Location = new System.Drawing.Point(28, 64);
             this.labelTip.Name = "labelTip";
-            this.labelTip.Size = new System.Drawing.Size(313, 13);
+            this.labelTip.Size = new System.Drawing.Size(296, 13);
             this.labelTip.TabIndex = 6;
-            this.labelTip.Text = "*Todas alterações devem ser confirmadas com o Botão SALVAR";
+            this.labelTip.Text = "*Para Deletar um elemento (linha) selecione uma Célula antes";
             // 
             // labelAlteracoes
             // 
             this.labelAlteracoes.AutoSize = true;
+            this.labelAlteracoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAlteracoes.ForeColor = System.Drawing.Color.ForestGreen;
-            this.labelAlteracoes.Location = new System.Drawing.Point(28, 46);
+            this.labelAlteracoes.Location = new System.Drawing.Point(28, 297);
             this.labelAlteracoes.Name = "labelAlteracoes";
-            this.labelAlteracoes.Size = new System.Drawing.Size(181, 13);
+            this.labelAlteracoes.Size = new System.Drawing.Size(216, 13);
             this.labelAlteracoes.TabIndex = 7;
             this.labelAlteracoes.Text = "*Existem Alterações não confirmadas";
             // 
             // labelErros
             // 
             this.labelErros.AutoSize = true;
+            this.labelErros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelErros.ForeColor = System.Drawing.Color.Red;
-            this.labelErros.Location = new System.Drawing.Point(28, 69);
+            this.labelErros.Location = new System.Drawing.Point(28, 324);
             this.labelErros.Name = "labelErros";
-            this.labelErros.Size = new System.Drawing.Size(322, 13);
+            this.labelErros.Size = new System.Drawing.Size(387, 13);
             this.labelErros.TabIndex = 8;
             this.labelErros.Text = "*Erros encotrados, posiocione o mouse sobre eles para saber mais.";
             // 
@@ -301,6 +304,7 @@
             this.button3.Text = "CANCELAR";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -315,6 +319,7 @@
             this.button2.Text = "DELETAR";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -342,11 +347,21 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(28, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(313, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "*Todas alterações devem ser confirmadas com o Botão SALVAR";
+            // 
             // Func_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(826, 363);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.labelErros);
             this.Controls.Add(this.labelAlteracoes);
@@ -383,6 +398,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private Class.DataGridViewDateTimeColumn dataGridViewDateTimeColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label labelTip;
+        private System.Windows.Forms.Label labelAlteracoes;
+        private System.Windows.Forms.Label labelErros;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cPFDataGridViewTextBoxColumn;
@@ -393,12 +415,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn salaryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private Class.DataGridViewDateTimeColumn birthdayDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label labelTip;
-        private System.Windows.Forms.Label labelAlteracoes;
-        private System.Windows.Forms.Label labelErros;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label1;
     }
 }

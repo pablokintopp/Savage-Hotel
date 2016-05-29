@@ -250,6 +250,8 @@ namespace Savage_Hotel_System.Views
         //Metodo que chama a insercao do banco passando como parametros o nome da tabela a ser inserido, os nomes das colunas e respectivos valores
         private int InserirBanco()
         {
+
+            Console.WriteLine("DATA: "+ dateTimeNascimento.Value.ToString("dd/MM/yyyy"));
             //pega os valores das entradas para serem inseridos 
             List<object> parametrosValores = new List<object>()
             {
@@ -257,7 +259,7 @@ namespace Savage_Hotel_System.Views
                 textBoxPhone.Text,
                 textBoxCPF.Text,
                 radioButton1.Checked ? "M":"F",
-                dateTimeNascimento.Text,
+                dateTimeNascimento.Value.ToString("dd/MM/yyyy"),
                 "0",
                 textBoxSalario.Text,
                 textBoxLogin.Text,

@@ -1,4 +1,5 @@
 ﻿using Savage_Hotel_System.Class;
+using Savage_Hotel_System.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -80,10 +81,11 @@ namespace Savage_Hotel_System.Views
                 //Pegando o nome da coluna onde houve alteração
                 string colTitulo = dataGridView1.Columns[e.ColumnIndex].HeaderText;
                 Funcoes auxfunc = new Funcoes();
-
-
+                
+                //validando conforme  a coluna
                 switch (colTitulo.Trim())
                 {
+                    
                     case "Nome":
                         int verifica = auxfunc.verificanome(valorEditado);
                         
@@ -117,18 +119,195 @@ namespace Savage_Hotel_System.Views
                         
                         break;
                     case "CPF":
-                        //MessageBox.Show("CPF Editado");
+                        int verifica2 = auxfunc.verificacpf(valorEditado);
+
+                        if (verifica2 == 0)
+                        {
+                            //remove da lista antes de add para o caso de já existir na lista
+                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                            //Remove da lista de erros caso o item estiver lá
+                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                        }
+                        else if (verifica2 == 1)
+                        {
+                            //evita dois erros cadastrados para um mesmo item
+                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                            //evita o item estar como erro e sucesso ao mesmo tempo
+                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Este campo possui caracteres inválidos!";
+                        }
+                        else //caso seja 2
+                        {
+                            //evita dois erros cadastrados para um mesmo item
+                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                            //evita o item estar como erro e sucesso ao mesmo tempo
+                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Tamanho mínimo do campo não foi satisfeito";
+                        }
+                        break;
+                    case "Login":
+                        
+
+                        if (valorEditado.Length > 4)
+                        {
+                            //remove da lista antes de add para o caso de já existir na lista
+                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                            //Remove da lista de erros caso o item estiver lá
+                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                        }
+                        else
+                        {
+                            //evita dois erros cadastrados para um mesmo item
+                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                            //evita o item estar como erro e sucesso ao mesmo tempo
+                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Deve conter no mínimo 5 caracteres";
+                        }
+                        
                         break;
 
+                    case "Senha":
+
+
+                        if (valorEditado.Length > 4)
+                        {
+                            //remove da lista antes de add para o caso de já existir na lista
+                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                            //Remove da lista de erros caso o item estiver lá
+                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                        }
+                        else
+                        {
+                            //evita dois erros cadastrados para um mesmo item
+                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                            //evita o item estar como erro e sucesso ao mesmo tempo
+                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Deve conter no mínimo 5 caracteres";
+                        }
+
+                        break;
+                    case "Genero":
+                        
+                        //remove da lista antes de add para o caso de já existir na lista
+                        changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                        changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                        break;
+                    case "Gerente":
+
+                        //remove da lista antes de add para o caso de já existir na lista
+                        changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                        changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                        break;
+                    case "Data Nascimento":
+
+                        //remove da lista antes de add para o caso de já existir na lista
+                        changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                        changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                        break;
+                    case "Salario":
+                        int verifica3 = auxfunc.verificasalario(valorEditado);
+
+                        if (verifica3 == 0)
+                        {
+                            //remove da lista antes de add para o caso de já existir na lista
+                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                            //Remove da lista de erros caso o item estiver lá
+                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                        }
+                        else if(verifica3 == 1)
+                        {
+                            //evita dois erros cadastrados para um mesmo item
+                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                            //evita o item estar como erro e sucesso ao mesmo tempo
+                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Contém caracteres inválidos!";
+                        }else
+                        {
+                            //evita dois erros cadastrados para um mesmo item
+                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                            //evita o item estar como erro e sucesso ao mesmo tempo
+                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Tamnho mínimo não satisfeito!";
+
+                        }
+
+                        break;
+                    case "Telefone":
+                        int verifica4 = auxfunc.verificatelefone(valorEditado);
+
+                        if (verifica4 == 0)
+                        {
+                            //remove da lista antes de add para o caso de já existir na lista
+                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                            //Remove da lista de erros caso o item estiver lá
+                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                        }
+                        else if (verifica4 == 1)
+                        {
+                            //evita dois erros cadastrados para um mesmo item
+                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                            //evita o item estar como erro e sucesso ao mesmo tempo
+                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Contém caracteres inválidos!";
+                        }
+                        else
+                        {
+                            //evita dois erros cadastrados para um mesmo item
+                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                            //evita o item estar como erro e sucesso ao mesmo tempo
+                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Telefone deve conter 10 digitos";
+
+                        }
+
+                        break;
                 }
 
-            }            
+            }
 
             if (errorCells.Count > 0)
                 labelErros.Visible = true;
+            else
+                labelErros.Visible = false;
 
             if (changedCells.Count > 0)
                 labelAlteracoes.Visible = true;
+            else
+                labelAlteracoes.Visible = false;
 
             foreach (DataGridViewCell cell in errorCells)
             {
@@ -158,10 +337,42 @@ namespace Savage_Hotel_System.Views
             {
                 if(changedCells.Count > 0)
                 {
-                    //dataGridView1.DataBindings[0].WriteValue();
-                    //DataBindings[dataGridView1.Name].WriteValue();
-                    //TODO salvar alterações na databinding
+
+                    foreach(DataGridViewCell cell in changedCells)
+                    {
+
+                        //Coluna onde ouver alteração
+                        string nomeColuna = cell.OwningColumn.DataPropertyName;
+
+                        //Valor alterado
+                        string novoValor = cell.Value.ToString();
+                        //Id no banco da linha alterada para usar no update
+                        string idLinha = dataGridView1["idDataGridViewTextBoxColumn", cell.RowIndex].Value.ToString();
+
+                        string queryString = "UPDATE "+DataBase.tableFuncionario+" SET " + nomeColuna +" = @novoValor Where Id = @idLinha";
+                        //chamando função da query paramateros (querystring, lista parametros, lista valores)
+                        var reader = DataBase.SqlCommand(queryString,
+                            new List<string>() {
+                                "@novoValor",
+                                 "@idLinha"
+
+                              }, new List<object>() {
+                                      novoValor,
+                                      idLinha
+                        });
+
+                        //fechando a query, causa erros se nao fechar
+                        reader.Close();
+
+                        //volta a cor normal
+                        cell.Style.ForeColor = Color.Black;
+                        labelAlteracoes.Visible = false;
+
+                        
+                    }                                   
+                    
                     MessageBox.Show("Todas alterações foram salvas!", "Alterações realizadas co Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataGridView1.Refresh();
                 }
                 else
                 {
@@ -171,6 +382,53 @@ namespace Savage_Hotel_System.Views
             }
 
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.funcionarioTableAdapter.Fill(this.databaseHotelDataSet1.Funcionario);
+            errorCells.Clear();
+            changedCells.Clear();
+            labelAlteracoes.Visible = false;
+            labelErros.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataGridViewCell selecionada = dataGridView1.SelectedCells[0];
+            if(selecionada != null)
+            {
+                string nomeLinha = dataGridView1["nameDataGridViewTextBoxColumn", selecionada.RowIndex].Value.ToString();
+                DialogResult result1 = MessageBox.Show("Tem certeza que deseja deletar "+ nomeLinha+" ?", "Remoção irreversível!",MessageBoxButtons.YesNo);
+
+                if(result1 == DialogResult.Yes)
+                {
+
+                    //Id no banco da linha para excluir
+                    string idLinha = dataGridView1["idDataGridViewTextBoxColumn", selecionada.RowIndex].Value.ToString();
+
+                    string queryString = "DELETE FROM " + DataBase.tableFuncionario + " Where Id = @idLinha";
+                    //chamando função da query paramateros (querystring, lista parametros, lista valores)
+                    var reader = DataBase.SqlCommand(queryString,
+                        new List<string>() {
+                                 "@idLinha"
+
+                          }, new List<object>() {
+                                      idLinha
+                    });
+
+                    //fechando a query, causa erros se nao fechar
+                    reader.Close();
+                    //remove da view
+                    dataGridView1.Rows.Remove(selecionada.OwningRow);
+
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Nenhuma Dado deletado", "Selecione pelo menos um campo para escluir a linha!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }
