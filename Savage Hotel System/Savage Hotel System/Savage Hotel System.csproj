@@ -77,8 +77,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseHotelDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseHotelDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseHotelDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\DataBase.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Views\Cli_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Cli_List.Designer.cs">
+      <DependentUpon>Cli_List.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Cli_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +168,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Cli_List.resx">
+      <DependentUpon>Cli_List.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Cli_Menu.resx">
       <DependentUpon>Cli_Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +225,17 @@
     </None>
     <None Include="DatabaseHotelDataSet1.xss">
       <DependentUpon>DatabaseHotelDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseHotelDataSet2.xsc">
+      <DependentUpon>DatabaseHotelDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseHotelDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseHotelDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseHotelDataSet2.xss">
+      <DependentUpon>DatabaseHotelDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

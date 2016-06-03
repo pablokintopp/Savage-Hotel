@@ -430,5 +430,10 @@ namespace Savage_Hotel_System.Views
                 MessageBox.Show("Nenhuma Dado deletado", "Selecione pelo menos um campo para escluir a linha!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            //dataGridView1[e.ColumnIndex, e.RowIndex].Style.ForeColor = Color.Red; 
+        }
     }
 }
