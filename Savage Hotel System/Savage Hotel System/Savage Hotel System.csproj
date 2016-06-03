@@ -82,6 +82,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseHotelDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseHotelDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseHotelDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\DataBase.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Views\Cli_List.cs">
@@ -101,6 +106,12 @@
     </Compile>
     <Compile Include="Views\Cli_Cad.Designer.cs">
       <DependentUpon>Cli_Cad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Fornecedor_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Fornecedor_List.Designer.cs">
+      <DependentUpon>Fornecedor_List.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Quarto_Cadastro.cs">
       <SubType>Form</SubType>
@@ -177,6 +188,9 @@
     <EmbeddedResource Include="Views\Cli_Cad.resx">
       <DependentUpon>Cli_Cad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Fornecedor_List.resx">
+      <DependentUpon>Fornecedor_List.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Quarto_Cadastro.resx">
       <DependentUpon>Quarto_Cadastro.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +250,17 @@
     </None>
     <None Include="DatabaseHotelDataSet2.xss">
       <DependentUpon>DatabaseHotelDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseHotelDataSet3.xsc">
+      <DependentUpon>DatabaseHotelDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseHotelDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseHotelDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseHotelDataSet3.xss">
+      <DependentUpon>DatabaseHotelDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
