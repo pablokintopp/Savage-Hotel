@@ -233,16 +233,6 @@ namespace Savage_Hotel_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img_bottle {
-            get {
-                object obj = ResourceManager.GetObject("img_bottle", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap img_customer {
             get {
                 object obj = ResourceManager.GetObject("img_customer", resourceCulture);
@@ -296,6 +286,46 @@ namespace Savage_Hotel_System.Properties {
         internal static System.Drawing.Bitmap lista {
             get {
                 object obj = ResourceManager.GetObject("lista", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Produto {
+            get {
+                object obj = ResourceManager.GetObject("Produto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Produto_add {
+            get {
+                object obj = ResourceManager.GetObject("Produto_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Produto_busca {
+            get {
+                object obj = ResourceManager.GetObject("Produto_busca", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Produto_lista {
+            get {
+                object obj = ResourceManager.GetObject("Produto_lista", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

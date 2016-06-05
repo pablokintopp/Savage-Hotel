@@ -15,6 +15,7 @@ namespace Savage_Hotel_System.Views
     public partial class Quarto_Cadastro : Form
     {
         private Quarto_Menu JanelaAnterior;
+        private int QuantidadeDeQuartosCadastrados = 0;
 
         public Quarto_Cadastro()
         {
@@ -40,8 +41,10 @@ namespace Savage_Hotel_System.Views
 
         private void Func_Cad_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'databaseHotelDataSet.Funcionario' table. You can move, or remove it, as needed.
-           // this.funcionarioTableAdapter.Fill(this.databaseHotelDataSet.Funcionario);
+            QuantidadeDeQuartosCadastrados = (int)this.quartoTableAdapter.QuantidadeDeQuartosCadastrados();
+            textBoxNumeroQuarto.Text = (1000 + QuantidadeDeQuartosCadastrados + 1).ToString();
+
+
 
         }
 
@@ -159,7 +162,8 @@ namespace Savage_Hotel_System.Views
                 textBoxDescricao.Text,
                 textBoxNumeroQuarto.Text,
                 numericUpDown1.Text,
-                numericUpDown2.Text
+                numericUpDown2.Text,
+                "disponivel"
 
             };
 
@@ -170,7 +174,8 @@ namespace Savage_Hotel_System.Views
                 "Descricao",
                 "NumeroQuarto",
                 "QuantidadeCamaSolteiro",
-                "QuantidadeCamaCasal"
+                "QuantidadeCamaCasal",
+                "Status"
             };
             string nomeDaTabela = DataBase.tableQuarto;
             return DataBase.SqlCommandInsert(nomeDaTabela, parametrosNomes, parametrosValores);
@@ -179,6 +184,28 @@ namespace Savage_Hotel_System.Views
 
         private void label3_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void quartoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+
+        }
+
+        private void quartoBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.quartoBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.quarto);
+
+        }
+
+        private void quartoBindingNavigatorSaveItem_Click_2(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.quartoBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.quarto);
 
         }
     }

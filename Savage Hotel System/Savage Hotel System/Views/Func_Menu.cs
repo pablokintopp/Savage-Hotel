@@ -44,5 +44,10 @@ namespace Savage_Hotel_System.Views
             this.Hide();
             Lista.Show();
         }
+
+        private void Func_Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Main.Show();
+        }
     }
 }

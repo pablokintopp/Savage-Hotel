@@ -120,18 +120,6 @@ namespace Savage_Hotel_System.Views
                     break;
             }
 
-            //Verifica Sexo
-            String sexo;
-            if (radioButton1.Checked == true)
-            {
-                sexo = "M";
-            }
-            else {
-                if (radioButton2.Checked == true) {
-                    sexo = "F";
-                }
-            }
-
             //Verifica Data
             label4.Text = dateTimeNascimento.Text;
             if (somaretornos == 0) {

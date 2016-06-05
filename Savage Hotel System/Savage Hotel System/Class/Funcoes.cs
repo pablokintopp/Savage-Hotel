@@ -128,7 +128,7 @@ namespace Savage_Hotel_System.Class
             //Caso contrário retorna 1
             //Caso contrário retorna 2 (Tamanho Mínino 1)
             int tam = entrada.Length;
-            if (tam<1)
+            if (tam < 1)
             {
                 return 2;
             }
@@ -171,6 +171,65 @@ namespace Savage_Hotel_System.Class
             if (tam != 4)
             {
                 return 2;
+            }
+            return 0;
+        }
+
+        public int verificavalor(String entrada)
+        {
+            //Verifica Valor
+            //Se tudo estiver ok, retorna 0
+            //Caso contrário retorna 1
+            //Caso tenha mais de 2 casas após a vírgula ou se possuir 2 virgulas, retorna 2
+            int numeropontos = 0;
+            int casas = 0;
+            int tam = entrada.Length;
+            for (int i = 0; i < tam; i++)
+            {
+                if (entrada[i] > 47 && entrada[i] < 58)
+                {
+                    //cout<<entrada[i]<<endl;
+                    if (numeropontos > 0)
+                    {
+                        casas++;
+                    }
+                    if (casas > 2)
+                    {
+                        return 2;
+                    }
+                }
+                else
+                {
+                    if (entrada[i] == 46)
+                    {
+                        if (numeropontos == 0)
+                        {
+                            numeropontos++;
+                        }
+                        else
+                        {
+                            return 2;
+                        }
+                    }
+                    else
+                    {
+                        //cout<<entrada[i];
+                        //cout<<" caracter invalido"<<endl;
+                        return 1;
+                    }
+                }
+            }
+            if (numeropontos == 0)
+            {
+                return 2;
+            }
+            if (numeropontos == 1 && casas < 2)
+            {
+                return 2;
+            }
+            if (entrada.Length > 8)
+            {
+                return 3;
             }
             return 0;
         }

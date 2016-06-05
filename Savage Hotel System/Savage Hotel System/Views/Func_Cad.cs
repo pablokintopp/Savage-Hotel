@@ -82,9 +82,6 @@ namespace Savage_Hotel_System.Views
                     break;
             }
 
-
-
-
             //Verifica Telefone
             aux = textBoxPhone.Text;
             retorno=auxfunc.verificatelefone(aux);
@@ -124,21 +121,8 @@ namespace Savage_Hotel_System.Views
                     break;
             }
 
-            //Verifica Sexo
-            String sexo;
-            if (radioButton1.Checked == true)
-            {
-                sexo = "M";
-            }
-            else {
-                if (radioButton2.Checked == true) {
-                    sexo = "F";
-                }
-            }
-
             //Verifica Data
             label4.Text = dateTimeNascimento.Text;
-
 
             //Cargo
             String Cargo;
@@ -152,10 +136,9 @@ namespace Savage_Hotel_System.Views
                 label14.Text = "";
             }
                        
-
             //Verifica Salário
             aux = textBoxSalario.Text;
-            retorno = auxfunc.verificasalario(aux);
+            retorno = auxfunc.verificavalor(aux);
             somaretornos += retorno;
             switch (retorno)
             {
@@ -165,11 +148,11 @@ namespace Savage_Hotel_System.Views
                     break;
                 case 1:
                     textBoxSalario.BackColor = Color.IndianRed;
-                    label5.Text = "Preencha apensa com números";
+                    label5.Text = "Preencha apenas com números e com 1 ponto";
                     break;
                 case 2:
                     textBoxSalario.BackColor = Color.IndianRed;
-                    label5.Text = "Digite pelo menos um número";
+                    label5.Text = "Digite no formato xxxx.xx";
                     break;
             }
 

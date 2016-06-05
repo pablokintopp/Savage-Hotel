@@ -152,12 +152,13 @@
             // pictureBox3
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Image = global::Savage_Hotel_System.Properties.Resources.Produto;
             this.pictureBox3.Location = new System.Drawing.Point(491, 236);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(130, 130);
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox4
             // 
@@ -201,6 +202,7 @@
             this.iconReserve.Size = new System.Drawing.Size(130, 130);
             this.iconReserve.TabIndex = 0;
             this.iconReserve.TabStop = false;
+            this.iconReserve.Click += new System.EventHandler(this.iconReserve_Click);
             // 
             // MenuMain
             // 
@@ -223,9 +225,12 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconReserve);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Savage Hotel - Menu Principal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuMain_FormClosing);
             this.Load += new System.EventHandler(this.MenuMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -256,5 +261,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
+        
     }
 }

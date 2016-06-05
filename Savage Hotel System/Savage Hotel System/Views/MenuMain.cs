@@ -47,6 +47,22 @@ namespace Savage_Hotel_System.Views
             labelGreetings.Text = "Bem Vindo " + user.Name;
         }
 
+        //Evento para fechar software a partir do x da janela
+        private void MenuMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                var result = MessageBox.Show(this, "Você tem certeza que deseja sair?", "Confirmação", MessageBoxButtons.YesNo);
+                if (result != DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+
+
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Form Func = new Func_Menu(this);
@@ -79,6 +95,20 @@ namespace Savage_Hotel_System.Views
             Form Quarto = new Quarto_Menu(this);
             this.Hide();
             Quarto.Show();
+        }
+
+        private void iconReserve_Click(object sender, EventArgs e)
+        {
+            Form Reserva = new Reserva_Menu(this);
+            this.Hide();
+            Reserva.Show();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Form ProdutosMenu = new Produto_Menu(this);
+            this.Hide();
+            ProdutosMenu.Show();
         }
     }
 }

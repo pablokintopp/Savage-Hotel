@@ -32,9 +32,6 @@
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxNumeroQuarto = new System.Windows.Forms.TextBox();
-            this.databaseHotelDataSet = new Savage_Hotel_System.DatabaseHotelDataSet();
-            this.funcionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.funcionarioTableAdapter = new Savage_Hotel_System.DatabaseHotelDataSetTableAdapters.FuncionarioTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,11 +43,15 @@
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.quarto = new Savage_Hotel_System.DataSet.DataSetQuarto();
+            this.quartoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quartoTableAdapter = new Savage_Hotel_System.DataSet.QuartoTableAdapters.QuartoTableAdapter();
+            this.tableAdapterManager = new Savage_Hotel_System.DataSet.QuartoTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quarto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quartoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxDescricao
@@ -76,25 +77,12 @@
             // 
             // textBoxNumeroQuarto
             // 
+            this.textBoxNumeroQuarto.Enabled = false;
             this.textBoxNumeroQuarto.Location = new System.Drawing.Point(121, 40);
             this.textBoxNumeroQuarto.Name = "textBoxNumeroQuarto";
             this.textBoxNumeroQuarto.Size = new System.Drawing.Size(217, 20);
             this.textBoxNumeroQuarto.TabIndex = 1;
             this.textBoxNumeroQuarto.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // databaseHotelDataSet
-            // 
-            this.databaseHotelDataSet.DataSetName = "DatabaseHotelDataSet";
-            this.databaseHotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // funcionarioBindingSource
-            // 
-            this.funcionarioBindingSource.DataMember = "Funcionario";
-            this.funcionarioBindingSource.DataSource = this.databaseHotelDataSet;
-            // 
-            // funcionarioTableAdapter
-            // 
-            this.funcionarioTableAdapter.ClearBeforeFill = true;
             // 
             // button1
             // 
@@ -207,12 +195,32 @@
             this.label5.Text = "label5";
             this.label5.Visible = false;
             // 
+            // quarto
+            // 
+            this.quarto.DataSetName = "Quarto";
+            this.quarto.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // quartoBindingSource
+            // 
+            this.quartoBindingSource.DataMember = "Quarto";
+            this.quartoBindingSource.DataSource = this.quarto;
+            // 
+            // quartoTableAdapter
+            // 
+            this.quartoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.QuartoTableAdapter = this.quartoTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Savage_Hotel_System.DataSet.QuartoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // Quarto_Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(519, 164);
+            this.ClientSize = new System.Drawing.Size(527, 177);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label5);
@@ -231,10 +239,10 @@
             this.Text = "Cadastrar Quarto";
             this.Load += new System.EventHandler(this.Func_Cad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quarto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quartoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,9 +253,6 @@
         private System.Windows.Forms.TextBox textBoxDescricao;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBoxNumeroQuarto;
-        private DatabaseHotelDataSet databaseHotelDataSet;
-        private System.Windows.Forms.BindingSource funcionarioBindingSource;
-        private DatabaseHotelDataSetTableAdapters.FuncionarioTableAdapter funcionarioTableAdapter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -259,5 +264,9 @@
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label5;
+        private DataSet.DataSetQuarto quarto;
+        private System.Windows.Forms.BindingSource quartoBindingSource;
+        private DataSet.QuartoTableAdapters.QuartoTableAdapter quartoTableAdapter;
+        private DataSet.QuartoTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }
