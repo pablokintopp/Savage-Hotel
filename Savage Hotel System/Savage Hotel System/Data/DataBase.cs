@@ -55,13 +55,18 @@ namespace Savage_Hotel_System.Data
 
         //CONSULTA SQL, retorna um SqlDataReader que contem a tabela de resposta a consulta
         public static SqlDataReader SqlCommand(string queryString, List<string> parNames, List<object> parValues)
-        {           
-            
+        {
+            Console.WriteLine("QUERY: "+queryString);
+
             SqlCommand command = new SqlCommand(queryString, connection);
-            for (int i = 0; i < parNames.Count ; i++)
+            if(parNames != null)
             {
-                command.Parameters.AddWithValue(parNames[i], parValues[i]);
+                for (int i = 0; i < parNames.Count; i++)
+                {
+                    command.Parameters.AddWithValue(parNames[i], parValues[i]);
+                }
             }
+            
 
             SqlDataReader reader = command.ExecuteReader();
 

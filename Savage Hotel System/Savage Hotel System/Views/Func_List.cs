@@ -18,6 +18,7 @@ namespace Savage_Hotel_System.Views
         private string valorQuandoEntrou;
         private List<DataGridViewCell> errorCells;
         private List<DataGridViewCell> changedCells;
+        private int idBusca = 0;
         public Func_List()
         {
             InitializeComponent();
@@ -27,8 +28,14 @@ namespace Savage_Hotel_System.Views
         {
             InitializeComponent();
             this.func_Menu = func_Menu;
-            //CARREGA UM EVENTHANDLER NO LOAD
-            //this.Load += new EventHandler(Func_List_Load);
+           
+        }
+        public Func_List(Func_Menu func_Menu , int idBusca)
+        {
+            InitializeComponent();
+            this.func_Menu = func_Menu;
+            this.idBusca = idBusca;
+
         }
 
         private void Func_List_Load(object sender, EventArgs e)
@@ -42,7 +49,25 @@ namespace Savage_Hotel_System.Views
 
             //Desabilitando o update automatico do banco pois queremos validar antes.
             this.dataGridView1.DataBindings.DefaultDataSourceUpdateMode = DataSourceUpdateMode.Never;
+           
+            //caso veio do menu de busca seleciona linha com o id da busca
+            if(idBusca > 0)
+            {
+                dataGridView1[0, 0].Selected = false;
+               foreach(DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if(Convert.ToInt32( row.Cells[0].Value )== idBusca)
+                    {
+                        dataGridView1[0, row.Index].Selected = true;
+                        dataGridView1.Rows[row.Index].Selected = true;
+                        
+                        break;
+                    }
+                }
+            }
         }
+
+
 
         private void funcionarioBindingSource_CurrentChanged(object sender, EventArgs e)
         {

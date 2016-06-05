@@ -40,7 +40,7 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Form Lista = new Func_List(this);
+            Form Lista = new Func_List(this,3);
             this.Hide();
             Lista.Show();
         }
@@ -48,6 +48,13 @@ namespace Savage_Hotel_System.Views
         private void Func_Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
             Main.Show();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Func_Busc busca = new Func_Busc(this);
+            busca.Show();
+            this.Hide();
         }
     }
 }
