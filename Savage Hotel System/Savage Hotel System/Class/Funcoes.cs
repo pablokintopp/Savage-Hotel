@@ -40,7 +40,7 @@ namespace Savage_Hotel_System.Class
             return 0;
         }
 
-        public int verificanome(String entrada)
+        /*public int verificanome(String entrada)
         {
             //Verifica Nome
             //Se tudo estiver ok, retorna 0
@@ -65,8 +65,69 @@ namespace Savage_Hotel_System.Class
                 return 2;
             }
             return 0;
-        }
+        }*/
 
+		public int verificanome(String entrada)
+        {
+            //Verifica Nome
+            //Se tudo estiver ok, retorna 0
+            //Caso contrário retorna 2 (Tamanho Mínino 1)
+            //Caso contrário retorna 1 (caracteres Inválidos)
+            int tam = entrada.Length;
+            for (int i = 0; i < tam; i++)
+            {
+                if((int)entrada[i]>64 && (int)entrada[i] < 91){
+				}else{
+					if((int)entrada[i] > 96 && (int)entrada[i] < 123){
+					}else{
+						if((int)entrada[i] == 32){
+						}else{
+							if((int)entrada[i] > 127 && (int)entrada[i] < 145){
+							}else{
+								if((int)entrada[i] > 146 && (int)entrada[i] < 155){
+								}else{
+									if((int)entrada[i] > 159 && (int)entrada[i] < 166){
+									}else{
+										if((int)entrada[i] > 180 && (int)entrada[i] < 184){
+										}else{
+											if((int)entrada[i] > 197 && (int)entrada[i] < 200){
+											}else{
+												if((int)entrada[i] == 208){
+												}else{
+													if((int)entrada[i] > 209 && (int)entrada[i] < 217){
+													}else{
+														if((int)entrada[i] == 222){
+														}else{
+															if((int)entrada[i] == 224){
+															}else{
+																if((int)entrada[i] > 225 && (int)entrada[i] < 230){
+																}else{
+																	if((int)entrada[i] > 232 && (int)entrada[i] < 238){
+																	}else{
+																		//caracter inválido
+																		return 1;
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+            }
+            if (tam <= 1)
+            {
+                return 2;
+            }
+            return 0;
+        }
+		
         public int verificacpf(String entrada)
         {
             //Verifica CPF

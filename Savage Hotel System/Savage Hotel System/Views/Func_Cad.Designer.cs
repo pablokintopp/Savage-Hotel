@@ -126,7 +126,8 @@
             this.comboBoxCargo.Items.AddRange(new object[] {
             "Recepcionista",
             "Faxineira",
-            "Porteiro"});
+            "Porteiro",
+            "Gerente"});
             this.comboBoxCargo.Location = new System.Drawing.Point(122, 145);
             this.comboBoxCargo.Name = "comboBoxCargo";
             this.comboBoxCargo.Size = new System.Drawing.Size(216, 21);
@@ -139,7 +140,7 @@
             this.textBoxSalario.Name = "textBoxSalario";
             this.textBoxSalario.Size = new System.Drawing.Size(217, 20);
             this.textBoxSalario.TabIndex = 8;
-            this.textBoxSalario.Text = "1234";
+            this.textBoxSalario.Text = "1234.00";
             this.textBoxSalario.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // databaseHotelDataSet
@@ -383,7 +384,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(519, 327);
+            this.ClientSize = new System.Drawing.Size(519, 380);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);

@@ -47,8 +47,9 @@ namespace Savage_Hotel_System.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int gerente = 0;
             int retorno = 0;
-            int somaretornos = 0;
+            int somarerros = 0;
             Funcoes auxfunc = new Funcoes();
             String aux;
             
@@ -65,7 +66,7 @@ namespace Savage_Hotel_System.Views
             //Verifica Nome
             aux = textBoxNome.Text;
             retorno = auxfunc.verificanome(aux);
-            somaretornos += retorno;
+            somarerros += retorno;
             switch (retorno)
             {
                 case 0:
@@ -84,8 +85,8 @@ namespace Savage_Hotel_System.Views
 
             //Verifica Telefone
             aux = textBoxPhone.Text;
-            retorno=auxfunc.verificatelefone(aux);
-            somaretornos += retorno;
+            retorno = auxfunc.verificatelefone(aux);
+            somarerros += retorno;
             switch (retorno) {
                 case 0:
                     textBoxPhone.BackColor = Color.LightGreen;
@@ -104,7 +105,7 @@ namespace Savage_Hotel_System.Views
             //Verifica CPF
             aux = textBoxCPF.Text;
             retorno = auxfunc.verificacpf(aux);
-            somaretornos += retorno;
+            somarerros += retorno;
             switch (retorno)
             {
                 case 0:
@@ -130,16 +131,19 @@ namespace Savage_Hotel_System.Views
             if (Cargo.Length == 0)
             {
                 label14.Text = "Selecione um cargo";
-                somaretornos += 1;
+                somarerros += 1;
             }
             else {
                 label14.Text = "";
+                if (comboBoxCargo.Text == "Gerente") {
+                    gerente = 1;
+                }
             }
                        
             //Verifica Salário
             aux = textBoxSalario.Text;
             retorno = auxfunc.verificavalor(aux);
-            somaretornos += retorno;
+            somarerros += retorno;
             switch (retorno)
             {
                 case 0:
@@ -162,7 +166,7 @@ namespace Savage_Hotel_System.Views
             {
                 textBoxLogin.BackColor = Color.IndianRed;
                 label16.Text = "Insira pelo menos 5 caracteres";
-                somaretornos += 1;
+                somarerros += 1;
             }
             else {
                 label16.Text = "";
@@ -175,7 +179,7 @@ namespace Savage_Hotel_System.Views
             {
                 textBoxSenha.BackColor = Color.IndianRed;
                 label17.Text = "Insira pelo menos 5 caracteres";
-                somaretornos += 1;
+                somarerros += 1;
             }
             else
             {
@@ -183,8 +187,8 @@ namespace Savage_Hotel_System.Views
                 textBoxSenha.BackColor = Color.LightGreen;
             }
 
-            if (somaretornos == 0) {
-                if (InserirBanco() > 0) {
+            if (somarerros == 0) {
+                if (InserirBanco(gerente) > 0) {
                     MessageBox.Show("Inserido com Sucesso!");
                     this.Close();
                     this.JanelaAnterior.Show();
@@ -227,13 +231,9 @@ namespace Savage_Hotel_System.Views
             textBoxSenha.BackColor = Color.White;
         }
 
-
-       
-
         //Metodo que chama a insercao do banco passando como parametros o nome da tabela a ser inserido, os nomes das colunas e respectivos valores
-        private int InserirBanco()
+        private int InserirBanco(int gerente)
         {
-
             Console.WriteLine("DATA: "+ dateTimeNascimento.Value.ToString("dd/MM/yyyy"));
             //pega os valores das entradas para serem inseridos 
             List<object> parametrosValores = new List<object>()
@@ -243,7 +243,7 @@ namespace Savage_Hotel_System.Views
                 textBoxCPF.Text,
                 radioButton1.Checked ? "M":"F",
                 dateTimeNascimento.Value.ToString("dd/MM/yyyy"),
-                "0",
+                gerente,
                 textBoxSalario.Text,
                 textBoxLogin.Text,
                 textBoxSenha.Text
