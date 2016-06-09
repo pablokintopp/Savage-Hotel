@@ -101,7 +101,7 @@ namespace Savage_Hotel_System.Views
 
         private void Selecionarbutton_Click(object sender, EventArgs e)
         {
-            int NumeroQuarto = -1;
+            int IDQuarto = -1;
             if (quantidadeItensNaGridView > 0)
             {
                 int linha = -1;
@@ -114,16 +114,18 @@ namespace Savage_Hotel_System.Views
                 /*label2.Text = "ID do Quarto Selecionado ";
                 label2.Text += quartoDataGridView.SelectedCells[2].Value.ToString();*/
 
-                //Numero do Quarto Selecionado
+                //ID do Quarto Selecionado
                 label2.Text = "Numero do Quarto Selecionado ";
-                NumeroQuarto = Convert.ToInt16(quartoDataGridView.Rows[linha].Cells[2].Value);
-                label2.Text = NumeroQuarto.ToString();
+                IDQuarto = Convert.ToInt16(quartoDataGridView.Rows[linha].Cells[0].Value);
+                label2.Text = IDQuarto.ToString();
+
+                MenuReserva.DefinirID(IDQuarto);
+                MenuReserva.refresh();
+                MenuReserva.Show();
+                this.Close();
             }
 
-            MenuReserva.DefinirNumeroQuarto(NumeroQuarto);
-            MenuReserva.refresh();
-            MenuReserva.Show();
-            this.Close();
+            
         }
     }
 }

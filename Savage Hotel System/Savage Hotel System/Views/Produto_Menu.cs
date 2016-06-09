@@ -33,16 +33,16 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            /*Form Cadastro = new Func_Cad(this);
+            Form Cadastro = new Produto_Cadastro(this);
             this.Hide();
-            Cadastro.Show();*/
+            Cadastro.Show();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            /*Form Lista = new Func_List(this);
+            Form Lista = new Produto_List(this);
             this.Hide();
-            Lista.Show();*/
+            Lista.Show();
         }
 
         private void Func_Menu_FormClosing(object sender, FormClosingEventArgs e)

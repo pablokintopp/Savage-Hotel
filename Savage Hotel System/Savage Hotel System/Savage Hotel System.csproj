@@ -87,10 +87,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseHotelDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\DataSetFornecedor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFornecedor.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\DataSetFuncionario.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetFuncionario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetProduto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProduto.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet\DataSetQuarto.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -152,6 +162,12 @@
     <Compile Include="Views\Fornecedor_Cadastro.designer.cs">
       <DependentUpon>Fornecedor_Cadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Produto_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto_List.Designer.cs">
+      <DependentUpon>Produto_List.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Quarto_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +218,18 @@
     <Compile Include="Views\Quarto_List.Designer.cs">
       <DependentUpon>Quarto_List.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Produto_Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto_Cadastro.Designer.cs">
+      <DependentUpon>Produto_Cadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Produto_Cadastro_BuscaFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto_Cadastro_BuscaFornecedor.Designer.cs">
+      <DependentUpon>Produto_Cadastro_BuscaFornecedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reserva_Quartos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +271,9 @@
     <EmbeddedResource Include="Views\Fornecedor_Cadastro.resx">
       <DependentUpon>Fornecedor_Cadastro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto_List.resx">
+      <DependentUpon>Produto_List.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Quarto_Menu.resx">
       <DependentUpon>Quarto_Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +297,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Quarto_List.resx">
       <DependentUpon>Quarto_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto_Cadastro.resx">
+      <DependentUpon>Produto_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto_Cadastro_BuscaFornecedor.resx">
+      <DependentUpon>Produto_Cadastro_BuscaFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reserva_Quartos.resx">
       <DependentUpon>Reserva_Quartos.cs</DependentUpon>
@@ -317,6 +354,17 @@
     <None Include="DatabaseHotelDataSet3.xss">
       <DependentUpon>DatabaseHotelDataSet3.xsd</DependentUpon>
     </None>
+    <None Include="DataSet\DataSetFornecedor.xsc">
+      <DependentUpon>DataSetFornecedor.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetFornecedor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFornecedor.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSetFornecedor.xss">
+      <DependentUpon>DataSetFornecedor.xsd</DependentUpon>
+    </None>
     <None Include="DataSet\DataSetFuncionario.xsc">
       <DependentUpon>DataSetFuncionario.xsd</DependentUpon>
     </None>
@@ -327,6 +375,17 @@
     </None>
     <None Include="DataSet\DataSetFuncionario.xss">
       <DependentUpon>DataSetFuncionario.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetProduto.xsc">
+      <DependentUpon>DataSetProduto.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetProduto.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProduto.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSetProduto.xss">
+      <DependentUpon>DataSetProduto.xsd</DependentUpon>
     </None>
     <None Include="DataSet\DataSetQuarto.xsc">
       <DependentUpon>DataSetQuarto.xsd</DependentUpon>

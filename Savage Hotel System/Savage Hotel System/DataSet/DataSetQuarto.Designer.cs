@@ -22,7 +22,7 @@ namespace Savage_Hotel_System.DataSet {
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
     [global::System.Xml.Serialization.XmlRootAttribute("Quarto")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSetQuarto : global::System.Data.DataSet {
+    public partial class Quarto : global::System.Data.DataSet {
         
         private QuartoDataTable tableQuarto;
         
@@ -30,7 +30,7 @@ namespace Savage_Hotel_System.DataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DataSetQuarto() {
+        public Quarto() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Savage_Hotel_System.DataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DataSetQuarto(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected Quarto(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace Savage_Hotel_System.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSetQuarto cln = ((DataSetQuarto)(base.Clone()));
+            Quarto cln = ((Quarto)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -225,7 +225,7 @@ namespace Savage_Hotel_System.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSetQuarto ds = new DataSetQuarto();
+            Quarto ds = new Quarto();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -557,7 +557,7 @@ namespace Savage_Hotel_System.DataSet {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetQuarto ds = new DataSetQuarto();
+                Quarto ds = new Quarto();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -912,7 +912,7 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal, " +
@@ -927,38 +927,44 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT        Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCama" +
-                "Casal, Status\r\nFROM            Quarto\r\nWHERE        (NumeroQuarto LIKE @Param1) " +
-                "AND (Status LIKE @Param2)";
+                "Casal, Status\r\nFROM            Quarto\r\nWHERE        (Id = @Param1)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.NChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroQuarto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param2", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT        Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCama" +
-                "Casal, Status\r\nFROM            Quarto\r\nWHERE        (QuantidadeCamaCasal LIKE @P" +
-                "aram1) AND (Status LIKE @Param2)";
+                "Casal, Status\r\nFROM            Quarto\r\nWHERE        (NumeroQuarto LIKE @Param1) " +
+                "AND (Status LIKE @Param2)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.NChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "QuantidadeCamaCasal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.NChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroQuarto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param2", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT        Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCama" +
-                "Casal, Status\r\nFROM            Quarto\r\nWHERE        (QuantidadeCamaSolteiro LIKE" +
-                " @Param1) AND (Status LIKE @Param2)";
+                "Casal, Status\r\nFROM            Quarto\r\nWHERE        (QuantidadeCamaCasal LIKE @P" +
+                "aram1) AND (Status LIKE @Param2)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.NChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "QuantidadeCamaSolteiro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.NChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "QuantidadeCamaCasal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param2", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            Quarto";
+            this._commandCollection[5].CommandText = "SELECT        Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCama" +
+                "Casal, Status\r\nFROM            Quarto\r\nWHERE        (QuantidadeCamaSolteiro LIKE" +
+                " @Param1) AND (Status LIKE @Param2)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.NChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "QuantidadeCamaSolteiro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param2", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            Quarto";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetQuarto.QuartoDataTable dataTable) {
+        public virtual int Fill(Quarto.QuartoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -971,9 +977,9 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetQuarto.QuartoDataTable GetData() {
+        public virtual Quarto.QuartoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSetQuarto.QuartoDataTable dataTable = new DataSetQuarto.QuartoDataTable();
+            Quarto.QuartoDataTable dataTable = new Quarto.QuartoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -982,7 +988,7 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int busca_DetalhesQuartoDeNumeroTal(DataSetQuarto.QuartoDataTable dataTable, string Param1) {
+        public virtual int busca_DetalhesQuartoDeNumeroTal(Quarto.QuartoDataTable dataTable, string Param1) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((Param1 == null)) {
                 throw new global::System.ArgumentNullException("Param1");
@@ -1001,7 +1007,7 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSetQuarto.QuartoDataTable GetDataBy4(string Param1) {
+        public virtual Quarto.QuartoDataTable GetDataBy4(string Param1) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((Param1 == null)) {
                 throw new global::System.ArgumentNullException("Param1");
@@ -1009,7 +1015,7 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
             }
-            DataSetQuarto.QuartoDataTable dataTable = new DataSetQuarto.QuartoDataTable();
+            Quarto.QuartoDataTable dataTable = new Quarto.QuartoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1018,20 +1024,9 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int busca_NumeroQuarto(DataSetQuarto.QuartoDataTable dataTable, string Param1, string Param2) {
+        public virtual int Busca_ID(Quarto.QuartoDataTable dataTable, int Param1) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((Param1 == null)) {
-                throw new global::System.ArgumentNullException("Param1");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
-            }
-            if ((Param2 == null)) {
-                throw new global::System.ArgumentNullException("Param2");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Param2));
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Param1));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1042,31 +1037,8 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSetQuarto.QuartoDataTable GetDataBy(string Param1, string Param2) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((Param1 == null)) {
-                throw new global::System.ArgumentNullException("Param1");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
-            }
-            if ((Param2 == null)) {
-                throw new global::System.ArgumentNullException("Param2");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Param2));
-            }
-            DataSetQuarto.QuartoDataTable dataTable = new DataSetQuarto.QuartoDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int busca_QuantidadeCamaCasal(DataSetQuarto.QuartoDataTable dataTable, string Param1, string Param2) {
+        public virtual int busca_NumeroQuarto(Quarto.QuartoDataTable dataTable, string Param1, string Param2) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((Param1 == null)) {
                 throw new global::System.ArgumentNullException("Param1");
@@ -1091,7 +1063,7 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSetQuarto.QuartoDataTable GetDataBy3(string Param1, string Param2) {
+        public virtual Quarto.QuartoDataTable GetDataBy(string Param1, string Param2) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((Param1 == null)) {
                 throw new global::System.ArgumentNullException("Param1");
@@ -1105,7 +1077,7 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Param2));
             }
-            DataSetQuarto.QuartoDataTable dataTable = new DataSetQuarto.QuartoDataTable();
+            Quarto.QuartoDataTable dataTable = new Quarto.QuartoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1114,7 +1086,7 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int busca_QuantidadeCamaSolteiro(DataSetQuarto.QuartoDataTable dataTable, string Param1, string Param2) {
+        public virtual int busca_QuantidadeCamaCasal(Quarto.QuartoDataTable dataTable, string Param1, string Param2) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((Param1 == null)) {
                 throw new global::System.ArgumentNullException("Param1");
@@ -1139,7 +1111,7 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSetQuarto.QuartoDataTable GetDataBy2(string Param1, string Param2) {
+        public virtual Quarto.QuartoDataTable GetDataBy3(string Param1, string Param2) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((Param1 == null)) {
                 throw new global::System.ArgumentNullException("Param1");
@@ -1153,7 +1125,7 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Param2));
             }
-            DataSetQuarto.QuartoDataTable dataTable = new DataSetQuarto.QuartoDataTable();
+            Quarto.QuartoDataTable dataTable = new Quarto.QuartoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1161,14 +1133,62 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetQuarto.QuartoDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int busca_QuantidadeCamaSolteiro(Quarto.QuartoDataTable dataTable, string Param1, string Param2) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((Param1 == null)) {
+                throw new global::System.ArgumentNullException("Param1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
+            }
+            if ((Param2 == null)) {
+                throw new global::System.ArgumentNullException("Param2");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Param2));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Quarto.QuartoDataTable GetDataBy2(string Param1, string Param2) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((Param1 == null)) {
+                throw new global::System.ArgumentNullException("Param1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
+            }
+            if ((Param2 == null)) {
+                throw new global::System.ArgumentNullException("Param2");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Param2));
+            }
+            Quarto.QuartoDataTable dataTable = new Quarto.QuartoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Quarto.QuartoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetQuarto dataSet) {
+        public virtual int Update(Quarto dataSet) {
             return this.Adapter.Update(dataSet, "Quarto");
         }
         
@@ -1385,7 +1405,7 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> QuantidadeDeQuartosCadastrados() {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1501,7 +1521,7 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DataSetQuarto dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(Quarto dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._quartoTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet._Quarto.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1520,7 +1540,7 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DataSetQuarto dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(Quarto dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._quartoTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet._Quarto.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1538,7 +1558,7 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DataSetQuarto dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(Quarto dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._quartoTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet._Quarto.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1580,7 +1600,7 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DataSetQuarto dataSet) {
+        public virtual int UpdateAll(Quarto dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

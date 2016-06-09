@@ -124,13 +124,14 @@
             this.comboBoxCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCargo.ForeColor = System.Drawing.Color.Black;
             this.comboBoxCargo.Items.AddRange(new object[] {
-            "Recepcionista",
             "Faxineira",
+            "Gerente",
             "Porteiro",
-            "Gerente"});
+            "Recepcionista"});
             this.comboBoxCargo.Location = new System.Drawing.Point(122, 145);
             this.comboBoxCargo.Name = "comboBoxCargo";
             this.comboBoxCargo.Size = new System.Drawing.Size(216, 21);
+            this.comboBoxCargo.Sorted = true;
             this.comboBoxCargo.TabIndex = 7;
             // 
             // textBoxSalario

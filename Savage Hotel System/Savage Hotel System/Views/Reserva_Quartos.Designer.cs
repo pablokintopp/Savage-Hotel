@@ -33,7 +33,7 @@
             this.quartoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.quartoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quarto = new Savage_Hotel_System.DataSet.DataSetQuarto();
+            this.quarto = new Savage_Hotel_System.DataSet.Quarto();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -422,7 +422,7 @@
 
         #endregion
 
-        private DataSet.DataSetQuarto quarto;
+        private DataSet.Quarto quarto;
         private System.Windows.Forms.BindingSource quartoBindingSource;
         private DataSet.QuartoTableAdapters.QuartoTableAdapter quartoTableAdapter;
         private DataSet.QuartoTableAdapters.TableAdapterManager tableAdapterManager;

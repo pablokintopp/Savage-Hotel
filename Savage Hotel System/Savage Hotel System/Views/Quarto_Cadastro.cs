@@ -51,7 +51,7 @@ namespace Savage_Hotel_System.Views
         private void button1_Click(object sender, EventArgs e)
         {
             int retorno = 0;
-            int somaretornos = 0;
+            int somarerros = 0;
             Funcoes auxfunc = new Funcoes();
             String aux;
             
@@ -64,7 +64,7 @@ namespace Savage_Hotel_System.Views
             //Verifica Descrição
             aux = textBoxDescricao.Text;
             retorno = auxfunc.verificanome(aux);
-            somaretornos += retorno;
+            somarerros += retorno;
             switch (retorno)
             {
                 case 0:
@@ -84,7 +84,7 @@ namespace Savage_Hotel_System.Views
             //Verifica Número Do Quarto
             aux = textBoxNumeroQuarto.Text;
             retorno = auxfunc.verificanumeroquarto(aux);
-            somaretornos += retorno;
+            somarerros += retorno;
             switch (retorno)
             {
                 case 0:
@@ -122,11 +122,11 @@ namespace Savage_Hotel_System.Views
                     retorno = 0;
                     break;
             }
-            somaretornos += retorno;
+            somarerros += retorno;
 
 
 
-            if (somaretornos == 0)
+            if (somarerros == 0)
             {
                 if (InserirBanco() > 0)
                 {

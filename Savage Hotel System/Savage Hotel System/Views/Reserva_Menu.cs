@@ -12,7 +12,7 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Reserva_Menu : Form
     {
-        private int NumeroQuarto = -1;
+        private int ID = -1;
         private MenuMain Main;
         public Reserva_Menu()
         {
@@ -30,9 +30,9 @@ namespace Savage_Hotel_System.Views
             Main.Show();
             this.Close();
         }
-        public void DefinirNumeroQuarto(int newNumeroQuarto)
+        public void DefinirID(int newID)
         {
-            NumeroQuarto = newNumeroQuarto;
+            ID = newID;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -60,10 +60,10 @@ namespace Savage_Hotel_System.Views
             
         }
         public void refresh() {
-            if (NumeroQuarto > -1)
+            if (ID > -1)
             {
-                numeroQuartoTextBox.Text = NumeroQuarto.ToString();
-                this.quartoTableAdapter.busca_DetalhesQuartoDeNumeroTal(this.quarto._Quarto, NumeroQuarto.ToString());
+                numeroQuartoTextBox.Text = ID.ToString();
+                this.quartoTableAdapter.Busca_ID(this.quarto._Quarto, ID);
             }            
         }
     }

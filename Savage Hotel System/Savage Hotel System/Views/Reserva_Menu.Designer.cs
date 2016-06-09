@@ -39,7 +39,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.quartoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quarto = new Savage_Hotel_System.DataSet.DataSetQuarto();
+            this.quarto = new Savage_Hotel_System.DataSet.Quarto();
             this.descricaoTextBox = new System.Windows.Forms.TextBox();
             this.numeroQuartoTextBox = new System.Windows.Forms.TextBox();
             this.quantidadeCamaSolteiroTextBox = new System.Windows.Forms.TextBox();
@@ -266,7 +266,7 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private DataSet.DataSetQuarto quarto;
+        private DataSet.Quarto quarto;
         private System.Windows.Forms.BindingSource quartoBindingSource;
         private DataSet.QuartoTableAdapters.QuartoTableAdapter quartoTableAdapter;
         private DataSet.QuartoTableAdapters.TableAdapterManager tableAdapterManager;

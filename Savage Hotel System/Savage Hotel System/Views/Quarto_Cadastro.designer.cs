@@ -43,7 +43,7 @@
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.quarto = new Savage_Hotel_System.DataSet.DataSetQuarto();
+            this.quarto = new Savage_Hotel_System.DataSet.Quarto();
             this.quartoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quartoTableAdapter = new Savage_Hotel_System.DataSet.QuartoTableAdapters.QuartoTableAdapter();
             this.tableAdapterManager = new Savage_Hotel_System.DataSet.QuartoTableAdapters.TableAdapterManager();
@@ -264,7 +264,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label5;
-        private DataSet.DataSetQuarto quarto;
+        private DataSet.Quarto quarto;
         private System.Windows.Forms.BindingSource quartoBindingSource;
         private DataSet.QuartoTableAdapters.QuartoTableAdapter quartoTableAdapter;
         private DataSet.QuartoTableAdapters.TableAdapterManager tableAdapterManager;
