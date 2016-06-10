@@ -236,6 +236,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBoxDescricao);
             this.Name = "Quarto_Cadastro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Quarto";
             this.Load += new System.EventHandler(this.Func_Cad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

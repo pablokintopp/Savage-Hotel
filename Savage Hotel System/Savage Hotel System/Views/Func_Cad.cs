@@ -41,8 +41,10 @@ namespace Savage_Hotel_System.Views
         private void Func_Cad_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseHotelDataSet.Funcionario' table. You can move, or remove it, as needed.
-           // this.funcionarioTableAdapter.Fill(this.databaseHotelDataSet.Funcionario);
-
+            // this.funcionarioTableAdapter.Fill(this.databaseHotelDataSet.Funcionario);
+            
+            //Definir a data de hoje no campo Data
+            dateTimeNascimento.Value = DateTime.Now;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -122,8 +124,28 @@ namespace Savage_Hotel_System.Views
                     break;
             }
 
-            //Verifica Data
-            label4.Text = dateTimeNascimento.Text;
+            //Verifica Data de Nascimento
+            String dia;
+            dia = dateTimeNascimento.Text;
+            label4.Text = dia[0].ToString();
+            aux = dateTimeNascimento.Text;
+            retorno = auxfunc.VerificaDataNascimento(aux);
+            somarerros += retorno;
+            switch (retorno)
+            {
+                case 0:
+                    dateTimeNascimento.BackColor = Color.LightGreen;
+                    label4.Text = "";
+                    break;
+                case 1:
+                    dateTimeNascimento.BackColor = Color.IndianRed;
+                    label4.Text = "Data de hoje não é Permitido";
+                    break;
+                case 2:
+                    dateTimeNascimento.BackColor = Color.IndianRed;
+                    label4.Text = "Datas futuras São Inválidas";
+                    break;
+            }
 
             //Cargo
             String Cargo;

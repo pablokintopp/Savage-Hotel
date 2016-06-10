@@ -144,5 +144,15 @@ namespace Savage_Hotel_System.Views
             this.tableAdapterManager.UpdateAll(this.dataSetFornecedor);
 
         }
+
+        private void fornecedorDataGridView_KeyUp(object sender, KeyEventArgs e)
+        {
+            mostrarInfos();
+        }
+
+        private void fornecedorDataGridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            mostrarInfos();
+        }
     }
 }

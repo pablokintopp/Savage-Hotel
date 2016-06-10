@@ -29,93 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label idLabel;
-            System.Windows.Forms.Label descricaoLabel;
-            System.Windows.Forms.Label numeroQuartoLabel;
-            System.Windows.Forms.Label quantidadeCamaSolteiroLabel;
-            System.Windows.Forms.Label quantidadeCamaCasalLabel;
-            System.Windows.Forms.Label statusLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reserva_Menu));
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.idTextBox = new System.Windows.Forms.TextBox();
-            this.quartoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quarto = new Savage_Hotel_System.DataSet.Quarto();
-            this.descricaoTextBox = new System.Windows.Forms.TextBox();
-            this.numeroQuartoTextBox = new System.Windows.Forms.TextBox();
-            this.quantidadeCamaSolteiroTextBox = new System.Windows.Forms.TextBox();
-            this.quantidadeCamaCasalTextBox = new System.Windows.Forms.TextBox();
-            this.statusTextBox = new System.Windows.Forms.TextBox();
-            this.quartoTableAdapter = new Savage_Hotel_System.DataSet.QuartoTableAdapters.QuartoTableAdapter();
-            this.tableAdapterManager = new Savage_Hotel_System.DataSet.QuartoTableAdapters.TableAdapterManager();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            idLabel = new System.Windows.Forms.Label();
-            descricaoLabel = new System.Windows.Forms.Label();
-            numeroQuartoLabel = new System.Windows.Forms.Label();
-            quantidadeCamaSolteiroLabel = new System.Windows.Forms.Label();
-            quantidadeCamaCasalLabel = new System.Windows.Forms.Label();
-            statusLabel = new System.Windows.Forms.Label();
+            this.quarto = new Savage_Hotel_System.DataSet.Quarto();
+            this.quartoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quartoTableAdapter = new Savage_Hotel_System.DataSet.QuartoTableAdapters.QuartoTableAdapter();
+            this.tableAdapterManager = new Savage_Hotel_System.DataSet.QuartoTableAdapters.TableAdapterManager();
+            this.quartoDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quartoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quarto)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quarto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quartoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quartoDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(12, 41);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(19, 13);
-            idLabel.TabIndex = 3;
-            idLabel.Text = "Id:";
-            // 
-            // descricaoLabel
-            // 
-            descricaoLabel.AutoSize = true;
-            descricaoLabel.Location = new System.Drawing.Point(12, 67);
-            descricaoLabel.Name = "descricaoLabel";
-            descricaoLabel.Size = new System.Drawing.Size(58, 13);
-            descricaoLabel.TabIndex = 5;
-            descricaoLabel.Text = "Descricao:";
-            descricaoLabel.Visible = false;
-            // 
-            // numeroQuartoLabel
-            // 
-            numeroQuartoLabel.AutoSize = true;
-            numeroQuartoLabel.Location = new System.Drawing.Point(12, 93);
-            numeroQuartoLabel.Name = "numeroQuartoLabel";
-            numeroQuartoLabel.Size = new System.Drawing.Size(82, 13);
-            numeroQuartoLabel.TabIndex = 7;
-            numeroQuartoLabel.Text = "Numero Quarto:";
-            // 
-            // quantidadeCamaSolteiroLabel
-            // 
-            quantidadeCamaSolteiroLabel.AutoSize = true;
-            quantidadeCamaSolteiroLabel.Location = new System.Drawing.Point(12, 119);
-            quantidadeCamaSolteiroLabel.Name = "quantidadeCamaSolteiroLabel";
-            quantidadeCamaSolteiroLabel.Size = new System.Drawing.Size(133, 13);
-            quantidadeCamaSolteiroLabel.TabIndex = 9;
-            quantidadeCamaSolteiroLabel.Text = "Quantidade Cama Solteiro:";
-            // 
-            // quantidadeCamaCasalLabel
-            // 
-            quantidadeCamaCasalLabel.AutoSize = true;
-            quantidadeCamaCasalLabel.Location = new System.Drawing.Point(12, 145);
-            quantidadeCamaCasalLabel.Name = "quantidadeCamaCasalLabel";
-            quantidadeCamaCasalLabel.Size = new System.Drawing.Size(124, 13);
-            quantidadeCamaCasalLabel.TabIndex = 11;
-            quantidadeCamaCasalLabel.Text = "Quantidade Cama Casal:";
-            // 
-            // statusLabel
-            // 
-            statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(12, 171);
-            statusLabel.Name = "statusLabel";
-            statusLabel.Size = new System.Drawing.Size(40, 13);
-            statusLabel.TabIndex = 13;
-            statusLabel.Text = "Status:";
-            statusLabel.Visible = false;
             // 
             // button1
             // 
@@ -131,77 +66,40 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(604, 218);
+            this.pictureBox1.Location = new System.Drawing.Point(612, 381);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // idTextBox
+            // panel1
             // 
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartoBindingSource, "Id", true));
-            this.idTextBox.Enabled = false;
-            this.idTextBox.Location = new System.Drawing.Point(151, 38);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(100, 20);
-            this.idTextBox.TabIndex = 4;
+            this.panel1.Controls.Add(this.quartoDataGridView);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(12, 41);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(624, 306);
+            this.panel1.TabIndex = 15;
             // 
-            // quartoBindingSource
+            // label1
             // 
-            this.quartoBindingSource.DataMember = "Quarto";
-            this.quartoBindingSource.DataSource = this.quarto;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(266, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Detalhes do Quarto";
             // 
             // quarto
             // 
             this.quarto.DataSetName = "Quarto";
             this.quarto.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // descricaoTextBox
+            // quartoBindingSource
             // 
-            this.descricaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartoBindingSource, "Descricao", true));
-            this.descricaoTextBox.Enabled = false;
-            this.descricaoTextBox.Location = new System.Drawing.Point(151, 64);
-            this.descricaoTextBox.Name = "descricaoTextBox";
-            this.descricaoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.descricaoTextBox.TabIndex = 6;
-            // 
-            // numeroQuartoTextBox
-            // 
-            this.numeroQuartoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartoBindingSource, "NumeroQuarto", true));
-            this.numeroQuartoTextBox.Enabled = false;
-            this.numeroQuartoTextBox.Location = new System.Drawing.Point(151, 90);
-            this.numeroQuartoTextBox.Name = "numeroQuartoTextBox";
-            this.numeroQuartoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.numeroQuartoTextBox.TabIndex = 8;
-            // 
-            // quantidadeCamaSolteiroTextBox
-            // 
-            this.quantidadeCamaSolteiroTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartoBindingSource, "QuantidadeCamaSolteiro", true));
-            this.quantidadeCamaSolteiroTextBox.Enabled = false;
-            this.quantidadeCamaSolteiroTextBox.Location = new System.Drawing.Point(151, 116);
-            this.quantidadeCamaSolteiroTextBox.Name = "quantidadeCamaSolteiroTextBox";
-            this.quantidadeCamaSolteiroTextBox.Size = new System.Drawing.Size(100, 20);
-            this.quantidadeCamaSolteiroTextBox.TabIndex = 10;
-            // 
-            // quantidadeCamaCasalTextBox
-            // 
-            this.quantidadeCamaCasalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartoBindingSource, "QuantidadeCamaCasal", true));
-            this.quantidadeCamaCasalTextBox.Enabled = false;
-            this.quantidadeCamaCasalTextBox.Location = new System.Drawing.Point(151, 142);
-            this.quantidadeCamaCasalTextBox.Name = "quantidadeCamaCasalTextBox";
-            this.quantidadeCamaCasalTextBox.Size = new System.Drawing.Size(100, 20);
-            this.quantidadeCamaCasalTextBox.TabIndex = 12;
-            // 
-            // statusTextBox
-            // 
-            this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartoBindingSource, "Status", true));
-            this.statusTextBox.Enabled = false;
-            this.statusTextBox.Location = new System.Drawing.Point(151, 168);
-            this.statusTextBox.Name = "statusTextBox";
-            this.statusTextBox.Size = new System.Drawing.Size(100, 20);
-            this.statusTextBox.TabIndex = 14;
-            this.statusTextBox.Visible = false;
+            this.quartoBindingSource.DataMember = "Quarto";
+            this.quartoBindingSource.DataSource = this.quarto;
             // 
             // quartoTableAdapter
             // 
@@ -213,34 +111,76 @@
             this.tableAdapterManager.QuartoTableAdapter = this.quartoTableAdapter;
             this.tableAdapterManager.UpdateOrder = Savage_Hotel_System.DataSet.QuartoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // panel1
+            // quartoDataGridView
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(idLabel);
-            this.panel1.Controls.Add(this.statusTextBox);
-            this.panel1.Controls.Add(this.idTextBox);
-            this.panel1.Controls.Add(statusLabel);
-            this.panel1.Controls.Add(descricaoLabel);
-            this.panel1.Controls.Add(this.quantidadeCamaCasalTextBox);
-            this.panel1.Controls.Add(this.descricaoTextBox);
-            this.panel1.Controls.Add(quantidadeCamaCasalLabel);
-            this.panel1.Controls.Add(numeroQuartoLabel);
-            this.panel1.Controls.Add(this.quantidadeCamaSolteiroTextBox);
-            this.panel1.Controls.Add(this.numeroQuartoTextBox);
-            this.panel1.Controls.Add(quantidadeCamaSolteiroLabel);
-            this.panel1.Location = new System.Drawing.Point(12, 41);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 197);
-            this.panel1.TabIndex = 15;
+            this.quartoDataGridView.AllowUserToAddRows = false;
+            this.quartoDataGridView.AllowUserToDeleteRows = false;
+            this.quartoDataGridView.AllowUserToResizeColumns = false;
+            this.quartoDataGridView.AllowUserToResizeRows = false;
+            this.quartoDataGridView.AutoGenerateColumns = false;
+            this.quartoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.quartoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.quartoDataGridView.DataSource = this.quartoBindingSource;
+            this.quartoDataGridView.Location = new System.Drawing.Point(3, 22);
+            this.quartoDataGridView.Name = "quartoDataGridView";
+            this.quartoDataGridView.ReadOnly = true;
+            this.quartoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.quartoDataGridView.Size = new System.Drawing.Size(621, 46);
+            this.quartoDataGridView.TabIndex = 15;
             // 
-            // label1
+            // dataGridViewTextBoxColumn1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(81, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Detalhes do Quarto";
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Descricao";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Descricao";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NumeroQuarto";
+            this.dataGridViewTextBoxColumn3.HeaderText = "NumeroQuarto";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "QuantidadeCamaSolteiro";
+            this.dataGridViewTextBoxColumn4.HeaderText = "QuantidadeCamaSolteiro";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "QuantidadeCamaCasal";
+            this.dataGridViewTextBoxColumn5.HeaderText = "QuantidadeCamaCasal";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Status";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // Reserva_Menu
             // 
@@ -250,14 +190,18 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Reserva_Menu";
-            this.Text = "Reserva_Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Savage Hotel - Reserva";
             this.Load += new System.EventHandler(this.Reserva_Menu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quartoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quarto)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quarto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quartoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quartoDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -266,17 +210,18 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
         private DataSet.Quarto quarto;
         private System.Windows.Forms.BindingSource quartoBindingSource;
         private DataSet.QuartoTableAdapters.QuartoTableAdapter quartoTableAdapter;
         private DataSet.QuartoTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.TextBox idTextBox;
-        private System.Windows.Forms.TextBox descricaoTextBox;
-        private System.Windows.Forms.TextBox numeroQuartoTextBox;
-        private System.Windows.Forms.TextBox quantidadeCamaSolteiroTextBox;
-        private System.Windows.Forms.TextBox quantidadeCamaCasalTextBox;
-        private System.Windows.Forms.TextBox statusTextBox;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView quartoDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

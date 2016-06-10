@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Produto_Cadastro_BuscaFornecedor));
             this.textBoxBusca = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.radioButtonNome = new System.Windows.Forms.RadioButton();
@@ -41,13 +42,13 @@
             this.fornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetFornecedor = new Savage_Hotel_System.DataSet.DataSetFornecedor();
             this.fornecedorDataGridView = new System.Windows.Forms.DataGridView();
+            this.fornecedorTableAdapter = new Savage_Hotel_System.DataSet.DataSetFornecedorTableAdapters.FornecedorTableAdapter();
+            this.tableAdapterManager = new Savage_Hotel_System.DataSet.DataSetFornecedorTableAdapters.TableAdapterManager();
+            this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fornecedorTableAdapter = new Savage_Hotel_System.DataSet.DataSetFornecedorTableAdapters.FornecedorTableAdapter();
-            this.tableAdapterManager = new Savage_Hotel_System.DataSet.DataSetFornecedorTableAdapters.TableAdapterManager();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetFornecedor)).BeginInit();
@@ -134,7 +135,7 @@
             // 
             // Selecionarbutton
             // 
-            this.Selecionarbutton.Location = new System.Drawing.Point(313, 382);
+            this.Selecionarbutton.Location = new System.Drawing.Point(313, 390);
             this.Selecionarbutton.Name = "Selecionarbutton";
             this.Selecionarbutton.Size = new System.Drawing.Size(75, 23);
             this.Selecionarbutton.TabIndex = 11;
@@ -170,34 +171,12 @@
             this.fornecedorDataGridView.MultiSelect = false;
             this.fornecedorDataGridView.Name = "fornecedorDataGridView";
             this.fornecedorDataGridView.ReadOnly = true;
+            this.fornecedorDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.fornecedorDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.fornecedorDataGridView.Size = new System.Drawing.Size(680, 220);
             this.fornecedorDataGridView.TabIndex = 12;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "CNPJ";
-            this.dataGridViewTextBoxColumn3.HeaderText = "CNPJ";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Phone";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Phone";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.fornecedorDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fornecedorDataGridView_KeyDown);
+            this.fornecedorDataGridView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.fornecedorDataGridView_KeyUp);
             // 
             // fornecedorTableAdapter
             // 
@@ -212,12 +191,44 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(395, 391);
+            this.label4.Location = new System.Drawing.Point(329, 374);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 13;
             this.label4.Text = "label4";
             this.label4.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "CNPJ";
+            this.dataGridViewTextBoxColumn3.HeaderText = "CNPJ";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Phone";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Phone";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // Produto_Cadastro_BuscaFornecedor
             // 
@@ -235,8 +246,11 @@
             this.Controls.Add(this.radioButtonNome);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.textBoxBusca);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Produto_Cadastro_BuscaFornecedor";
-            this.Text = "Reserva_Cadastro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Savage Hotel - Lista de Fornecedores";
             this.Load += new System.EventHandler(this.Reserva_Cadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).EndInit();
@@ -262,10 +276,10 @@
         private DataSet.DataSetFornecedorTableAdapters.FornecedorTableAdapter fornecedorTableAdapter;
         private DataSet.DataSetFornecedorTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView fornecedorDataGridView;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.Label label4;
     }
 }

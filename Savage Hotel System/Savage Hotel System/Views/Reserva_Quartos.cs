@@ -127,5 +127,15 @@ namespace Savage_Hotel_System.Views
 
             
         }
+
+        private void quartoDataGridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            mostrarInfos();
+        }
+
+        private void quartoDataGridView_KeyUp(object sender, KeyEventArgs e)
+        {
+            mostrarInfos();
+        }
     }
 }

@@ -56,11 +56,16 @@ namespace Savage_Hotel_System.Views
         {
             // TODO: This line of code loads data into the 'dataSetFornecedor.Fornecedor' table. You can move, or remove it, as needed.
             //this.fornecedorTableAdapter.Fill(this.dataSetFornecedor.Fornecedor);
+            panel2.Enabled = false;
+            label4.Hide();
+            label5.Hide();
+            label6.Hide();
         }
         public void refresh() {
             if (IDFornecedor > -1)
             {
                 this.fornecedorTableAdapter.Busca_ID(this.dataSetFornecedor.Fornecedor, IDFornecedor);
+                panel2.Enabled = true;
             }            
         }
 
@@ -74,65 +79,76 @@ namespace Savage_Hotel_System.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int retorno = 0;
-            int somarerros = 0;
-            Funcoes auxfunc = new Funcoes();
-            String aux;
+            if (IDFornecedor > -1) {
+                label6.Visible = false;
+                int retorno = 0;
+                int somarerros = 0;
+                Funcoes auxfunc = new Funcoes();
+                String aux;
 
-            //Verifica Descrição
-            aux = textBoxNome.Text;
-            retorno = auxfunc.verificanome(aux);
-            somarerros += retorno;
-            switch (retorno)
-            {
-                case 0:
-                    textBoxNome.BackColor = Color.LightGreen;
-                    label4.Text = "";
-                    break;
-                case 1:
-                    textBoxNome.BackColor = Color.IndianRed;
-                    label4.Text = "Presença de Caracteres Inválidos";
-                    break;
-                case 2:
-                    textBoxNome.BackColor = Color.IndianRed;
-                    label4.Text = "Digite algo pelo menos";
-                    break;
-            }
+                //Mostra Labels
+                label4.Show();
+                label5.Show();
 
-            //Verifica Preço
-            aux = textBoxValor.Text;
-            retorno = auxfunc.verificavalor(aux);
-            somarerros += retorno;
-            switch (retorno)
-            {
-                case 0:
-                    textBoxValor.BackColor = Color.LightGreen;
-                    label5.Text = "";
-                    break;
-                case 1:
-                    textBoxValor.BackColor = Color.IndianRed;
-                    label5.Text = "Preencha apenas com números e com 1 ponto";
-                    break;
-                case 2:
-                    textBoxValor.BackColor = Color.IndianRed;
-                    label5.Text = "Digite no formato xxxx.xx";
-                    break;
-            }
-
-
-            if (somarerros == 0)
-            {
-                if (InserirBanco() > 0)
+                //Verifica Descrição
+                aux = textBoxNome.Text;
+                retorno = auxfunc.verificanome(aux);
+                somarerros += retorno;
+                switch (retorno)
                 {
-                    MessageBox.Show("Inserido com Sucesso!");
-                    this.Close();
-                    MenuProduto.Show();
+                    case 0:
+                        textBoxNome.BackColor = Color.LightGreen;
+                        label4.Text = "";
+                        break;
+                    case 1:
+                        textBoxNome.BackColor = Color.IndianRed;
+                        label4.Text = "Presença de Caracteres Inválidos";
+                        break;
+                    case 2:
+                        textBoxNome.BackColor = Color.IndianRed;
+                        label4.Text = "Digite algo pelo menos";
+                        break;
                 }
-                else
+
+                //Verifica Preço
+                aux = textBoxValor.Text;
+                retorno = auxfunc.verificavalor(aux);
+                somarerros += retorno;
+                switch (retorno)
                 {
-                    MessageBox.Show("Houve alguma falha na insercao!");
+                    case 0:
+                        textBoxValor.BackColor = Color.LightGreen;
+                        label5.Text = "";
+                        break;
+                    case 1:
+                        textBoxValor.BackColor = Color.IndianRed;
+                        label5.Text = "Preencha apenas com números e com 1 ponto";
+                        break;
+                    case 2:
+                        textBoxValor.BackColor = Color.IndianRed;
+                        label5.Text = "Digite no formato xxxx.xx";
+                        break;
                 }
+
+                if (somarerros == 0)
+                {
+                    if (InserirBanco() > 0)
+                    {
+                        MessageBox.Show("Inserido com Sucesso!");
+                        this.Close();
+                        MenuProduto.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Houve alguma falha na insercao!");
+                    }
+                }
+            }else
+            {
+                label6.Show();
+                label6.Text = "Selecione Um Fornecedor";
             }
+            
         }
 
         //Metodo que chama a insercao do banco passando como parametros o nome da tabela a ser inserido, os nomes das colunas e respectivos valores
@@ -158,6 +174,16 @@ namespace Savage_Hotel_System.Views
             string nomeDaTabela = DataBase.tableProduto;
             return DataBase.SqlCommandInsert(nomeDaTabela, parametrosNomes, parametrosValores);
 
+        }
+
+        private void textBoxNome_TextChanged(object sender, EventArgs e)
+        {
+            textBoxNome.BackColor = Color.White;
+        }
+
+        private void textBoxValor_TextChanged(object sender, EventArgs e)
+        {
+            textBoxValor.BackColor = Color.White;
         }
     }
 }

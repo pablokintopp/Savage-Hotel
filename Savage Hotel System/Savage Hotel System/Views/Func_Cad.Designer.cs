@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Func_Cad));
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
@@ -115,7 +116,7 @@
             this.dateTimeNascimento.Name = "dateTimeNascimento";
             this.dateTimeNascimento.Size = new System.Drawing.Size(218, 20);
             this.dateTimeNascimento.TabIndex = 6;
-            this.dateTimeNascimento.Value = new System.DateTime(2016, 5, 15, 0, 0, 0, 0);
+            this.dateTimeNascimento.Value = new System.DateTime(2016, 6, 7, 0, 0, 0, 0);
             this.dateTimeNascimento.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // comboBoxCargo
@@ -414,8 +415,11 @@
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBoxNome);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Func_Cad";
-            this.Text = "Cadastrar Funcionário";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Savage Hotel - Cadastro de Funcionário";
             this.Load += new System.EventHandler(this.Func_Cad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet)).EndInit();

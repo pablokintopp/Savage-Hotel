@@ -231,6 +231,8 @@
             this.quartoDataGridView.Size = new System.Drawing.Size(680, 220);
             this.quartoDataGridView.TabIndex = 0;
             this.quartoDataGridView.Click += new System.EventHandler(this.quartoDataGridView_Click);
+            this.quartoDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.quartoDataGridView_KeyDown);
+            this.quartoDataGridView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.quartoDataGridView_KeyUp);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -405,8 +407,11 @@
             this.Controls.Add(this.textBoxBusca);
             this.Controls.Add(this.quartoDataGridView);
             this.Controls.Add(this.quartoBindingNavigator);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Reserva_Quartos";
-            this.Text = "Reserva_Cadastro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Savage Hotel - Busca de Quartos";
             this.Load += new System.EventHandler(this.Reserva_Cadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.quartoBindingNavigator)).EndInit();
             this.quartoBindingNavigator.ResumeLayout(false);

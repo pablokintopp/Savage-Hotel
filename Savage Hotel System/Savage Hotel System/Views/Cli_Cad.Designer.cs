@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cli_Cad));
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
@@ -255,8 +256,11 @@
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBoxNome);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Cli_Cad";
-            this.Text = "Cadastrar Funcionário";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Savage Hotel - Cadastro de Cliente";
             this.Load += new System.EventHandler(this.Func_Cad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet)).EndInit();

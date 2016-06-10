@@ -56,15 +56,26 @@ namespace Savage_Hotel_System.Views
         {
             // TODO: This line of code loads data into the 'quarto._Quarto' table. You can move, or remove it, as needed.
             //this.quartoTableAdapter.Fill(this.quarto._Quarto);
+
             //idTextBox.Text = idquarto.ToString();
-            
+            panel1.Enabled = false;
         }
         public void refresh() {
             if (ID > -1)
             {
-                numeroQuartoTextBox.Text = ID.ToString();
+                //numeroQuartoTextBox.Text = ID.ToString();
                 this.quartoTableAdapter.Busca_ID(this.quarto._Quarto, ID);
-            }            
+                panel1.Enabled = true;
+            }
+            
+        }
+
+        private void quartoBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.quartoBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.quarto);
+
         }
     }
 }

@@ -294,5 +294,61 @@ namespace Savage_Hotel_System.Class
             }
             return 0;
         }
+
+
+        //Verificar data de nascimentos
+        public int VerificaDataNascimento(String DataSelecionada) {
+            String DatadeHoje = DateTime.Now.ToString();
+            if (DatadeHoje == DataSelecionada)
+            {
+                return 2;
+            }
+            else {
+                int diaHoje = ((((int)DatadeHoje[0]) - 48) * 10);
+                diaHoje += (((int)DatadeHoje[1]) - 48);
+                int mesHoje = ((((int)DatadeHoje[3]) - 48) * 10);
+                mesHoje += (((int)DatadeHoje[4]) - 48);
+                int anoHoje = ((((int)DatadeHoje[7]) - 48) * 1000);
+                anoHoje += ((((int)DatadeHoje[8]) - 48) * 100);
+                anoHoje += ((((int)DatadeHoje[9]) - 48) * 10);
+                anoHoje += (((int)DatadeHoje[8]) - 48);
+
+                int diaSelecionado = ((((int)DataSelecionada[0])-48) * 10);
+                diaSelecionado += (((int)DataSelecionada[1])-48);
+                int mesSelecionado = ((((int)DataSelecionada[3]) - 48) * 10);
+                mesSelecionado += (((int)DataSelecionada[4]) - 48);
+                int anoSelecionado = ((((int)DataSelecionada[7]) - 48) * 1000);
+                anoSelecionado += ((((int)DataSelecionada[8]) - 48) * 100);
+                anoSelecionado += ((((int)DataSelecionada[9]) - 48) * 10);
+                anoSelecionado += (((int)DataSelecionada[8]) - 48);
+
+                if (anoSelecionado == anoHoje)
+                {
+                    if (mesSelecionado == mesHoje)
+                    {
+                        if (diaHoje == diaSelecionado)
+                        {
+                            return 1;
+                        }
+                        else {
+                            if (diaSelecionado > diaHoje) {
+                                return 2;
+                            }
+                        }
+                    }
+                    else {
+                        if (mesSelecionado > mesHoje) {
+                            return 2;
+                        }
+                    }
+                }
+                else {
+                    if (anoSelecionado > anoHoje) {
+                        return 2;
+                    }
+                }
+            }
+            return 0;
+        } 
     }
 }

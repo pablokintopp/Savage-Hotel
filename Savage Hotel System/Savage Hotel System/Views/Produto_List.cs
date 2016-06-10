@@ -28,8 +28,6 @@ namespace Savage_Hotel_System.Views
         private void quartoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.quartoBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.quarto);
 
         }
 

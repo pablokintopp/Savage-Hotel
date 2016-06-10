@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Func_Busc));
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.labelTitle = new System.Windows.Forms.Label();
@@ -46,10 +47,11 @@
             this.textBoxSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBoxSearch.CausesValidation = false;
             this.textBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.textBoxSearch.Location = new System.Drawing.Point(208, 108);
+            this.textBoxSearch.Location = new System.Drawing.Point(156, 88);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearch.MaxLength = 200;
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(571, 36);
+            this.textBoxSearch.Size = new System.Drawing.Size(429, 30);
             this.textBoxSearch.TabIndex = 0;
             this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDownHandler);
             // 
@@ -58,11 +60,12 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(208, 173);
+            this.dataGridView1.Location = new System.Drawing.Point(156, 141);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(756, 184);
+            this.dataGridView1.Size = new System.Drawing.Size(567, 150);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -70,18 +73,20 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.labelTitle.Location = new System.Drawing.Point(203, 27);
+            this.labelTitle.Location = new System.Drawing.Point(152, 22);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(349, 29);
+            this.labelTitle.Size = new System.Drawing.Size(275, 25);
             this.labelTitle.TabIndex = 2;
             this.labelTitle.Text = "Pesquisar Em Funcionários";
             // 
             // labelTip
             // 
             this.labelTip.AutoSize = true;
-            this.labelTip.Location = new System.Drawing.Point(207, 76);
+            this.labelTip.Location = new System.Drawing.Point(155, 62);
+            this.labelTip.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTip.Name = "labelTip";
-            this.labelTip.Size = new System.Drawing.Size(281, 17);
+            this.labelTip.Size = new System.Drawing.Size(210, 13);
             this.labelTip.TabIndex = 5;
             this.labelTip.Text = "Pesquise por nome, telefone, login, ou CPF";
             // 
@@ -90,10 +95,9 @@
             this.labelErros.AutoSize = true;
             this.labelErros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelErros.ForeColor = System.Drawing.Color.Red;
-            this.labelErros.Location = new System.Drawing.Point(207, 147);
-            this.labelErros.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelErros.Location = new System.Drawing.Point(155, 119);
             this.labelErros.Name = "labelErros";
-            this.labelErros.Size = new System.Drawing.Size(303, 17);
+            this.labelErros.Size = new System.Drawing.Size(237, 13);
             this.labelErros.TabIndex = 9;
             this.labelErros.Text = "*Usar pelo menos 4 caracteres na busca";
             this.labelErros.Visible = false;
@@ -103,10 +107,11 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button1.Image = global::Savage_Hotel_System.Properties.Resources.edit;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(208, 361);
+            this.button1.Location = new System.Drawing.Point(156, 293);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5);
-            this.button1.Size = new System.Drawing.Size(342, 65);
+            this.button1.Padding = new System.Windows.Forms.Padding(4);
+            this.button1.Size = new System.Drawing.Size(256, 53);
             this.button1.TabIndex = 10;
             this.button1.Text = "Ver na lista de edição";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -119,10 +124,11 @@
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.buttonSearch.Image = global::Savage_Hotel_System.Properties.Resources.search1;
             this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonSearch.Location = new System.Drawing.Point(805, 93);
+            this.buttonSearch.Location = new System.Drawing.Point(604, 76);
+            this.buttonSearch.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Padding = new System.Windows.Forms.Padding(5);
-            this.buttonSearch.Size = new System.Drawing.Size(159, 65);
+            this.buttonSearch.Padding = new System.Windows.Forms.Padding(4);
+            this.buttonSearch.Size = new System.Drawing.Size(119, 53);
             this.buttonSearch.TabIndex = 4;
             this.buttonSearch.Text = "Buscar";
             this.buttonSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,19 +139,18 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(904, 387);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(678, 314);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 39);
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Func_Busc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1135, 469);
+            this.ClientSize = new System.Drawing.Size(851, 381);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelErros);
             this.Controls.Add(this.labelTip);
@@ -154,8 +159,12 @@
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBoxSearch);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Func_Busc";
-            this.Text = "Func_Busc";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Savage Hotel - Busca de Funcionários";
             this.Load += new System.EventHandler(this.Func_Busc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
