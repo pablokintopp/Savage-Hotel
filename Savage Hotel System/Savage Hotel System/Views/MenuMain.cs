@@ -65,9 +65,17 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Form Func = new Func_Menu(this);
-            this.Hide();
-            Func.Show();
+            if (user.IsManager == 1)
+            {
+                Form Func = new Func_Menu(this);
+                this.Hide();
+                Func.Show();
+
+            }else
+            {
+                MessageBox.Show("Você não tem permissão para acessar este menu");
+            }
+           
             
         }
 
@@ -85,10 +93,15 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Form Fornecedor = new Fornecedor_Menu(this);
-            this.Hide();
-            Fornecedor.Show();
-        }
+            if(user.IsManager == 1) { 
+                Form Fornecedor = new Fornecedor_Menu(this);
+                this.Hide();
+                Fornecedor.Show();
+            }else
+                {
+                    MessageBox.Show("Você não tem permissão para acessar este menu");
+                }
+}
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
@@ -106,9 +119,16 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Form ProdutosMenu = new Produto_Menu(this);
-            this.Hide();
-            ProdutosMenu.Show();
+            if (user.IsManager == 1)
+            {
+                Form ProdutosMenu = new Produto_Menu(this);
+                this.Hide();
+                ProdutosMenu.Show();
+            }else
+            {
+
+                MessageBox.Show("Você não tem permissão para acessar este menu");
+            }
         }
     }
 }

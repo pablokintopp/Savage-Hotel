@@ -18,6 +18,9 @@ namespace Savage_Hotel_System.Views
         private string valorQuandoEntrou;
         private List<DataGridViewCell> errorCells;
         private List<DataGridViewCell> changedCells;
+        private int idSelected;
+        private Fornecedor_Menu menu;
+
         public Cli_List()
         {
             InitializeComponent();
@@ -27,8 +30,21 @@ namespace Savage_Hotel_System.Views
         {
             InitializeComponent();
             this.cli_Menu = cli_menu;
+            this.idSelected = 0;
         }
 
+        public Cli_List(Cli_Menu cli_menu, int idSelected)
+        {
+            InitializeComponent();
+            this.cli_Menu = cli_menu;
+            this.idSelected = idSelected;
+        }
+
+        public Cli_List(Fornecedor_Menu menu, int idSelected)
+        {
+            this.menu = menu;
+            this.idSelected = idSelected;
+        }
 
         private void Cli_List_Load(object sender, EventArgs e)
         {
@@ -40,6 +56,21 @@ namespace Savage_Hotel_System.Views
             this.clienteTableAdapter.Fill(this.databaseHotelDataSet2.Cliente);
             //Desabilitando o update automatico do banco pois queremos validar antes.
             this.dataGridView1.DataBindings.DefaultDataSourceUpdateMode = DataSourceUpdateMode.Never;
+            //caso veio do menu de busca seleciona linha com o id da busca
+            if (idSelected > 0)
+            {
+                dataGridView1[0, 0].Selected = false;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (Convert.ToInt32(row.Cells[0].Value) == idSelected)
+                    {
+                        dataGridView1[0, row.Index].Selected = true;
+                        dataGridView1.Rows[row.Index].Selected = true;
+
+                        break;
+                    }
+                }
+            }
         }
 
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)

@@ -44,5 +44,12 @@ namespace Savage_Hotel_System.Views
             this.Hide();
             Lista.Show();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Form Busca = new Fornecedor_Busca(this);
+            this.Hide();
+            Busca.Show();
+        }
     }
 }

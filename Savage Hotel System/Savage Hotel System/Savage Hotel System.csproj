@@ -114,6 +114,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Cli_Busca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Cli_Busca.Designer.cs">
+      <DependentUpon>Cli_Busca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Cli_List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,12 @@
     <Compile Include="Views\Cli_Cad.Designer.cs">
       <DependentUpon>Cli_Cad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Fornecedor_Busca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Fornecedor_Busca.Designer.cs">
+      <DependentUpon>Fornecedor_Busca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Fornecedor_List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +161,12 @@
     </Compile>
     <Compile Include="Views\Produto_Menu.Designer.cs">
       <DependentUpon>Produto_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Quarto_Busca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Quarto_Busca.Designer.cs">
+      <DependentUpon>Quarto_Busca.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Quarto_Cadastro.cs">
       <SubType>Form</SubType>
@@ -247,6 +265,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Cli_Busca.resx">
+      <DependentUpon>Cli_Busca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Cli_List.resx">
       <DependentUpon>Cli_List.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,6 +277,9 @@
     <EmbeddedResource Include="Views\Cli_Cad.resx">
       <DependentUpon>Cli_Cad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Fornecedor_Busca.resx">
+      <DependentUpon>Fornecedor_Busca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Fornecedor_List.resx">
       <DependentUpon>Fornecedor_List.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Produto_Menu.resx">
       <DependentUpon>Produto_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Quarto_Busca.resx">
+      <DependentUpon>Quarto_Busca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Quarto_Cadastro.resx">
       <DependentUpon>Quarto_Cadastro.cs</DependentUpon>

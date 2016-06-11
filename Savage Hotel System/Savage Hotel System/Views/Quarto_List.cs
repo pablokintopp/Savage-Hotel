@@ -18,6 +18,7 @@ namespace Savage_Hotel_System.Views
         private List<DataGridViewCell> errorCells;
         private List<DataGridViewCell> changedCells;
         private string valorQuandoEntrou;
+        private int idSelected;
 
         public Quarto_List()
         {
@@ -28,6 +29,11 @@ namespace Savage_Hotel_System.Views
         {
             InitializeComponent();
             this.MenuQuarto = Menu;
+        }
+
+        public Quarto_List(Quarto_Menu Menu, int idSelected) : this(Menu)
+        {
+            this.idSelected = idSelected;
         }
 
         private void quartoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -47,6 +53,22 @@ namespace Savage_Hotel_System.Views
             // TODO: This line of code loads data into the 'quarto._Quarto' table. You can move, or remove it, as needed.
             this.quartoTableAdapter.Fill(this.quarto._Quarto);
             this.quartoDataGridView.DataBindings.DefaultDataSourceUpdateMode = DataSourceUpdateMode.Never;
+
+            //caso veio do menu de busca seleciona linha com o id da busca
+            if (idSelected > 0)
+            {
+                quartoDataGridView[0, 0].Selected = false;
+                foreach (DataGridViewRow row in quartoDataGridView.Rows)
+                {
+                    if (Convert.ToInt32(row.Cells[0].Value) == idSelected)
+                    {
+                        quartoDataGridView[0, row.Index].Selected = true;
+                        quartoDataGridView.Rows[row.Index].Selected = true;
+
+                        break;
+                    }
+                }
+            }
 
         }
 

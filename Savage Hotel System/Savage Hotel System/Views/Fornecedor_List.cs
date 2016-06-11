@@ -18,6 +18,8 @@ namespace Savage_Hotel_System.Views
         private string valorQuandoEntrou;
         private List<DataGridViewCell> errorCells;
         private List<DataGridViewCell> changedCells;
+        private int idSelected;
+
         public Fornecedor_List()
         {
             InitializeComponent();
@@ -27,6 +29,11 @@ namespace Savage_Hotel_System.Views
         {
             InitializeComponent();
             this.fornecedor_Menu = fornecedor_Menu;
+        }
+
+        public Fornecedor_List(Fornecedor_Menu fornecedor_Menu, int idSelected) : this(fornecedor_Menu)
+        {
+            this.idSelected = idSelected;
         }
 
         private void Fornecedor_List_Load(object sender, EventArgs e)
@@ -40,6 +47,22 @@ namespace Savage_Hotel_System.Views
             this.fornecedorTableAdapter.Fill(this.databaseHotelDataSet3.Fornecedor);
 
             this.dataGridView1.DataBindings.DefaultDataSourceUpdateMode = DataSourceUpdateMode.Never;
+
+            //caso veio do menu de busca seleciona linha com o id da busca
+            if (idSelected > 0)
+            {
+                dataGridView1[0, 0].Selected = false;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (Convert.ToInt32(row.Cells[0].Value) == idSelected)
+                    {
+                        dataGridView1[0, row.Index].Selected = true;
+                        dataGridView1.Rows[row.Index].Selected = true;
+
+                        break;
+                    }
+                }
+            }
 
         }
 

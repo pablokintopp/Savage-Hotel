@@ -56,5 +56,10 @@ namespace Savage_Hotel_System.Views
             busca.Show();
             this.Hide();
         }
+
+        private void Func_Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
