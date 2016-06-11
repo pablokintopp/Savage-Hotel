@@ -236,6 +236,28 @@ namespace Savage_Hotel_System.Class
             return 0;
         }
 
+        public int verificaQuantidade(String entrada)
+        {
+            //Verifica quantidade generico (valor inteiro maior igual a 0)
+            //Se tudo estiver ok, retorna 0
+            //Caracter invalido retorna 1            
+            int tam = entrada.Length;
+            for (int i = 0; i < tam; i++)
+            {
+                if (entrada[i] > 47 && entrada[i] < 58)
+                {
+                    //cout<<entrada[i]<<endl;
+                }
+                else
+                {
+                    //cout<<entrada[i];
+                    //cout<<" caracter invalido"<<endl;
+                    return 1;
+                }
+            }            
+            return 0;
+        }
+
         public int verificavalor(String entrada)
         {
             //Verifica Valor
