@@ -18,7 +18,7 @@ namespace Savage_Hotel_System.Views
         private int idSelected = 0;
         //resultado da pre-pesquisa
         private AutoCompleteStringCollection result;
-        //colunas a serem pre-pesquisadas
+        //colunas a serem pre-pesquisadas para o auto completar
         private List<String> columnsName;
         private List<String> columnsNameExibicao;
 

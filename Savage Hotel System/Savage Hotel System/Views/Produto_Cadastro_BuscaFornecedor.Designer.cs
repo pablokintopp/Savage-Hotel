@@ -42,13 +42,14 @@
             this.fornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetFornecedor = new Savage_Hotel_System.DataSet.DataSetFornecedor();
             this.fornecedorDataGridView = new System.Windows.Forms.DataGridView();
-            this.fornecedorTableAdapter = new Savage_Hotel_System.DataSet.DataSetFornecedorTableAdapters.FornecedorTableAdapter();
-            this.tableAdapterManager = new Savage_Hotel_System.DataSet.DataSetFornecedorTableAdapters.TableAdapterManager();
-            this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fornecedorTableAdapter = new Savage_Hotel_System.DataSet.DataSetFornecedorTableAdapters.FornecedorTableAdapter();
+            this.tableAdapterManager = new Savage_Hotel_System.DataSet.DataSetFornecedorTableAdapters.TableAdapterManager();
+            this.label4 = new System.Windows.Forms.Label();
+            this.radioButtonAny = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetFornecedor)).BeginInit();
@@ -57,14 +58,16 @@
             // 
             // textBoxBusca
             // 
-            this.textBoxBusca.Location = new System.Drawing.Point(12, 59);
+            this.textBoxBusca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBoxBusca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBoxBusca.Location = new System.Drawing.Point(12, 88);
             this.textBoxBusca.Name = "textBoxBusca";
             this.textBoxBusca.Size = new System.Drawing.Size(100, 20);
             this.textBoxBusca.TabIndex = 2;
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(118, 56);
+            this.buttonBuscar.Location = new System.Drawing.Point(118, 85);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscar.TabIndex = 3;
@@ -75,23 +78,20 @@
             // radioButtonNome
             // 
             this.radioButtonNome.AutoSize = true;
-            this.radioButtonNome.Checked = true;
-            this.radioButtonNome.Location = new System.Drawing.Point(12, 12);
+            this.radioButtonNome.Location = new System.Drawing.Point(12, 41);
             this.radioButtonNome.Name = "radioButtonNome";
             this.radioButtonNome.Size = new System.Drawing.Size(53, 17);
             this.radioButtonNome.TabIndex = 4;
-            this.radioButtonNome.TabStop = true;
             this.radioButtonNome.Text = "Nome";
             this.radioButtonNome.UseVisualStyleBackColor = true;
             // 
             // radioButtonCNPJ
             // 
             this.radioButtonCNPJ.AutoSize = true;
-            this.radioButtonCNPJ.Location = new System.Drawing.Point(12, 35);
+            this.radioButtonCNPJ.Location = new System.Drawing.Point(12, 64);
             this.radioButtonCNPJ.Name = "radioButtonCNPJ";
             this.radioButtonCNPJ.Size = new System.Drawing.Size(52, 17);
             this.radioButtonCNPJ.TabIndex = 5;
-            this.radioButtonCNPJ.TabStop = true;
             this.radioButtonCNPJ.Text = "CNPJ";
             this.radioButtonCNPJ.UseVisualStyleBackColor = true;
             // 
@@ -178,26 +178,6 @@
             this.fornecedorDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fornecedorDataGridView_KeyDown);
             this.fornecedorDataGridView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.fornecedorDataGridView_KeyUp);
             // 
-            // fornecedorTableAdapter
-            // 
-            this.fornecedorTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.FornecedorTableAdapter = this.fornecedorTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Savage_Hotel_System.DataSet.DataSetFornecedorTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(329, 374);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "label4";
-            this.label4.Visible = false;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -230,11 +210,44 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
+            // fornecedorTableAdapter
+            // 
+            this.fornecedorTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.FornecedorTableAdapter = this.fornecedorTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Savage_Hotel_System.DataSet.DataSetFornecedorTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(329, 374);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "label4";
+            this.label4.Visible = false;
+            // 
+            // radioButtonAny
+            // 
+            this.radioButtonAny.AutoSize = true;
+            this.radioButtonAny.Checked = true;
+            this.radioButtonAny.Location = new System.Drawing.Point(12, 16);
+            this.radioButtonAny.Name = "radioButtonAny";
+            this.radioButtonAny.Size = new System.Drawing.Size(158, 17);
+            this.radioButtonAny.TabIndex = 14;
+            this.radioButtonAny.TabStop = true;
+            this.radioButtonAny.Text = "Nome ou CNPJ ou Telefone";
+            this.radioButtonAny.UseVisualStyleBackColor = true;
+            // 
             // Produto_Cadastro_BuscaFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 425);
+            this.Controls.Add(this.radioButtonAny);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.fornecedorDataGridView);
             this.Controls.Add(this.Selecionarbutton);
@@ -281,5 +294,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.RadioButton radioButtonAny;
     }
 }
