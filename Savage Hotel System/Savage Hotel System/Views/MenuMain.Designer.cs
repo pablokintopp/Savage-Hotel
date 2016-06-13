@@ -196,7 +196,7 @@
             // iconReserve
             // 
             this.iconReserve.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconReserve.Image = global::Savage_Hotel_System.Properties.Resources.img_phone2;
+            this.iconReserve.Image = global::Savage_Hotel_System.Properties.Resources.Reserva;
             this.iconReserve.Location = new System.Drawing.Point(42, 57);
             this.iconReserve.Name = "iconReserve";
             this.iconReserve.Size = new System.Drawing.Size(130, 130);

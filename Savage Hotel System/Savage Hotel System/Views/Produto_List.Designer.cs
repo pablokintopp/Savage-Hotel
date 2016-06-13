@@ -74,7 +74,10 @@
             this.Fornecedor});
             this.produtoDataGridView.DataSource = this.produtoBindingSource;
             this.produtoDataGridView.Location = new System.Drawing.Point(12, 12);
+            this.produtoDataGridView.MultiSelect = false;
             this.produtoDataGridView.Name = "produtoDataGridView";
+            this.produtoDataGridView.ReadOnly = true;
+            this.produtoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.produtoDataGridView.Size = new System.Drawing.Size(688, 333);
             this.produtoDataGridView.TabIndex = 7;
             // 
@@ -92,12 +95,14 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
             this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Valor";
             this.dataGridViewTextBoxColumn3.HeaderText = "Valor";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -105,6 +110,7 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "IdFornecedor";
             this.dataGridViewTextBoxColumn4.HeaderText = "IdFornecedor";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // Fornecedor
             // 
@@ -112,6 +118,7 @@
             this.Fornecedor.DataPropertyName = "Name";
             this.Fornecedor.HeaderText = "Fornecedor";
             this.Fornecedor.Name = "Fornecedor";
+            this.Fornecedor.ReadOnly = true;
             // 
             // produtoBindingSource
             // 

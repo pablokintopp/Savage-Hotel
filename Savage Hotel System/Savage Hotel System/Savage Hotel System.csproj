@@ -87,6 +87,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseHotelDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\DataSetCliente.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCliente.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\DataSetFornecedor.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -106,6 +111,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetQuarto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetReserva.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReserva.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\DataBase.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -155,6 +165,18 @@
     </Compile>
     <Compile Include="Views\Func_Busc.Designer.cs">
       <DependentUpon>Func_Busc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reserva_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reserva_List.Designer.cs">
+      <DependentUpon>Reserva_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reserva_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reserva_Menu.Designer.cs">
+      <DependentUpon>Reserva_Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Produto_Menu.cs">
       <SubType>Form</SubType>
@@ -248,17 +270,23 @@
     <Compile Include="Views\Produto_Cadastro_BuscaFornecedor.Designer.cs">
       <DependentUpon>Produto_Cadastro_BuscaFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Reserva_Quartos.cs">
+    <Compile Include="Views\Reserva_IncluirCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Reserva_Quartos.Designer.cs">
-      <DependentUpon>Reserva_Quartos.cs</DependentUpon>
+    <Compile Include="Views\Reserva_IncluirCliente.Designer.cs">
+      <DependentUpon>Reserva_IncluirCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Reserva_Menu.cs">
+    <Compile Include="Views\Reserva_IncluirQuarto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Reserva_Menu.Designer.cs">
-      <DependentUpon>Reserva_Menu.cs</DependentUpon>
+    <Compile Include="Views\Reserva_IncluirQuarto.Designer.cs">
+      <DependentUpon>Reserva_IncluirQuarto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reserva_Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reserva_Cadastro.Designer.cs">
+      <DependentUpon>Reserva_Cadastro.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -285,6 +313,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Func_Busc.resx">
       <DependentUpon>Func_Busc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reserva_List.resx">
+      <DependentUpon>Reserva_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reserva_Menu.resx">
+      <DependentUpon>Reserva_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Produto_Menu.resx">
       <DependentUpon>Produto_Menu.cs</DependentUpon>
@@ -331,11 +365,14 @@
     <EmbeddedResource Include="Views\Produto_Cadastro_BuscaFornecedor.resx">
       <DependentUpon>Produto_Cadastro_BuscaFornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Reserva_Quartos.resx">
-      <DependentUpon>Reserva_Quartos.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Reserva_IncluirCliente.resx">
+      <DependentUpon>Reserva_IncluirCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Reserva_Menu.resx">
-      <DependentUpon>Reserva_Menu.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Reserva_IncluirQuarto.resx">
+      <DependentUpon>Reserva_IncluirQuarto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reserva_Cadastro.resx">
+      <DependentUpon>Reserva_Cadastro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DatabaseHotelDataSet.xsc">
       <DependentUpon>DatabaseHotelDataSet.xsd</DependentUpon>
@@ -381,6 +418,17 @@
     <None Include="DatabaseHotelDataSet3.xss">
       <DependentUpon>DatabaseHotelDataSet3.xsd</DependentUpon>
     </None>
+    <None Include="DataSet\DataSetCliente.xsc">
+      <DependentUpon>DataSetCliente.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetCliente.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCliente.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSetCliente.xss">
+      <DependentUpon>DataSetCliente.xsd</DependentUpon>
+    </None>
     <None Include="DataSet\DataSetFornecedor.xsc">
       <DependentUpon>DataSetFornecedor.xsd</DependentUpon>
     </None>
@@ -425,6 +473,17 @@
     <None Include="DataSet\DataSetQuarto.xss">
       <DependentUpon>DataSetQuarto.xsd</DependentUpon>
     </None>
+    <None Include="DataSet\DataSetReserva.xsc">
+      <DependentUpon>DataSetReserva.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetReserva.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReserva.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSetReserva.xss">
+      <DependentUpon>DataSetReserva.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -448,6 +507,10 @@
       <DependentUpon>DatabaseHotel.mdf</DependentUpon>
     </Content>
     <Content Include="Resources\apply.png" />
+    <None Include="Resources\Reserva.png" />
+    <None Include="Resources\Reserva_lista.png" />
+    <None Include="Resources\Reserva_busca.png" />
+    <None Include="Resources\Reserva_add.png" />
     <None Include="Resources\edit.png" />
     <None Include="Resources\search1.png" />
     <None Include="Resources\search.png" />

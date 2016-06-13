@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Savage_Hotel_System.Class
 {
     class Funcoes
@@ -371,6 +372,71 @@ namespace Savage_Hotel_System.Class
                 }
             }
             return 0;
-        } 
+        }
+
+
+
+        //Verificar data de nascimentos
+        public int VerificaDataReserva(String DataEntrada,String DataSaida)
+        {
+            if (DataEntrada == DataSaida)
+            {
+                return 1;
+            }
+            else
+            {
+                int diaEntrada = ((((int)DataEntrada[0]) - 48) * 10);
+                diaEntrada += (((int)DataEntrada[1]) - 48);
+                int mesEntrada = ((((int)DataEntrada[3]) - 48) * 10);
+                mesEntrada += (((int)DataEntrada[4]) - 48);
+                int anoEntrada = ((((int)DataEntrada[7]) - 48) * 1000);
+                anoEntrada += ((((int)DataEntrada[8]) - 48) * 100);
+                anoEntrada += ((((int)DataEntrada[9]) - 48) * 10);
+                anoEntrada += (((int)DataEntrada[8]) - 48);
+
+                int diaSaida = ((((int)DataSaida[0]) - 48) * 10);
+                diaSaida += (((int)DataSaida[1]) - 48);
+                int mesSaida = ((((int)DataSaida[3]) - 48) * 10);
+                mesSaida += (((int)DataSaida[4]) - 48);
+                int anoSaida = ((((int)DataSaida[7]) - 48) * 1000);
+                anoSaida += ((((int)DataSaida[8]) - 48) * 100);
+                anoSaida += ((((int)DataSaida[9]) - 48) * 10);
+                anoSaida += (((int)DataSaida[8]) - 48);
+
+                if (anoSaida == anoEntrada)
+                {
+                    if (mesSaida == mesEntrada)
+                    {
+                        if (diaSaida == diaEntrada)
+                        {
+                            return 1;
+                        }
+                        else
+                        {
+                            if ((diaSaida < diaEntrada)||(diaEntrada > diaSaida))
+                            {
+                                return 2;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if ((mesSaida < mesEntrada)||(mesEntrada>mesSaida))
+                        {
+                            return 2;
+                        }
+                    }
+                }
+                else
+                {
+                    if ((anoSaida < anoEntrada)||(anoEntrada>anoSaida))
+                    {
+                        return 2;
+                    }
+                }
+            }
+            return 0;
+        }
+
     }
 }
