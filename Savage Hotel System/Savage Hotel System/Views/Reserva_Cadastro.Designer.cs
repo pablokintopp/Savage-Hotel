@@ -67,6 +67,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.buttonCadastrar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.buttonVerificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quartoDataGridView)).BeginInit();
@@ -334,7 +335,7 @@
             // 
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.button1);
-            this.panel3.Location = new System.Drawing.Point(8, 248);
+            this.panel3.Location = new System.Drawing.Point(8, 170);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(649, 113);
             this.panel3.TabIndex = 18;
@@ -351,7 +352,7 @@
             // dateTimeEntrada
             // 
             this.dateTimeEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeEntrada.Location = new System.Drawing.Point(23, 179);
+            this.dateTimeEntrada.Location = new System.Drawing.Point(20, 326);
             this.dateTimeEntrada.Name = "dateTimeEntrada";
             this.dateTimeEntrada.Size = new System.Drawing.Size(108, 20);
             this.dateTimeEntrada.TabIndex = 20;
@@ -360,7 +361,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 160);
+            this.label3.Location = new System.Drawing.Point(23, 307);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 13);
             this.label3.TabIndex = 21;
@@ -369,7 +370,7 @@
             // dateTimePickerSaida
             // 
             this.dateTimePickerSaida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerSaida.Location = new System.Drawing.Point(144, 179);
+            this.dateTimePickerSaida.Location = new System.Drawing.Point(141, 326);
             this.dateTimePickerSaida.Name = "dateTimePickerSaida";
             this.dateTimePickerSaida.Size = new System.Drawing.Size(108, 20);
             this.dateTimePickerSaida.TabIndex = 22;
@@ -378,7 +379,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(141, 160);
+            this.label4.Location = new System.Drawing.Point(138, 307);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 13);
             this.label4.TabIndex = 23;
@@ -397,17 +398,28 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(292, 179);
+            this.label5.Location = new System.Drawing.Point(463, 328);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 25;
             this.label5.Text = "label5";
             // 
+            // buttonVerificar
+            // 
+            this.buttonVerificar.Location = new System.Drawing.Point(273, 323);
+            this.buttonVerificar.Name = "buttonVerificar";
+            this.buttonVerificar.Size = new System.Drawing.Size(146, 23);
+            this.buttonVerificar.TabIndex = 26;
+            this.buttonVerificar.Text = "Verificar Disponibilidade";
+            this.buttonVerificar.UseVisualStyleBackColor = true;
+            this.buttonVerificar.Click += new System.EventHandler(this.buttonVerificar_Click);
+            // 
             // Reserva_Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 433);
+            this.ClientSize = new System.Drawing.Size(664, 483);
+            this.Controls.Add(this.buttonVerificar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonCadastrar);
             this.Controls.Add(this.label4);
@@ -480,5 +492,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonCadastrar;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonVerificar;
     }
 }

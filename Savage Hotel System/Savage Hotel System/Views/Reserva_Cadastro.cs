@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Savage_Hotel_System.Data;
 using Savage_Hotel_System.Class;
+using System.Data.SqlClient;
 
 namespace Savage_Hotel_System.Views
 {
@@ -16,6 +17,7 @@ namespace Savage_Hotel_System.Views
     {
         private int IDQuarto = -1;
         private int IDCliente = -1;
+        private int disponibilidade = -1;
         private Reserva_Menu MenuReserva;
         public Reserva_Cadastro()
         {
@@ -175,5 +177,49 @@ namespace Savage_Hotel_System.Views
 
         }
 
+        //Metodo para consultar banco se o quarto estara disponivel durante a data escolhida
+        //retorno -1 = quarto nao selecionado
+        // retorno 0  = não disponivel entre as datas de entrada e saida
+        // retorno  1 = disponivel
+        private int verificarDisponibilidadeQuarto()
+        {
+            
+            if (IDQuarto == -1)
+            {
+                MessageBox.Show("Selecione um quarto!");
+                return -1;
+            }
+            string dataEntrada = dateTimeEntrada.Text;
+            string dataSaida = dateTimePickerSaida.Text;
+
+            //Consulta vai ser algo como:
+            //Select distinct Reserva.id as Reserva from dbo.Reserva , dbo.Quarto where Reserva.IdQuarto = Quarto.id and Quarto.id = 1 and ( (Reserva.InicioReserva >= '18/06/2016' and Reserva.InicioReserva <= '20/06/2016') or (Reserva.FImReserva >= '18/06/2016' and Reserva.FImReserva <= '20/06/2016'));
+
+            string queryString = "Select distinct Reserva.id as Reserva from dbo.Reserva , dbo.Quarto where Reserva.IdQuarto = Quarto.id and Quarto.id = "+IDQuarto+" and ( (Reserva.InicioReserva >= '"+dataEntrada+ "' and Reserva.InicioReserva <= '" + dataSaida + "') or (Reserva.FImReserva >= '" + dataEntrada + "' and Reserva.FImReserva <= '" + dataSaida + "'))";
+            Console.WriteLine(queryString);
+            SqlDataReader dr = DataBase.SqlCommand(queryString, null, null);
+
+            //se a consulta retorna linhas significa que o quarto nao esta disponivel.
+            if (dr.HasRows)
+            {
+                dr.Close();
+                return 0;
+            }
+
+            else
+            {
+                dr.Close();
+                return 1;
+            }
+                
+           
+        }
+
+        private void buttonVerificar_Click(object sender, EventArgs e)
+        {
+            IDQuarto = IDQuarto == -1 ? 1: IDQuarto; // teste
+           int disp =  verificarDisponibilidadeQuarto();
+            label5.Text = disp == 1 ? "Disponivel" : "Não disponivel";
+        }
     }
 }
