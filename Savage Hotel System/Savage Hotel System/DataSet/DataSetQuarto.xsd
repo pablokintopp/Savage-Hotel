@@ -85,7 +85,7 @@ WHERE        (NumeroQuarto LIKE @Param1)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseHotelConnectionString (Settings)" DbObjectName="dbo.Quarto" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Busca_ID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="Busca_ID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="Busca_ID">
+              <DbSource ConnectionRef="DatabaseHotelConnectionString (Settings)" DbObjectName="dbo.Quarto" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Busca_ID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="Busca_ID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Busca_ID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal, Status
@@ -97,7 +97,7 @@ WHERE        (Id = @Param1)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseHotelConnectionString (Settings)" DbObjectName="dbo.Quarto" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="busca_NumeroQuarto" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="busca_NumeroQuarto" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="busca_NumeroQuarto">
+              <DbSource ConnectionRef="DatabaseHotelConnectionString (Settings)" DbObjectName="dbo.Quarto" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="busca_NumeroQuarto" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="busca_NumeroQuarto" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="busca_NumeroQuarto">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal, Status
@@ -136,7 +136,7 @@ WHERE        (QuantidadeCamaSolteiro LIKE @Param1) AND (Status LIKE @Param2)</Co
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseHotelConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="QuantidadeDeQuartosCadastrados" Modifier="Public" Name="QuantidadeDeQuartosCadastrados" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="QuantidadeDeQuartosCadastrados">
+              <DbSource ConnectionRef="DatabaseHotelConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="QuantidadeDeQuartosCadastrados" Modifier="Public" Name="QuantidadeDeQuartosCadastrados" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="QuantidadeDeQuartosCadastrados">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Expr1
@@ -144,6 +144,21 @@ FROM            Quarto</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseHotelConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateStatus" Modifier="Public" Name="UpdateStatus" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="UpdateStatus">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       Quarto
+SET                Status = @Status
+WHERE        (Id = @Original_Id);    
+SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal, Status FROM Quarto WHERE (Id = @Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Status" ColumnName="Status" DataSourceName="[C:\USERS\RAFAEL\DESKTOP\SAVAGE HOTEL\SAVAGE-HOTEL\SAVAGE HOTEL SYSTEM\SAVAGE HOTEL SYSTEM\DATA\DATABASEHOTEL.MDF].dbo.Quarto" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Status" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_Id" ColumnName="Id" DataSourceName="[C:\USERS\RAFAEL\DESKTOP\SAVAGE HOTEL\SAVAGE-HOTEL\SAVAGE HOTEL SYSTEM\SAVAGE HOTEL SYSTEM\DATA\DATABASEHOTEL.MDF].dbo.Quarto" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id" DataSourceName="[C:\USERS\RAFAEL\DESKTOP\SAVAGE HOTEL\SAVAGE-HOTEL\SAVAGE HOTEL SYSTEM\SAVAGE HOTEL SYSTEM\DATA\DATABASEHOTEL.MDF].dbo.Quarto" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
               </DbSource>
             </Sources>
           </TableAdapter>

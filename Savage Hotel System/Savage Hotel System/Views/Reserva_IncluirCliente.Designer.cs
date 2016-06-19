@@ -33,8 +33,6 @@
             this.textBoxBusca = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.radioButtonCPF = new System.Windows.Forms.RadioButton();
-            this.radioButtonQuantidadeCamaSolteiro = new System.Windows.Forms.RadioButton();
-            this.radioButtonQuantidadeCamaCasal = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -84,28 +82,6 @@
             this.radioButtonCPF.TabStop = true;
             this.radioButtonCPF.Text = "CPF";
             this.radioButtonCPF.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonQuantidadeCamaSolteiro
-            // 
-            this.radioButtonQuantidadeCamaSolteiro.AutoSize = true;
-            this.radioButtonQuantidadeCamaSolteiro.Location = new System.Drawing.Point(12, 35);
-            this.radioButtonQuantidadeCamaSolteiro.Name = "radioButtonQuantidadeCamaSolteiro";
-            this.radioButtonQuantidadeCamaSolteiro.Size = new System.Drawing.Size(148, 17);
-            this.radioButtonQuantidadeCamaSolteiro.TabIndex = 5;
-            this.radioButtonQuantidadeCamaSolteiro.TabStop = true;
-            this.radioButtonQuantidadeCamaSolteiro.Text = "Quantidade Cama Solteiro";
-            this.radioButtonQuantidadeCamaSolteiro.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonQuantidadeCamaCasal
-            // 
-            this.radioButtonQuantidadeCamaCasal.AutoSize = true;
-            this.radioButtonQuantidadeCamaCasal.Location = new System.Drawing.Point(13, 59);
-            this.radioButtonQuantidadeCamaCasal.Name = "radioButtonQuantidadeCamaCasal";
-            this.radioButtonQuantidadeCamaCasal.Size = new System.Drawing.Size(139, 17);
-            this.radioButtonQuantidadeCamaCasal.TabIndex = 6;
-            this.radioButtonQuantidadeCamaCasal.TabStop = true;
-            this.radioButtonQuantidadeCamaCasal.Text = "Quantidade Cama Casal";
-            this.radioButtonQuantidadeCamaCasal.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -258,8 +234,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.radioButtonQuantidadeCamaCasal);
-            this.Controls.Add(this.radioButtonQuantidadeCamaSolteiro);
             this.Controls.Add(this.radioButtonCPF);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.textBoxBusca);
@@ -267,7 +241,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Reserva_IncluirCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Savage Hotel - Busca de Quartos";
+            this.Text = "Savage Hotel - Busca de Cliente";
             this.Load += new System.EventHandler(this.Reserva_Cadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).EndInit();
@@ -282,8 +256,6 @@
         private System.Windows.Forms.TextBox textBoxBusca;
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.RadioButton radioButtonCPF;
-        private System.Windows.Forms.RadioButton radioButtonQuantidadeCamaSolteiro;
-        private System.Windows.Forms.RadioButton radioButtonQuantidadeCamaCasal;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

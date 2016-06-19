@@ -158,6 +158,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBoxSearch);
             this.Name = "Quarto_Busca";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quarto_Busca";
             this.Load += new System.EventHandler(this.Quarto_Busca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

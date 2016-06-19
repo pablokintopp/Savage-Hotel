@@ -47,23 +47,11 @@ namespace Savage_Hotel_System.Views
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            //Buscar pelo Número do Quarto
+            //Buscar pelo CPF
             if (radioButtonCPF.Checked == true)
             {
                 this.clienteTableAdapter.Busca_CPF(this.dataSetCliente.Cliente, textBoxBusca.Text);
 
-            }
-
-            //Buscar pelo Número de Camas de Solteiro nos Quartos
-            if (radioButtonQuantidadeCamaSolteiro.Checked == true)
-            {
-                //this.quartoTableAdapter.busca_QuantidadeCamaSolteiro(this.quarto._Quarto, textBoxBusca.Text, "disponivel");
-            }
-
-            //Buscar pelo Número de Camas de Casal nos Quartos
-            if (radioButtonQuantidadeCamaCasal.Checked == true)
-            {
-                //this.quartoTableAdapter.busca_QuantidadeCamaCasal(this.quarto._Quarto, textBoxBusca.Text, "disponivel");
             }
 
             //Conta quantas linhas estão na GridView

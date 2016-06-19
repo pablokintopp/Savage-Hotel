@@ -70,14 +70,14 @@ namespace Savage_Hotel_System.Views
             //this.quartoTableAdapter.Fill(this.quarto._Quarto);
 
             //idTextBox.Text = idquarto.ToString();
-            panel3.Enabled = false;
-
+            label5.Text = "";
+            panelIncluirQuartos.Hide();
         }
         public void refresh() {
             if (IDCliente > -1)
             {
                 this.clienteTableAdapter.Busca_ID(this.dataSetCliente.Cliente, IDCliente);
-                panel3.Enabled = true;
+                panelIncluirQuartos.Show();
             }
             if (IDQuarto > -1)
             {
@@ -97,38 +97,22 @@ namespace Savage_Hotel_System.Views
         private void button2_Click(object sender, EventArgs e)
         {
             Form Cliente = new Reserva_IncluirCliente(this);
-            this.Hide();
-            Cliente.Show();
+            Cliente.ShowDialog();
         }
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
             int somarerros = 0;
-            int retorno = 0;
-            if (IDCliente > -1) {
-                if (IDQuarto > -1) {
-                    String DataEntrada = dateTimeEntrada.Text;
-                    String DataSaida = dateTimePickerSaida.Text;
-                    Funcoes auxfunc = new Funcoes();
-
-                    //Verifica Datas de Reserva
-                    retorno = auxfunc.VerificaDataReserva(DataEntrada,DataSaida);
-                    somarerros += retorno;
-                    switch (retorno)
-                    {
-                        case 0:
-                            dateTimeEntrada.BackColor = Color.LightGreen;
-                            label5.Text = "";
-                            break;
-                        case 1:
-                            dateTimeEntrada.BackColor = Color.IndianRed;
-                            label5.Text = "Data do mesmo dia não é Permitido";
-                            break;
-                        case 2:
-                            dateTimeEntrada.BackColor = Color.IndianRed;
-                            label5.Text = "Datas passadas São Inválidas";
-                            break;
+            if (IDCliente > -1)
+            {
+                if (IDQuarto > -1)
+                {
+                    //Se já tiver Clicado em Verificar Disponibilidade
+                    if (disponibilidade != 0) {
+                        label5.Text = "Verifique a Disponibilidade do Quarto"; 
                     }
+                    somarerros += disponibilidade;
+
 
                     if (somarerros == 0)
                     {
@@ -144,6 +128,12 @@ namespace Savage_Hotel_System.Views
                         }
                     }
                 }
+                else {
+                    label5.Text = "Adicione um Quarto a Reserva";
+                }
+            }
+            else {
+                label5.Text = "Adicione um Cliente a Reserva";
             }
         }
 
@@ -179,16 +169,10 @@ namespace Savage_Hotel_System.Views
 
         //Metodo para consultar banco se o quarto estara disponivel durante a data escolhida
         //retorno -1 = quarto nao selecionado
-        // retorno 0  = não disponivel entre as datas de entrada e saida
-        // retorno  1 = disponivel
+        // retorno 1  = não disponivel entre as datas de entrada e saida
+        // retorno  0 = disponivel
         private int verificarDisponibilidadeQuarto()
         {
-            
-            if (IDQuarto == -1)
-            {
-                MessageBox.Show("Selecione um quarto!");
-                return -1;
-            }
             string dataEntrada = dateTimeEntrada.Text;
             string dataSaida = dateTimePickerSaida.Text;
 
@@ -203,23 +187,61 @@ namespace Savage_Hotel_System.Views
             if (dr.HasRows)
             {
                 dr.Close();
-                return 0;
+                return 1;
             }
 
             else
             {
                 dr.Close();
-                return 1;
-            }
-                
-           
+                return 0;
+            }                
         }
 
         private void buttonVerificar_Click(object sender, EventArgs e)
         {
-            IDQuarto = IDQuarto == -1 ? 1: IDQuarto; // teste
-           int disp =  verificarDisponibilidadeQuarto();
-            label5.Text = disp == 1 ? "Disponivel" : "Não disponivel";
+            if (IDCliente > -1)
+            {
+                if (IDQuarto > -1)
+                {
+                    Funcoes auxfunc = new Funcoes();
+                    String DataEntrada = dateTimeEntrada.Text;
+                    String DataSaida = dateTimePickerSaida.Text;
+                    int retorno = 0;
+
+                    //Verifica Datas de Reserva
+                    retorno = auxfunc.VerificaDataReserva(DataEntrada, DataSaida);
+                    switch (retorno)
+                    {
+                        case 0:
+                            dateTimeEntrada.BackColor = Color.LightGreen;
+                            label5.Text = "";
+                            break;
+                        case 1:
+                            dateTimeEntrada.BackColor = Color.IndianRed;
+                            label5.Text = "Data do mesmo dia não é Permitido";
+                            break;
+                        case 2:
+                            dateTimeEntrada.BackColor = Color.IndianRed;
+                            label5.Text = "Datas passadas São Inválidas";
+                            break;
+                    }
+                    if (retorno == 0)
+                    {
+                        IDQuarto = IDQuarto == -1 ? 1 : IDQuarto; // teste
+                        int disp = verificarDisponibilidadeQuarto();
+                        label5.Text = disp == 0 ? "Disponivel" : "Não disponivel";
+                        disponibilidade = disp;
+                    }
+                }
+                else
+                {
+                    label5.Text = "Adicione um Quarto a Reserva";
+                }
+            }
+            else
+            {
+                label5.Text = "Adicione um Cliente a Reserva";
+            }
         }
     }
 }

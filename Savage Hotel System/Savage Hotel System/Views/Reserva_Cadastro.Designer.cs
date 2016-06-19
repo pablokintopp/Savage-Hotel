@@ -59,7 +59,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.clienteTableAdapter = new Savage_Hotel_System.DataSet.DataSetClienteTableAdapters.ClienteTableAdapter();
             this.tableAdapterManager1 = new Savage_Hotel_System.DataSet.DataSetClienteTableAdapters.TableAdapterManager();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelIncluirQuartos = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimeEntrada = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -77,7 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetCliente)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panelIncluirQuartos.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,7 +95,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(612, 381);
+            this.pictureBox1.Location = new System.Drawing.Point(625, 381);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 1;
@@ -136,25 +136,25 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
             this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 30;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Descricao";
             this.dataGridViewTextBoxColumn2.HeaderText = "Descricao";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 80;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "NumeroQuarto";
-            this.dataGridViewTextBoxColumn3.HeaderText = "NumeroQuarto";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Numero do Quarto";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
@@ -162,7 +162,7 @@
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "QuantidadeCamaSolteiro";
-            this.dataGridViewTextBoxColumn4.HeaderText = "QuantidadeCamaSolteiro";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Cama de Solteiro";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
@@ -170,7 +170,7 @@
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn5.DataPropertyName = "QuantidadeCamaCasal";
-            this.dataGridViewTextBoxColumn5.HeaderText = "QuantidadeCamaCasal";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Cama de Casal";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
@@ -257,7 +257,7 @@
             // 
             this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Nome";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
@@ -265,7 +265,7 @@
             // 
             this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Gender";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Gender";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Gênero";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
@@ -281,7 +281,7 @@
             // 
             this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn11.DataPropertyName = "Phone";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Phone";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Telefone";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
@@ -289,7 +289,7 @@
             // 
             this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn12.DataPropertyName = "Birthday";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Birthday";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Aniversário";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
@@ -331,14 +331,14 @@
             this.tableAdapterManager1.ClienteTableAdapter = this.clienteTableAdapter;
             this.tableAdapterManager1.UpdateOrder = Savage_Hotel_System.DataSet.DataSetClienteTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // panel3
+            // panelIncluirQuartos
             // 
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Location = new System.Drawing.Point(8, 170);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(649, 113);
-            this.panel3.TabIndex = 18;
+            this.panelIncluirQuartos.Controls.Add(this.panel4);
+            this.panelIncluirQuartos.Controls.Add(this.button1);
+            this.panelIncluirQuartos.Location = new System.Drawing.Point(8, 148);
+            this.panelIncluirQuartos.Name = "panelIncluirQuartos";
+            this.panelIncluirQuartos.Size = new System.Drawing.Size(649, 113);
+            this.panelIncluirQuartos.TabIndex = 18;
             // 
             // panel1
             // 
@@ -398,11 +398,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(463, 328);
+            this.label5.Location = new System.Drawing.Point(270, 365);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 25;
-            this.label5.Text = "label5";
+            this.label5.Text = "Label5";
             // 
             // buttonVerificar
             // 
@@ -418,16 +418,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 483);
+            this.ClientSize = new System.Drawing.Size(664, 421);
+            this.Controls.Add(this.buttonCadastrar);
             this.Controls.Add(this.buttonVerificar);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.buttonCadastrar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePickerSaida);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateTimeEntrada);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panelIncluirQuartos);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -446,7 +446,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSetCliente)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            this.panelIncluirQuartos.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -464,27 +464,15 @@
         private DataSet.QuartoTableAdapters.QuartoTableAdapter quartoTableAdapter;
         private DataSet.QuartoTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView quartoDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Button button2;
         private DataSet.DataSetCliente dataSetCliente;
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private DataSet.DataSetClienteTableAdapters.ClienteTableAdapter clienteTableAdapter;
         private DataSet.DataSetClienteTableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.DataGridView clienteDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelIncluirQuartos;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker dateTimeEntrada;
         private System.Windows.Forms.Label label3;
@@ -493,5 +481,17 @@
         private System.Windows.Forms.Button buttonCadastrar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonVerificar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
     }
 }
