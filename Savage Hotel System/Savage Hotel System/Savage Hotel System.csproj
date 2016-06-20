@@ -87,6 +87,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseHotelDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\DataSetCliente.cs">
+      <DependentUpon>DataSetCliente.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\DataSetCliente.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

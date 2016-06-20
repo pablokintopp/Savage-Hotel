@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Savage_Hotel_System.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,12 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Reserva_IncluirQuarto : Form
     {
+        //para a sugestao de autocompletar
+        private AutoCompleteStringCollection result;
+        //colunas a serem pre-pesquisadas para o auto completar
+        private List<String> columnsName;
+        private List<String> columnsNameExibicao;
+
         private Reserva_Cadastro CadastroReserva;
         int quantidadeItensNaGridView = 0;
         public Reserva_IncluirQuarto()
@@ -35,6 +43,8 @@ namespace Savage_Hotel_System.Views
 
         private void Reserva_Cadastro_Load(object sender, EventArgs e)
         {
+            inicializaAutoCompletar(DataBase.tableQuarto);
+
             // TODO: This line of code loads data into the 'quarto._Quarto' table. You can move, or remove it, as needed.
             //this.quartoTableAdapter.Fill(this.quarto._Quarto);
             
@@ -136,6 +146,41 @@ namespace Savage_Hotel_System.Views
         private void quartoDataGridView_KeyUp(object sender, KeyEventArgs e)
         {
             mostrarInfos();
+        }
+
+        private void inicializaAutoCompletar(String tabela)
+        {
+
+            //busca todas informacoes relevantes e armazena num array
+            //este array sera usado pra sugerir e autopletar dados no campo de busca
+            String queryString = "Select * from " + tabela;
+            SqlDataReader dataReader = DataBase.SqlCommand(queryString, null, null);
+            result = new AutoCompleteStringCollection();
+
+            //inicializa as listas com os nomes reais das colunas e o nome que sera exibido ao usuario
+            columnsName = new List<string>();
+            columnsNameExibicao = new List<string>();
+            columnsName.Add("numeroQuarto");
+            columnsNameExibicao.Add("numeroQuarto");            
+
+
+
+            //add cada dado da busca a lista do autocompletar que sera exibida no textBox
+            while (dataReader.Read())
+            {
+                //result.AddRange(dataReader.);
+                foreach (String colName in columnsName)
+                {
+                    result.Add(Convert.ToString(dataReader[colName]));
+
+                }
+
+            }
+            dataReader.Close();
+
+            //faz o link do campo de busca com a lista de sugestoes/autocompletar
+            textBoxBusca.AutoCompleteCustomSource = result;
+
         }
     }
 }

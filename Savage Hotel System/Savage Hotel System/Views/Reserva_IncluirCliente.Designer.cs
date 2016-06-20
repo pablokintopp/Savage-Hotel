@@ -39,6 +39,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Selecionarbutton = new System.Windows.Forms.Button();
             this.clienteDataGridView = new System.Windows.Forms.DataGridView();
+            this.radioButtonNome = new System.Windows.Forms.RadioButton();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,16 +64,20 @@
             // 
             // textBoxBusca
             // 
-            this.textBoxBusca.Location = new System.Drawing.Point(12, 104);
+            this.textBoxBusca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBoxBusca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBoxBusca.Location = new System.Drawing.Point(16, 128);
+            this.textBoxBusca.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxBusca.Name = "textBoxBusca";
-            this.textBoxBusca.Size = new System.Drawing.Size(100, 20);
+            this.textBoxBusca.Size = new System.Drawing.Size(132, 22);
             this.textBoxBusca.TabIndex = 2;
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(118, 101);
+            this.buttonBuscar.Location = new System.Drawing.Point(157, 124);
+            this.buttonBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscar.Size = new System.Drawing.Size(100, 28);
             this.buttonBuscar.TabIndex = 3;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
@@ -75,9 +86,11 @@
             // radioButtonCPF
             // 
             this.radioButtonCPF.AutoSize = true;
-            this.radioButtonCPF.Location = new System.Drawing.Point(12, 12);
+            this.radioButtonCPF.Checked = true;
+            this.radioButtonCPF.Location = new System.Drawing.Point(31, 51);
+            this.radioButtonCPF.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonCPF.Name = "radioButtonCPF";
-            this.radioButtonCPF.Size = new System.Drawing.Size(45, 17);
+            this.radioButtonCPF.Size = new System.Drawing.Size(55, 21);
             this.radioButtonCPF.TabIndex = 4;
             this.radioButtonCPF.TabStop = true;
             this.radioButtonCPF.Text = "CPF";
@@ -87,9 +100,10 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(660, 373);
+            this.pictureBox1.Location = new System.Drawing.Point(880, 459);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.Size = new System.Drawing.Size(43, 39);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -97,35 +111,39 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(280, 16);
+            this.label1.Location = new System.Drawing.Point(388, 56);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
+            this.label1.Size = new System.Drawing.Size(129, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Linha Selecionada ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(280, 37);
+            this.label2.Location = new System.Drawing.Point(388, 82);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 13);
+            this.label2.Size = new System.Drawing.Size(208, 17);
             this.label2.TabIndex = 9;
             this.label2.Text = "Numero do Quarto Selecionado";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(280, 59);
+            this.label3.Location = new System.Drawing.Point(388, 109);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 13);
+            this.label3.Size = new System.Drawing.Size(220, 17);
             this.label3.TabIndex = 10;
             this.label3.Text = "Quantidade de Intens Econtrados";
             // 
             // Selecionarbutton
             // 
-            this.Selecionarbutton.Location = new System.Drawing.Point(313, 382);
+            this.Selecionarbutton.Location = new System.Drawing.Point(417, 470);
+            this.Selecionarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Selecionarbutton.Name = "Selecionarbutton";
-            this.Selecionarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Selecionarbutton.Size = new System.Drawing.Size(100, 28);
             this.Selecionarbutton.TabIndex = 11;
             this.Selecionarbutton.Text = "Selecionar";
             this.Selecionarbutton.UseVisualStyleBackColor = true;
@@ -147,13 +165,67 @@
             this.phoneDataGridViewTextBoxColumn,
             this.birthdayDataGridViewTextBoxColumn});
             this.clienteDataGridView.DataSource = this.clienteBindingSource;
-            this.clienteDataGridView.Location = new System.Drawing.Point(12, 151);
+            this.clienteDataGridView.Location = new System.Drawing.Point(16, 186);
+            this.clienteDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.clienteDataGridView.MultiSelect = false;
             this.clienteDataGridView.Name = "clienteDataGridView";
             this.clienteDataGridView.ReadOnly = true;
             this.clienteDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clienteDataGridView.Size = new System.Drawing.Size(680, 220);
+            this.clienteDataGridView.Size = new System.Drawing.Size(907, 271);
             this.clienteDataGridView.TabIndex = 12;
+            // 
+            // radioButtonNome
+            // 
+            this.radioButtonNome.AutoSize = true;
+            this.radioButtonNome.Location = new System.Drawing.Point(31, 80);
+            this.radioButtonNome.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButtonNome.Name = "radioButtonNome";
+            this.radioButtonNome.Size = new System.Drawing.Size(66, 21);
+            this.radioButtonNome.TabIndex = 13;
+            this.radioButtonNome.Text = "Nome";
+            this.radioButtonNome.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Gender";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Gender";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "CPF";
+            this.dataGridViewTextBoxColumn4.HeaderText = "CPF";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Phone";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Phone";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Birthday";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Birthday";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -225,9 +297,10 @@
             // 
             // Reserva_IncluirCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 425);
+            this.ClientSize = new System.Drawing.Size(971, 576);
+            this.Controls.Add(this.radioButtonNome);
             this.Controls.Add(this.clienteDataGridView);
             this.Controls.Add(this.Selecionarbutton);
             this.Controls.Add(this.label3);
@@ -239,6 +312,7 @@
             this.Controls.Add(this.textBoxBusca);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Reserva_IncluirCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Savage Hotel - Busca de Cliente";
@@ -272,5 +346,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cPFDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn birthdayDataGridViewTextBoxColumn;
+        private System.Windows.Forms.RadioButton radioButtonNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }
