@@ -161,8 +161,7 @@ namespace Savage_Hotel_System.Views
             columnsName = new List<string>();
             columnsNameExibicao = new List<string>();
             columnsName.Add("numeroQuarto");
-            columnsNameExibicao.Add("numeroQuarto");            
-
+            columnsNameExibicao.Add("numeroQuarto");
 
 
             //add cada dado da busca a lista do autocompletar que sera exibida no textBox
