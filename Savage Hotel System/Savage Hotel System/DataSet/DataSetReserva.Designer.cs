@@ -499,7 +499,7 @@ namespace Savage_Hotel_System.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ReservaRow AddReservaRow(decimal Valor, string InicioReserva, string FImReserva, string IdCliente, string IdQuarto, string NumeroQuarto, string Name) {
+            public ReservaRow AddReservaRow(string Valor, string InicioReserva, string FImReserva, string IdCliente, string IdQuarto, string NumeroQuarto, string Name) {
                 ReservaRow rowReservaRow = ((ReservaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -554,7 +554,7 @@ namespace Savage_Hotel_System.DataSet {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
-                this.columnValor = new global::System.Data.DataColumn("Valor", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnValor = new global::System.Data.DataColumn("Valor", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValor);
                 this.columnInicioReserva = new global::System.Data.DataColumn("InicioReserva", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnInicioReserva);
@@ -1416,9 +1416,9 @@ namespace Savage_Hotel_System.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Valor {
+            public string Valor {
                 get {
-                    return ((decimal)(this[this.tableReserva.ValorColumn]));
+                    return ((string)(this[this.tableReserva.ValorColumn]));
                 }
                 set {
                     this[this.tableReserva.ValorColumn] = value;
