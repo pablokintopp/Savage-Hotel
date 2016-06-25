@@ -169,6 +169,12 @@
     <Compile Include="Views\Func_Busc.Designer.cs">
       <DependentUpon>Func_Busc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Produto_Busca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto_Busca.Designer.cs">
+      <DependentUpon>Produto_Busca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reserva_Busca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Func_Busc.resx">
       <DependentUpon>Func_Busc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto_Busca.resx">
+      <DependentUpon>Produto_Busca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reserva_Busca.resx">
       <DependentUpon>Reserva_Busca.cs</DependentUpon>

@@ -114,6 +114,7 @@ namespace Savage_Hotel_System.Views
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
 
+            reservaDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = reservaDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Replace(',', '.');
             //valor atual do campo
             string valorEditado = reservaDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
             // Console.WriteLine("Editou: "+ valorEditado);
@@ -128,8 +129,7 @@ namespace Savage_Hotel_System.Views
             {
                 //Pegando o nome da coluna onde houve alteração
                 string colTitulo = reservaDataGridView.Columns[e.ColumnIndex].HeaderText;
-                Funcoes auxfunc = new Funcoes();
-                valorEditado = valorEditado.Replace(',', '.');
+                Funcoes auxfunc = new Funcoes();             
 
                 //validando conforme  a coluna
                 switch (colTitulo.Trim())
@@ -253,6 +253,7 @@ namespace Savage_Hotel_System.Views
 
                     MessageBox.Show("Todas alterações foram salvas!", "Alterações realizadas co Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     reservaDataGridView.Refresh();
+                    changedCells.Clear();
                 }
                 else
                 {

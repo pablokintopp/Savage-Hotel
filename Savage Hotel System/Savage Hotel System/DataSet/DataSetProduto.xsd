@@ -109,7 +109,7 @@ SELECT Id, Name, CNPJ, Phone FROM Fornecedor WHERE (Id = @Id)</CommandText>
   <xs:element name="DataSetProduto" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetProduto" msprop:Generator_UserDSName="DataSetProduto">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Produto" msprop:Generator_TableClassName="ProdutoDataTable" msprop:Generator_TableVarName="tableProduto" msprop:Generator_RowChangedName="ProdutoRowChanged" msprop:Generator_TablePropName="Produto" msprop:Generator_RowDeletingName="ProdutoRowDeleting" msprop:Generator_RowChangingName="ProdutoRowChanging" msprop:Generator_RowEvHandlerName="ProdutoRowChangeEventHandler" msprop:Generator_RowDeletedName="ProdutoRowDeleted" msprop:Generator_RowClassName="ProdutoRow" msprop:Generator_UserTableName="Produto" msprop:Generator_RowEvArgName="ProdutoRowChangeEvent">
+        <xs:element name="Produto" msprop:Generator_TableClassName="ProdutoDataTable" msprop:Generator_TableVarName="tableProduto" msprop:Generator_TablePropName="Produto" msprop:Generator_RowDeletingName="ProdutoRowDeleting" msprop:Generator_RowChangingName="ProdutoRowChanging" msprop:Generator_RowEvHandlerName="ProdutoRowChangeEventHandler" msprop:Generator_RowDeletedName="ProdutoRowDeleted" msprop:Generator_UserTableName="Produto" msprop:Generator_RowChangedName="ProdutoRowChanged" msprop:Generator_RowEvArgName="ProdutoRowChangeEvent" msprop:Generator_RowClassName="ProdutoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -120,7 +120,7 @@ SELECT Id, Name, CNPJ, Phone FROM Fornecedor WHERE (Id = @Id)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Valor" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_UserColumnName="Valor" type="xs:decimal" />
+              <xs:element name="Valor" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_UserColumnName="Valor" type="xs:string" />
               <xs:element name="IdFornecedor" msprop:Generator_ColumnVarNameInTable="columnIdFornecedor" msprop:Generator_ColumnPropNameInRow="IdFornecedor" msprop:Generator_ColumnPropNameInTable="IdFornecedorColumn" msprop:Generator_UserColumnName="IdFornecedor">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -139,7 +139,7 @@ SELECT Id, Name, CNPJ, Phone FROM Fornecedor WHERE (Id = @Id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Fornecedor" msprop:Generator_TableClassName="FornecedorDataTable" msprop:Generator_TableVarName="tableFornecedor" msprop:Generator_RowChangedName="FornecedorRowChanged" msprop:Generator_TablePropName="Fornecedor" msprop:Generator_RowDeletingName="FornecedorRowDeleting" msprop:Generator_RowChangingName="FornecedorRowChanging" msprop:Generator_RowEvHandlerName="FornecedorRowChangeEventHandler" msprop:Generator_RowDeletedName="FornecedorRowDeleted" msprop:Generator_RowClassName="FornecedorRow" msprop:Generator_UserTableName="Fornecedor" msprop:Generator_RowEvArgName="FornecedorRowChangeEvent">
+        <xs:element name="Fornecedor" msprop:Generator_TableClassName="FornecedorDataTable" msprop:Generator_TableVarName="tableFornecedor" msprop:Generator_TablePropName="Fornecedor" msprop:Generator_RowDeletingName="FornecedorRowDeleting" msprop:Generator_RowChangingName="FornecedorRowChanging" msprop:Generator_RowEvHandlerName="FornecedorRowChangeEventHandler" msprop:Generator_RowDeletedName="FornecedorRowDeleted" msprop:Generator_UserTableName="Fornecedor" msprop:Generator_RowChangedName="FornecedorRowChanged" msprop:Generator_RowEvArgName="FornecedorRowChangeEvent" msprop:Generator_RowClassName="FornecedorRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />

@@ -291,6 +291,7 @@ namespace Savage_Hotel_System.Views
 
                     MessageBox.Show("Todas alterações foram salvas!", "Alterações realizadas co Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dataGridView1.Refresh();
+                    changedCells.Clear();
                 }
                 else
                 {

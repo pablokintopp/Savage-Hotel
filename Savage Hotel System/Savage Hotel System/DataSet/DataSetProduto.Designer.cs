@@ -444,7 +444,7 @@ namespace Savage_Hotel_System.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProdutoRow AddProdutoRow(string Nome, decimal Valor, string IdFornecedor, string Name) {
+            public ProdutoRow AddProdutoRow(string Nome, string Valor, string IdFornecedor, string Name) {
                 ProdutoRow rowProdutoRow = ((ProdutoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -497,7 +497,7 @@ namespace Savage_Hotel_System.DataSet {
                 base.Columns.Add(this.columnId);
                 this.columnNome = new global::System.Data.DataColumn("Nome", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNome);
-                this.columnValor = new global::System.Data.DataColumn("Valor", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnValor = new global::System.Data.DataColumn("Valor", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValor);
                 this.columnIdFornecedor = new global::System.Data.DataColumn("IdFornecedor", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIdFornecedor);
@@ -999,9 +999,9 @@ namespace Savage_Hotel_System.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Valor {
+            public string Valor {
                 get {
-                    return ((decimal)(this[this.tableProduto.ValorColumn]));
+                    return ((string)(this[this.tableProduto.ValorColumn]));
                 }
                 set {
                     this[this.tableProduto.ValorColumn] = value;
