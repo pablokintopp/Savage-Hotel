@@ -87,6 +87,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseHotelDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseHotelDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseHotelDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseHotelDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseHotelDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseHotelDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseHotelDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseHotelDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseHotelDataSet7.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\DataSetCliente.cs">
       <DependentUpon>DataSetCliente.xsd</DependentUpon>
     </Compile>
@@ -303,6 +323,12 @@
     <Compile Include="Views\Reserva_Cadastro.Designer.cs">
       <DependentUpon>Reserva_Cadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reserva_Pedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reserva_Pedidos.Designer.cs">
+      <DependentUpon>Reserva_Pedidos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -395,6 +421,9 @@
     <EmbeddedResource Include="Views\Reserva_Cadastro.resx">
       <DependentUpon>Reserva_Cadastro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reserva_Pedidos.resx">
+      <DependentUpon>Reserva_Pedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DatabaseHotelDataSet.xsc">
       <DependentUpon>DatabaseHotelDataSet.xsd</DependentUpon>
     </None>
@@ -438,6 +467,50 @@
     </None>
     <None Include="DatabaseHotelDataSet3.xss">
       <DependentUpon>DatabaseHotelDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseHotelDataSet4.xsc">
+      <DependentUpon>DatabaseHotelDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseHotelDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseHotelDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseHotelDataSet4.xss">
+      <DependentUpon>DatabaseHotelDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseHotelDataSet5.xsc">
+      <DependentUpon>DatabaseHotelDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseHotelDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseHotelDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseHotelDataSet5.xss">
+      <DependentUpon>DatabaseHotelDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseHotelDataSet6.xsc">
+      <DependentUpon>DatabaseHotelDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseHotelDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseHotelDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseHotelDataSet6.xss">
+      <DependentUpon>DatabaseHotelDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseHotelDataSet7.xsc">
+      <DependentUpon>DatabaseHotelDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseHotelDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseHotelDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseHotelDataSet7.xss">
+      <DependentUpon>DatabaseHotelDataSet7.xsd</DependentUpon>
     </None>
     <None Include="DataSet\DataSetCliente.xsc">
       <DependentUpon>DataSetCliente.xsd</DependentUpon>
@@ -528,6 +601,7 @@
       <DependentUpon>DatabaseHotel.mdf</DependentUpon>
     </Content>
     <Content Include="Resources\apply.png" />
+    <None Include="Resources\reservaPedido.png" />
     <None Include="Resources\Reserva.png" />
     <None Include="Resources\Reserva_lista.png" />
     <None Include="Resources\Reserva_busca.png" />
