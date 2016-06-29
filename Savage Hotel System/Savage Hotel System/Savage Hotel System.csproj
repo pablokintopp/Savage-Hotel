@@ -107,6 +107,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseHotelDataSet7.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseHotelDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseHotelDataSet8.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\DataSetCliente.cs">
       <DependentUpon>DataSetCliente.xsd</DependentUpon>
     </Compile>
@@ -194,6 +199,12 @@
     </Compile>
     <Compile Include="Views\Produto_Busca.Designer.cs">
       <DependentUpon>Produto_Busca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Produto_Pedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto_Pedido.Designer.cs">
+      <DependentUpon>Produto_Pedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Reserva_Busca.cs">
       <SubType>Form</SubType>
@@ -358,6 +369,9 @@
     <EmbeddedResource Include="Views\Produto_Busca.resx">
       <DependentUpon>Produto_Busca.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto_Pedido.resx">
+      <DependentUpon>Produto_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Reserva_Busca.resx">
       <DependentUpon>Reserva_Busca.cs</DependentUpon>
     </EmbeddedResource>
@@ -512,6 +526,17 @@
     <None Include="DatabaseHotelDataSet7.xss">
       <DependentUpon>DatabaseHotelDataSet7.xsd</DependentUpon>
     </None>
+    <None Include="DatabaseHotelDataSet8.xsc">
+      <DependentUpon>DatabaseHotelDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseHotelDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseHotelDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseHotelDataSet8.xss">
+      <DependentUpon>DatabaseHotelDataSet8.xsd</DependentUpon>
+    </None>
     <None Include="DataSet\DataSetCliente.xsc">
       <DependentUpon>DataSetCliente.xsd</DependentUpon>
     </None>
@@ -601,6 +626,7 @@
       <DependentUpon>DatabaseHotel.mdf</DependentUpon>
     </Content>
     <Content Include="Resources\apply.png" />
+    <None Include="Resources\Produto_Pedido.png" />
     <None Include="Resources\reservaPedido.png" />
     <None Include="Resources\Reserva.png" />
     <None Include="Resources\Reserva_lista.png" />
