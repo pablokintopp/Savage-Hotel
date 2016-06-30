@@ -23,6 +23,7 @@ namespace Savage_Hotel_System.Data
         public static string tableProduto = "[dbo].[Produto]";
         public static string tableReserva = "[dbo].[Reserva]";
         public static string tablePedidoReserva = "[dbo].[PedidoReserva]";
+        public static string tablePedidoProduto = "[dbo].[PedidoProduto]";
 
         //Conecta ao DB
         public static string Connect()

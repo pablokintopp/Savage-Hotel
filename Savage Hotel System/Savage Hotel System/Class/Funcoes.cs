@@ -374,6 +374,21 @@ namespace Savage_Hotel_System.Class
             return 0;
         }
 
+        //Como regra de negócio vamos definir que 
+        //esta data é valida se for do mesmo mes que o dia atual entao retorna 0
+        // se for do futuro ou mais antiga q um mes retorna 1
+        public int VerificaDataPedido(DateTime dataSelecionada)
+        {
+            double days = (DateTime.Now - dataSelecionada).TotalDays;
+
+            if (days > 30 || days < 0)
+                return 1;
+            else
+                return 0;  
+           
+
+        }
+
 
 
         //Verificar data de nascimentos

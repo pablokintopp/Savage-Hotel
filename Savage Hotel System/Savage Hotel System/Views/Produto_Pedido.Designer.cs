@@ -30,22 +30,32 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pedidosGridView = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produtoIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fornecedorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pedidoProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseHotelDataSet8 = new Savage_Hotel_System.DatabaseHotelDataSet8();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.labelInfo = new System.Windows.Forms.Label();
             this.produtoGridView = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idFornecedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseHotelDataSet6 = new Savage_Hotel_System.DatabaseHotelDataSet6();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.databaseHotelDataSet7 = new Savage_Hotel_System.DatabaseHotelDataSet7();
             this.databaseHotelDataSet7BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseHotelDataSet6 = new Savage_Hotel_System.DatabaseHotelDataSet6();
-            this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.produtoTableAdapter = new Savage_Hotel_System.DatabaseHotelDataSet6TableAdapters.ProdutoTableAdapter();
-            this.databaseHotelDataSet8 = new Savage_Hotel_System.DatabaseHotelDataSet8();
-            this.pedidoProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pedidoProdutoTableAdapter = new Savage_Hotel_System.DatabaseHotelDataSet8TableAdapters.PedidoProdutoTableAdapter();
             this.dateTimePedido = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,26 +69,16 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.produtoIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fornecedorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idFornecedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pedidosGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pedidoProdutoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet7BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pedidoProdutoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pedidosGridView
@@ -100,6 +100,58 @@
             this.pedidosGridView.ReadOnly = true;
             this.pedidosGridView.Size = new System.Drawing.Size(643, 150);
             this.pedidosGridView.TabIndex = 42;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // produtoIdDataGridViewTextBoxColumn
+            // 
+            this.produtoIdDataGridViewTextBoxColumn.DataPropertyName = "ProdutoId";
+            this.produtoIdDataGridViewTextBoxColumn.HeaderText = "ProdutoId";
+            this.produtoIdDataGridViewTextBoxColumn.Name = "produtoIdDataGridViewTextBoxColumn";
+            this.produtoIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fornecedorIdDataGridViewTextBoxColumn
+            // 
+            this.fornecedorIdDataGridViewTextBoxColumn.DataPropertyName = "FornecedorId";
+            this.fornecedorIdDataGridViewTextBoxColumn.HeaderText = "FornecedorId";
+            this.fornecedorIdDataGridViewTextBoxColumn.Name = "fornecedorIdDataGridViewTextBoxColumn";
+            this.fornecedorIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // quantidadeDataGridViewTextBoxColumn
+            // 
+            this.quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
+            this.quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
+            this.quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
+            this.quantidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // valorTotalDataGridViewTextBoxColumn
+            // 
+            this.valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
+            this.valorTotalDataGridViewTextBoxColumn.HeaderText = "ValorTotal";
+            this.valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
+            this.valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataDataGridViewTextBoxColumn
+            // 
+            this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
+            this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
+            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
+            this.dataDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pedidoProdutoBindingSource
+            // 
+            this.pedidoProdutoBindingSource.DataMember = "PedidoProduto";
+            this.pedidoProdutoBindingSource.DataSource = this.databaseHotelDataSet8;
+            // 
+            // databaseHotelDataSet8
+            // 
+            this.databaseHotelDataSet8.DataSetName = "DatabaseHotelDataSet8";
+            this.databaseHotelDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label4
             // 
@@ -124,11 +176,6 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(152, 238);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
             this.numericUpDown1.Minimum = new decimal(new int[] {
             1,
             0,
@@ -182,6 +229,45 @@
             this.produtoGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.produtoGridView.Size = new System.Drawing.Size(444, 150);
             this.produtoGridView.TabIndex = 36;
+            this.produtoGridView.SelectionChanged += new System.EventHandler(this.produtoGridView_SelectionChanged);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // valorDataGridViewTextBoxColumn
+            // 
+            this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
+            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
+            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idFornecedorDataGridViewTextBoxColumn
+            // 
+            this.idFornecedorDataGridViewTextBoxColumn.DataPropertyName = "IdFornecedor";
+            this.idFornecedorDataGridViewTextBoxColumn.HeaderText = "Fornecedor ID";
+            this.idFornecedorDataGridViewTextBoxColumn.Name = "idFornecedorDataGridViewTextBoxColumn";
+            this.idFornecedorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // produtoBindingSource
+            // 
+            this.produtoBindingSource.DataMember = "Produto";
+            this.produtoBindingSource.DataSource = this.databaseHotelDataSet6;
+            // 
+            // databaseHotelDataSet6
+            // 
+            this.databaseHotelDataSet6.DataSetName = "DatabaseHotelDataSet6";
+            this.databaseHotelDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pictureBox1
             // 
@@ -202,9 +288,9 @@
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.Location = new System.Drawing.Point(29, 272);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(210, 52);
+            this.button1.Size = new System.Drawing.Size(227, 52);
             this.button1.TabIndex = 43;
-            this.button1.Text = "EFETUAR PEDIDO";
+            this.button1.Text = "REGISTRAR PEDIDO";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -229,29 +315,9 @@
             this.databaseHotelDataSet7BindingSource.DataSource = this.databaseHotelDataSet7;
             this.databaseHotelDataSet7BindingSource.Position = 0;
             // 
-            // databaseHotelDataSet6
-            // 
-            this.databaseHotelDataSet6.DataSetName = "DatabaseHotelDataSet6";
-            this.databaseHotelDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // produtoBindingSource
-            // 
-            this.produtoBindingSource.DataMember = "Produto";
-            this.produtoBindingSource.DataSource = this.databaseHotelDataSet6;
-            // 
             // produtoTableAdapter
             // 
             this.produtoTableAdapter.ClearBeforeFill = true;
-            // 
-            // databaseHotelDataSet8
-            // 
-            this.databaseHotelDataSet8.DataSetName = "DatabaseHotelDataSet8";
-            this.databaseHotelDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pedidoProdutoBindingSource
-            // 
-            this.pedidoProdutoBindingSource.DataMember = "PedidoProduto";
-            this.pedidoProdutoBindingSource.DataSource = this.databaseHotelDataSet8;
             // 
             // pedidoProdutoTableAdapter
             // 
@@ -338,76 +404,6 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "Data";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // produtoIdDataGridViewTextBoxColumn
-            // 
-            this.produtoIdDataGridViewTextBoxColumn.DataPropertyName = "ProdutoId";
-            this.produtoIdDataGridViewTextBoxColumn.HeaderText = "ProdutoId";
-            this.produtoIdDataGridViewTextBoxColumn.Name = "produtoIdDataGridViewTextBoxColumn";
-            this.produtoIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fornecedorIdDataGridViewTextBoxColumn
-            // 
-            this.fornecedorIdDataGridViewTextBoxColumn.DataPropertyName = "FornecedorId";
-            this.fornecedorIdDataGridViewTextBoxColumn.HeaderText = "FornecedorId";
-            this.fornecedorIdDataGridViewTextBoxColumn.Name = "fornecedorIdDataGridViewTextBoxColumn";
-            this.fornecedorIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // quantidadeDataGridViewTextBoxColumn
-            // 
-            this.quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
-            this.quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
-            this.quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
-            this.quantidadeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // valorTotalDataGridViewTextBoxColumn
-            // 
-            this.valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
-            this.valorTotalDataGridViewTextBoxColumn.HeaderText = "ValorTotal";
-            this.valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
-            this.valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataDataGridViewTextBoxColumn
-            // 
-            this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
-            this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
-            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
-            this.dataDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // valorDataGridViewTextBoxColumn
-            // 
-            this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
-            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
-            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
-            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idFornecedorDataGridViewTextBoxColumn
-            // 
-            this.idFornecedorDataGridViewTextBoxColumn.DataPropertyName = "IdFornecedor";
-            this.idFornecedorDataGridViewTextBoxColumn.HeaderText = "Fornecedor ID";
-            this.idFornecedorDataGridViewTextBoxColumn.Name = "idFornecedorDataGridViewTextBoxColumn";
-            this.idFornecedorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // Produto_Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -429,15 +425,15 @@
             this.Text = "Produto_Pedido";
             this.Load += new System.EventHandler(this.Produto_Pedido_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pedidosGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pedidoProdutoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet7BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseHotelDataSet8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pedidoProdutoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
