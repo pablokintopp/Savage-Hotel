@@ -63,5 +63,12 @@ namespace Savage_Hotel_System.Views
             this.Hide();
             Pedidos.Show();
         }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Form PedidosLista = new Reserva_Pedidos_Lista(this);
+            this.Hide();
+            PedidosLista.Show();
+        }
     }
 }

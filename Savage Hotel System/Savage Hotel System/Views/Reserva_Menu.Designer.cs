@@ -38,11 +38,14 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -77,9 +80,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(525, 147);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 13);
+            this.label4.Size = new System.Drawing.Size(112, 13);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Pedidos Reserva";
+            this.label4.Text = "Novo Pedido Reserva";
             // 
             // pictureBox5
             // 
@@ -129,19 +132,41 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(546, 164);
+            this.pictureBox1.Location = new System.Drawing.Point(759, 200);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = global::Savage_Hotel_System.Properties.Resources.Produto_lista;
+            this.pictureBox6.Location = new System.Drawing.Point(663, 12);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox6.TabIndex = 16;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(674, 147);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Lista Pedidos Reserva";
+            // 
             // Reserva_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(725, 208);
+            this.ClientSize = new System.Drawing.Size(840, 262);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.label3);
@@ -162,6 +187,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,5 +204,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label5;
     }
 }
