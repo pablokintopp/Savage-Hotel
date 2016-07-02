@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Produto_Cadastro_BuscaFornecedor));
             this.textBoxBusca = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
-            this.radioButtonNome = new System.Windows.Forms.RadioButton();
-            this.radioButtonCNPJ = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,51 +47,35 @@
             this.fornecedorTableAdapter = new Savage_Hotel_System.DataSet.DataSetFornecedorTableAdapters.FornecedorTableAdapter();
             this.tableAdapterManager = new Savage_Hotel_System.DataSet.DataSetFornecedorTableAdapters.TableAdapterManager();
             this.label4 = new System.Windows.Forms.Label();
-            this.radioButtonAny = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetFornecedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorDataGridView)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxBusca
             // 
             this.textBoxBusca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.textBoxBusca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBoxBusca.Location = new System.Drawing.Point(12, 88);
+            this.textBoxBusca.Location = new System.Drawing.Point(7, 36);
             this.textBoxBusca.Name = "textBoxBusca";
-            this.textBoxBusca.Size = new System.Drawing.Size(100, 20);
+            this.textBoxBusca.Size = new System.Drawing.Size(156, 20);
             this.textBoxBusca.TabIndex = 2;
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(118, 85);
+            this.buttonBuscar.Location = new System.Drawing.Point(164, 33);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscar.TabIndex = 3;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
-            // 
-            // radioButtonNome
-            // 
-            this.radioButtonNome.AutoSize = true;
-            this.radioButtonNome.Location = new System.Drawing.Point(12, 41);
-            this.radioButtonNome.Name = "radioButtonNome";
-            this.radioButtonNome.Size = new System.Drawing.Size(53, 17);
-            this.radioButtonNome.TabIndex = 4;
-            this.radioButtonNome.Text = "Nome";
-            this.radioButtonNome.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonCNPJ
-            // 
-            this.radioButtonCNPJ.AutoSize = true;
-            this.radioButtonCNPJ.Location = new System.Drawing.Point(12, 64);
-            this.radioButtonCNPJ.Name = "radioButtonCNPJ";
-            this.radioButtonCNPJ.Size = new System.Drawing.Size(52, 17);
-            this.radioButtonCNPJ.TabIndex = 5;
-            this.radioButtonCNPJ.Text = "CNPJ";
-            this.radioButtonCNPJ.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -109,7 +91,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(280, 16);
+            this.label1.Location = new System.Drawing.Point(5, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 8;
@@ -118,7 +100,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(280, 37);
+            this.label2.Location = new System.Drawing.Point(5, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 13);
             this.label2.TabIndex = 9;
@@ -127,7 +109,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(280, 59);
+            this.label3.Location = new System.Drawing.Point(5, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(166, 13);
             this.label3.TabIndex = 10;
@@ -230,35 +212,49 @@
             this.label4.Text = "label4";
             this.label4.Visible = false;
             // 
-            // radioButtonAny
+            // panel1
             // 
-            this.radioButtonAny.AutoSize = true;
-            this.radioButtonAny.Checked = true;
-            this.radioButtonAny.Location = new System.Drawing.Point(12, 16);
-            this.radioButtonAny.Name = "radioButtonAny";
-            this.radioButtonAny.Size = new System.Drawing.Size(158, 17);
-            this.radioButtonAny.TabIndex = 14;
-            this.radioButtonAny.TabStop = true;
-            this.radioButtonAny.Text = "Nome ou CNPJ ou Telefone";
-            this.radioButtonAny.UseVisualStyleBackColor = true;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.textBoxBusca);
+            this.panel1.Controls.Add(this.buttonBuscar);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(254, 66);
+            this.panel1.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(14, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(225, 16);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Digite o Nome ou CNPJ ou Telefone";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(272, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 66);
+            this.panel2.TabIndex = 17;
             // 
             // Produto_Cadastro_BuscaFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 425);
-            this.Controls.Add(this.radioButtonAny);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.fornecedorDataGridView);
             this.Controls.Add(this.Selecionarbutton);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.radioButtonCNPJ);
-            this.Controls.Add(this.radioButtonNome);
-            this.Controls.Add(this.buttonBuscar);
-            this.Controls.Add(this.textBoxBusca);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Produto_Cadastro_BuscaFornecedor";
@@ -269,6 +265,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetFornecedor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorDataGridView)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,8 +277,6 @@
         #endregion
         private System.Windows.Forms.TextBox textBoxBusca;
         private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.RadioButton radioButtonNome;
-        private System.Windows.Forms.RadioButton radioButtonCNPJ;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -294,6 +292,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.RadioButton radioButtonAny;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel2;
     }
 }

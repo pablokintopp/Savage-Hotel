@@ -14,7 +14,8 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Cli_Cad : Form
     {
-        private Cli_Menu JanelaAnterior;
+        private Cli_Menu JanelaAnteriorMenuCliente = null;
+        private Reserva_IncluirCliente JanelaAnteriorReserva = null;
 
         public Cli_Cad()
         {
@@ -24,13 +25,19 @@ namespace Savage_Hotel_System.Views
         public Cli_Cad(Cli_Menu Janela)
         {
             InitializeComponent();
-            this.JanelaAnterior = Janela;
+            this.JanelaAnteriorMenuCliente = Janela;
+        }
+
+        public Cli_Cad(Reserva_IncluirCliente NewReserva)
+        {
+            InitializeComponent();
+            this.JanelaAnteriorReserva = NewReserva;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
-            JanelaAnterior.Show();
+            voltar_janela();
+
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -79,9 +86,6 @@ namespace Savage_Hotel_System.Views
                     label1.Text = "Digite pelo menos o primeiro nome";
                     break;
             }
-
-
-
 
             //Verifica Telefone
             aux = textBoxPhone.Text;
@@ -145,18 +149,33 @@ namespace Savage_Hotel_System.Views
                     break;
             }
 
-
-
             if (somarerros == 0) {
                 if (InserirBanco() > 0) {
                     MessageBox.Show("Inserido com Sucesso!");
                     this.Close();
-                    JanelaAnterior.Show();
+                    voltar_janela();
                 }
                 else
                 {
                     MessageBox.Show("Houve alguma falha na insercao!");
                 } 
+            }
+        }
+
+        private void voltar_janela() {
+            this.Close();
+            if (JanelaAnteriorReserva != null)
+            {
+                JanelaAnteriorReserva.Show();
+                //É necessário recarregar as listas de auto completar
+                JanelaAnteriorReserva.refresh();
+            }
+            else
+            {
+                if (JanelaAnteriorMenuCliente != null)
+                {
+                    JanelaAnteriorMenuCliente.Show();
+                }
             }
         }
 

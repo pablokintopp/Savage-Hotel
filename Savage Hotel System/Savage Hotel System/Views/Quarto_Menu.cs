@@ -51,5 +51,10 @@ namespace Savage_Hotel_System.Views
             this.Hide();
             busca.Show();
         }
+
+        private void Quarto_Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Main.Show();
+        }
     }
 }

@@ -38,13 +38,12 @@ namespace Savage_Hotel_System.Views
             this.Validate();
             //this.quartoBindingSource.EndEdit();
             //this.tableAdapterManager.UpdateAll(this.quarto);
-
         }
 
-       
 
-        private void Reserva_Cadastro_Load(object sender, EventArgs e)
+        private void Reserva_IncluirCliente_Load(object sender, EventArgs e)
         {
+            //inicializaAutoCompletar(DataBase.tableCliente);
             inicializaAutoCompletar(DataBase.tableCliente);
             // TODO: This line of code loads data into the 'dataSetCliente.Cliente' table. You can move, or remove it, as needed.
             //this.clienteTableAdapter.Fill(this.dataSetCliente.Cliente);
@@ -58,15 +57,8 @@ namespace Savage_Hotel_System.Views
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            //Buscar pelo CPF
-            if (radioButtonCPF.Checked == true)
-            {
-                this.clienteTableAdapter.Busca_CPF(this.dataSetCliente.Cliente, textBoxBusca.Text);
-
-            }else if(radioButtonNome.Checked)
-            {
-                this.clienteTableAdapter.Busca_Nome(this.dataSetCliente.Cliente,textBoxBusca.Text);
-            }
+            //Buscar pelo Nome ou Pelo CPF
+            this.clienteTableAdapter.Busca_NOMEouCPF(this.dataSetCliente.Cliente, textBoxBusca.Text);
 
             //Conta quantas linhas estão na GridView
             quantidadeItensNaGridView = clienteDataGridView.Rows.Count;
@@ -140,6 +132,9 @@ namespace Savage_Hotel_System.Views
             mostrarInfos();
         }
 
+
+
+/////// Métodos para o autocompletar
         private void inicializaAutoCompletar(String tabela)
         {
 
@@ -157,8 +152,6 @@ namespace Savage_Hotel_System.Views
             columnsName.Add("CPF");
             columnsNameExibicao.Add("CPF");
 
-
-
             //add cada dado da busca a lista do autocompletar que sera exibida no textBox
             while (dataReader.Read())
             {
@@ -174,9 +167,27 @@ namespace Savage_Hotel_System.Views
 
             //faz o link do campo de busca com a lista de sugestoes/autocompletar
             textBoxBusca.AutoCompleteCustomSource = result;
+        }
+/////// Métodos para o autocompletar
 
+/////// Método para cadastrar um novo cliente
+        private void buttonCadastrarCliente_Click(object sender, EventArgs e)
+        {
+            Form CadastrarCliente = new Cli_Cad(this);
+            CadastrarCliente.ShowDialog();
+        }
+/////// Método para cadastrar um novo cliente
+
+/////// Método para recarregar para mudanças
+        public void refresh() {
+            inicializaAutoCompletar(DataBase.tableCliente);
         }
 
-       
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+        /////// Método para recarregar para mudanças
+
     }
 }

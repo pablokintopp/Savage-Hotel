@@ -19,7 +19,7 @@ namespace Savage_Hotel_System.Class
             //Verifica Telefone
             //Se tudo estiver ok, retorna 0
             //Caso contrário retorna 1
-            //Se o tamanho da entrada for diferente de 10 retorna 2 (Casas incompletas ou maior que a necessária)
+            //Se o tamanho da entrada for diferente de 10 ou 11 retornar 2 (Casas incompletas ou maior que a necessária)
             int tam = entrada.Length;
             for (int i = 0; i < tam; i++)
             {
@@ -34,7 +34,7 @@ namespace Savage_Hotel_System.Class
                     return 1;
                 }
             }
-            if (tam != 10)
+            if (tam < 10 || tam > 11)
             {
                 return 2;
             }

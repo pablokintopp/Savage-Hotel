@@ -131,6 +131,7 @@
             this.Name = "Quarto_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Savage Hotel - Menu do Quarto";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Quarto_Menu_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

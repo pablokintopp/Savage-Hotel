@@ -46,9 +46,18 @@ namespace Savage_Hotel_System.Views
             // TODO: This line of code loads data into the 'dataSetFornecedor.Fornecedor' table. You can move, or remove it, as needed.
             //this.fornecedorTableAdapter.Fill(this.dataSetFornecedor.Fornecedor);
 
+            inicializaAutoCompletar(DataBase.tableFornecedor);
+
+        }
+
+
+/////// Métodos para o autocompletar
+        private void inicializaAutoCompletar(String tabela)
+        {
+
             //busca todas informacoes relevantes e armazena num array
             //este array sera usado pra sugerir e autopletar dados no campo de busca
-            String queryString = "Select * from " + DataBase.tableFornecedor;
+            String queryString = "Select * from " + tabela;
             SqlDataReader dataReader = DataBase.SqlCommand(queryString, null, null);
             result = new AutoCompleteStringCollection();
 
@@ -61,8 +70,6 @@ namespace Savage_Hotel_System.Views
             columnsNameExibicao.Add("CNPJ");
             columnsName.Add("Phone");
             columnsNameExibicao.Add("Phone");
-            
-
 
             //add cada dado da busca a lista do autocompletar que sera exibida no textBox
             while (dataReader.Read())
@@ -71,7 +78,7 @@ namespace Savage_Hotel_System.Views
                 foreach (String colName in columnsName)
                 {
                     result.Add(Convert.ToString(dataReader[colName]));
-                    
+
                 }
 
             }
@@ -79,8 +86,8 @@ namespace Savage_Hotel_System.Views
 
             //faz o link do campo de busca com a lista de sugestoes/autocompletar
             textBoxBusca.AutoCompleteCustomSource = result;
-
         }
+/////// Métodos para o autocompletar
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -90,84 +97,14 @@ namespace Savage_Hotel_System.Views
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            //Buscar pelo Nome do FOrnecedor
-            if (radioButtonNome.Checked == true)
-            {
-                this.fornecedorTableAdapter.Busca_Nome(this.dataSetFornecedor.Fornecedor, textBoxBusca.Text);
-            }
-
-            //Buscar pelo CNPJ dos Fornecedores
-            if (radioButtonCNPJ.Checked == true)
-            {
-                this.fornecedorTableAdapter.Busca_CNPJ(this.dataSetFornecedor.Fornecedor, textBoxBusca.Text);
-            }
-
-            //busca por qualquer campo
-            if(radioButtonAny.Checked == true)
-            {
-                buscaQualquerCampo();
-
-            }
+            //Buscar pelo Nome ou Pelo Telefone ou Pelo CNPJ do Fornecedor
+            this.fornecedorTableAdapter.Busca_NOMEouCNPJouTELEFONE(this.dataSetFornecedor.Fornecedor, textBoxBusca.Text);
 
             //Conta quantas linhas estão na GridView
             quantidadeItensNaGridView = fornecedorDataGridView.Rows.Count;
             label3.Text = "Quantidade de Intens Econtrados ";
             label3.Text += quantidadeItensNaGridView.ToString();
             mostrarInfos();
-
-        }
-
-        public void buscaQualquerCampo()
-        {
-            if (textBoxBusca.Text.Length > 2)
-            {
-                
-                String value = textBoxBusca.Text.Trim();
-                value = "%" + value + "%";
-
-                String queryString = "Select Id as Id";
-
-                List<String> parNames = new List<String>();
-                List<Object> parValues = new List<Object>();
-
-                //monta e executa as consultas para cada coluna que devera ser pesquisada
-                for (int i = 0; i < columnsName.Count; i++)
-                {
-                    queryString += " , " + columnsName[i] + " as " + columnsNameExibicao[i];
-
-                }
-
-                queryString += " from " + DataBase.tableFornecedor + " where ";
-                
-                for (int i = 0; i < columnsName.Count; i++)
-                {
-                    if (i > 0)
-                    {
-                        queryString += " or UPPER(" + columnsName[i] + ") like UPPER(@" + columnsName[i] + ")";
-                    }
-                    else
-                    {
-                        queryString += "UPPER(" + columnsName[i] + ") like UPPER(@" + columnsName[i] + ")";
-
-                    }
-                    parNames.Add("@" + columnsName[i]);
-                    parValues.Add(value);
-
-                }
-                SqlDataReader reader = DataBase.SqlCommand(queryString, parNames, parValues);
-
-                //Add resultado da busca ao datagridview
-                DataTable dt = new DataTable();
-                dt.Load(reader);
-                fornecedorDataGridView.AutoGenerateColumns = false;
-                fornecedorDataGridView.DataSource = dt;
-                fornecedorDataGridView.Refresh();
-
-
-
-                reader.Close();
-
-            }           
 
         }
 
