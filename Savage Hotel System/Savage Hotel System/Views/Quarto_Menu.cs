@@ -12,22 +12,22 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Quarto_Menu : Form
     {
-        private MenuMain Main;
+        private MenuMain JanelaMenuMain;
 
         public Quarto_Menu()
         {
             InitializeComponent();
         }
 
-        public Quarto_Menu(MenuMain MenuMain)
+        public Quarto_Menu(MenuMain Janela)
         {
             InitializeComponent();
-            this.Main = MenuMain;
+            this.JanelaMenuMain = Janela;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Main.Show();
+            JanelaMenuMain.Show();
             this.Close();
         }
 
@@ -54,7 +54,7 @@ namespace Savage_Hotel_System.Views
 
         private void Quarto_Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Main.Show();
+            JanelaMenuMain.Show();
         }
     }
 }

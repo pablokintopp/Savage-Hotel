@@ -14,7 +14,7 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Fornecedor_Cadastro : Form
     {
-        private Fornecedor_Menu JanelaAnterior;
+        private Fornecedor_Menu JanelaFornecedorMenu;
 
         public Fornecedor_Cadastro()
         {
@@ -24,13 +24,13 @@ namespace Savage_Hotel_System.Views
         public Fornecedor_Cadastro(Fornecedor_Menu Janela)
         {
             InitializeComponent();
-            this.JanelaAnterior = Janela;
+            this.JanelaFornecedorMenu = Janela;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
-            JanelaAnterior.Show();
+            JanelaFornecedorMenu.Show();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -122,7 +122,7 @@ namespace Savage_Hotel_System.Views
                 {
                     MessageBox.Show("Inserido com Sucesso!");
                     this.Close();
-                    JanelaAnterior.Show();
+                    JanelaFornecedorMenu.Show();
                 }
                 else
                 {
@@ -172,5 +172,9 @@ namespace Savage_Hotel_System.Views
 
         }
 
+        private void Fornecedor_Cadastro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaFornecedorMenu.Show();
+        }
     }
 }

@@ -18,21 +18,21 @@ namespace Savage_Hotel_System.Views
         private int IDQuarto = -1;
         private int IDCliente = -1;
         private int disponibilidade = -1;
-        private Reserva_Menu MenuReserva;
+        private Reserva_Menu JanelaMenuReserva;
         public Reserva_Cadastro()
         {
             InitializeComponent();
         }
 
-        public Reserva_Cadastro(Reserva_Menu MenuReserva)
+        public Reserva_Cadastro(Reserva_Menu Janela)
         {
             InitializeComponent();
-            this.MenuReserva = MenuReserva;
+            this.JanelaMenuReserva = Janela;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            MenuReserva.Show();
+            JanelaMenuReserva.Show();
             this.Close();
         }
         public void DefinirIDQuarto(int newIDQuarto)
@@ -120,7 +120,7 @@ namespace Savage_Hotel_System.Views
                         {
                             MessageBox.Show("Inserido com Sucesso!");
                             this.Close();
-                            this.MenuReserva.Show();
+                            this.JanelaMenuReserva.Show();
                         }
                         else
                         {
@@ -242,6 +242,11 @@ namespace Savage_Hotel_System.Views
             {
                 label5.Text = "Adicione um Cliente a Reserva";
             }
+        }
+
+        private void Reserva_Cadastro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaMenuReserva.Show();
         }
     }
 }

@@ -12,23 +12,23 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Cli_Menu : Form
     {
-        private MenuMain Main;
+        private MenuMain JanelaMenuMain;
 
         public Cli_Menu()
         {
             InitializeComponent();
         }
 
-        public Cli_Menu(MenuMain MenuMain)
+        public Cli_Menu(MenuMain Janela)
         {
             InitializeComponent();
-            this.Main = MenuMain;
+            this.JanelaMenuMain = Janela;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Main.Show();
             this.Close();
+            JanelaMenuMain.Show();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace Savage_Hotel_System.Views
 
         private void Cli_Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Main.Show();
+            JanelaMenuMain.Show();
         }
     }
 }

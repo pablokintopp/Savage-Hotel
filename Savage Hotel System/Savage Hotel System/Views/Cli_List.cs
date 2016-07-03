@@ -14,7 +14,7 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Cli_List : Form
     {
-        private Cli_Menu cli_Menu;
+        private Cli_Menu JanelaClienteMenu;
         private string valorQuandoEntrou;
         private List<DataGridViewCell> errorCells;
         private List<DataGridViewCell> changedCells;
@@ -26,17 +26,17 @@ namespace Savage_Hotel_System.Views
             InitializeComponent();
         }
 
-        public Cli_List(Cli_Menu cli_menu)
+        public Cli_List(Cli_Menu Janela)
         {
             InitializeComponent();
-            this.cli_Menu = cli_menu;
+            this.JanelaClienteMenu = Janela;
             this.idSelected = 0;
         }
 
-        public Cli_List(Cli_Menu cli_menu, int idSelected)
+        public Cli_List(Cli_Menu Janela, int idSelected)
         {
             InitializeComponent();
-            this.cli_Menu = cli_menu;
+            this.JanelaClienteMenu = Janela;
             this.idSelected = idSelected;
         }
 
@@ -85,7 +85,7 @@ namespace Savage_Hotel_System.Views
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
-            cli_Menu.Show();
+            JanelaClienteMenu.Show();
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -378,6 +378,11 @@ namespace Savage_Hotel_System.Views
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Cli_List_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaClienteMenu.Show();
         }
     }
 }

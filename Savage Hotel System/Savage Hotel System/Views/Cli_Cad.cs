@@ -14,7 +14,7 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Cli_Cad : Form
     {
-        private Cli_Menu JanelaAnteriorMenuCliente = null;
+        private Cli_Menu JanelaClienteMenu = null;
         private Reserva_IncluirCliente JanelaAnteriorReserva = null;
 
         public Cli_Cad()
@@ -25,13 +25,13 @@ namespace Savage_Hotel_System.Views
         public Cli_Cad(Cli_Menu Janela)
         {
             InitializeComponent();
-            this.JanelaAnteriorMenuCliente = Janela;
+            this.JanelaClienteMenu = Janela;
         }
 
-        public Cli_Cad(Reserva_IncluirCliente NewReserva)
+        public Cli_Cad(Reserva_IncluirCliente Janela)
         {
             InitializeComponent();
-            this.JanelaAnteriorReserva = NewReserva;
+            this.JanelaAnteriorReserva = Janela;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -172,9 +172,9 @@ namespace Savage_Hotel_System.Views
             }
             else
             {
-                if (JanelaAnteriorMenuCliente != null)
+                if (JanelaClienteMenu != null)
                 {
-                    JanelaAnteriorMenuCliente.Show();
+                    JanelaClienteMenu.Show();
                 }
             }
         }
@@ -224,5 +224,9 @@ namespace Savage_Hotel_System.Views
 
         }
 
+        private void Cli_Cad_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaClienteMenu.Show();
+        }
     }
 }

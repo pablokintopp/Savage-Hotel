@@ -14,7 +14,7 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Quarto_Cadastro : Form
     {
-        private Quarto_Menu JanelaAnterior;
+        private Quarto_Menu JanelaQuartoMenu;
         private int QuantidadeDeQuartosCadastrados = 0;
 
         public Quarto_Cadastro()
@@ -25,13 +25,13 @@ namespace Savage_Hotel_System.Views
         public Quarto_Cadastro(Quarto_Menu Janela)
         {
             InitializeComponent();
-            this.JanelaAnterior = Janela;
+            this.JanelaQuartoMenu = Janela;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
-            JanelaAnterior.Show();
+            JanelaQuartoMenu.Show();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -132,7 +132,7 @@ namespace Savage_Hotel_System.Views
                 {
                     MessageBox.Show("Inserido com Sucesso!");
                     this.Close();
-                    JanelaAnterior.Show();
+                    JanelaQuartoMenu.Show();
                 }
                 else
                 {
@@ -207,6 +207,11 @@ namespace Savage_Hotel_System.Views
             this.quartoBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.quarto);
 
+        }
+
+        private void Quarto_Cadastro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaQuartoMenu.Show();
         }
     }
 }

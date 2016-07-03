@@ -14,7 +14,7 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Quarto_Busca : Form
     {
-        private Quarto_Menu menu;
+        private Quarto_Menu JanelaQuartoMenu;
         private int idSelected = 0;
         //resultado da pre-pesquisa
         private AutoCompleteStringCollection result;
@@ -28,10 +28,10 @@ namespace Savage_Hotel_System.Views
             InitializeComponent();
         }
 
-        public Quarto_Busca(Quarto_Menu quarto_Menu)
+        public Quarto_Busca(Quarto_Menu Janela)
         {
             InitializeComponent();
-            this.menu = quarto_Menu;
+            this.JanelaQuartoMenu = Janela;
         }
 
         private void Quarto_Busca_Load(object sender, EventArgs e)
@@ -145,14 +145,14 @@ namespace Savage_Hotel_System.Views
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            menu.Show();
+            JanelaQuartoMenu.Show();
         }
 
         private void buttonGoToList_Click(object sender, EventArgs e)
         {
             DataGridViewCell selected = dataGridView1.SelectedCells[0];
             idSelected = Convert.ToInt32(dataGridView1.Rows[selected.RowIndex].Cells[0].Value);
-            Quarto_List lista = new Quarto_List(menu, idSelected);
+            Quarto_List lista = new Quarto_List(JanelaQuartoMenu, idSelected);
             lista.Show();
             this.Hide();
         }
@@ -162,6 +162,11 @@ namespace Savage_Hotel_System.Views
 
             button1.Visible = true;
 
+        }
+
+        private void Quarto_Busca_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaQuartoMenu.Show();
         }
     }
 }

@@ -19,17 +19,17 @@ namespace Savage_Hotel_System.Views
         //colunas a serem pre-pesquisadas
         private List<String> columnsName;
         private List<String> columnsNameExibicao;
-        private Reserva_Menu menu;
+        private Reserva_Menu JanelaReservaMenu;
 
         public Reserva_Pedidos_Lista()
         {
             InitializeComponent();
         }
 
-        public Reserva_Pedidos_Lista(Reserva_Menu reserva_Menu)
+        public Reserva_Pedidos_Lista(Reserva_Menu Janela)
         {
             InitializeComponent();
-            this.menu = reserva_Menu;
+            this.JanelaReservaMenu = Janela;
         }
 
         private void Reserva_Pedidos_Lista_Load(object sender, EventArgs e)
@@ -161,7 +161,12 @@ namespace Savage_Hotel_System.Views
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            menu.Show();
+            JanelaReservaMenu.Show();
+        }
+
+        private void Reserva_Pedidos_Lista_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaReservaMenu.Show();
         }
     }
 }

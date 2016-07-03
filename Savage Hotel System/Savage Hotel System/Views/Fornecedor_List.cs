@@ -14,7 +14,7 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Fornecedor_List : Form
     {
-        private Fornecedor_Menu fornecedor_Menu;
+        private Fornecedor_Menu JanelaFornecedorMenu;
         private string valorQuandoEntrou;
         private List<DataGridViewCell> errorCells;
         private List<DataGridViewCell> changedCells;
@@ -25,10 +25,10 @@ namespace Savage_Hotel_System.Views
             InitializeComponent();
         }
 
-        public Fornecedor_List(Fornecedor_Menu fornecedor_Menu)
+        public Fornecedor_List(Fornecedor_Menu Janela)
         {
             InitializeComponent();
-            this.fornecedor_Menu = fornecedor_Menu;
+            this.JanelaFornecedorMenu = Janela;
         }
 
         public Fornecedor_List(Fornecedor_Menu fornecedor_Menu, int idSelected) : this(fornecedor_Menu)
@@ -80,7 +80,7 @@ namespace Savage_Hotel_System.Views
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
-            fornecedor_Menu.Show();
+            JanelaFornecedorMenu.Show();
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -353,6 +353,11 @@ namespace Savage_Hotel_System.Views
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             //dataGridView1[e.ColumnIndex, e.RowIndex].Style.ForeColor = Color.Red; 
+        }
+
+        private void Fornecedor_List_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaFornecedorMenu.Show();
         }
     }
 }

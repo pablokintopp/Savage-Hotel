@@ -14,8 +14,8 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Func_Busc : Form
     {
-        private Func_Menu func_Menu;
-        private Func_List func_List;
+        private Func_Menu JanelaFuncMenu;
+        private Func_List JanelaFuncList;
         private int idSelected = 0;
         //resultado da pre-pesquisa
         private AutoCompleteStringCollection result;
@@ -27,10 +27,10 @@ namespace Savage_Hotel_System.Views
         {
             InitializeComponent();
         }
-        public Func_Busc(Func_Menu menu)
+        public Func_Busc(Func_Menu Janela)
         {
             InitializeComponent();
-            this.func_Menu = menu;
+            this.JanelaFuncMenu = Janela;
 
         }
 
@@ -151,15 +151,15 @@ namespace Savage_Hotel_System.Views
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            func_Menu.Show();
+            JanelaFuncMenu.Show();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             DataGridViewCell selected = dataGridView1.SelectedCells[0];
             idSelected = Convert.ToInt32(dataGridView1.Rows[selected.RowIndex].Cells[0].Value);
-            func_List = new Func_List(func_Menu, idSelected);
-            func_List.Show();
+            JanelaFuncList = new Func_List(JanelaFuncMenu, idSelected);
+            JanelaFuncList.Show();
             this.Hide();
         }
 
@@ -168,6 +168,11 @@ namespace Savage_Hotel_System.Views
             
             button1.Visible = true;
             
+        }
+
+        private void Func_Busc_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaFuncMenu.Show();
         }
     }
 }

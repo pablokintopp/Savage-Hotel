@@ -20,17 +20,17 @@ namespace Savage_Hotel_System.Views
         private List<String> columnsName;
         private List<String> columnsNameExibicao;
 
-        private Produto_Cadastro Cadastro;
+        private Produto_Cadastro JanelaProdutoCadastro;
         int quantidadeItensNaGridView = 0;
         public Produto_Cadastro_BuscaFornecedor()
         {
             InitializeComponent();
         }
 
-        public Produto_Cadastro_BuscaFornecedor(Produto_Cadastro NewCadastro)
+        public Produto_Cadastro_BuscaFornecedor(Produto_Cadastro Janela)
         {
             InitializeComponent();
-            this.Cadastro = NewCadastro;
+            this.JanelaProdutoCadastro = Janela;
         }
 
         private void quartoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Cadastro.Show();
+            JanelaProdutoCadastro.Show();
             this.Close();
         }
 
@@ -162,9 +162,9 @@ namespace Savage_Hotel_System.Views
                 label2.Text = ID.ToString();
 
                 {
-                    Cadastro.definirID(ID);
-                    Cadastro.refresh();
-                    Cadastro.Show();
+                    JanelaProdutoCadastro.definirID(ID);
+                    JanelaProdutoCadastro.refresh();
+                    JanelaProdutoCadastro.Show();
                     this.Close();
                 }
 
@@ -193,6 +193,11 @@ namespace Savage_Hotel_System.Views
         private void fornecedorDataGridView_KeyDown(object sender, KeyEventArgs e)
         {
             mostrarInfos();
+        }
+
+        private void Produto_Cadastro_BuscaFornecedor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaProdutoCadastro.Show();
         }
     }
 }

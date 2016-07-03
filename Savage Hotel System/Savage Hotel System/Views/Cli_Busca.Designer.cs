@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cli_Busca));
             this.labelErros = new System.Windows.Forms.Label();
             this.labelTip = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
@@ -45,7 +46,7 @@
             this.labelErros.AutoSize = true;
             this.labelErros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelErros.ForeColor = System.Drawing.Color.Red;
-            this.labelErros.Location = new System.Drawing.Point(99, 125);
+            this.labelErros.Location = new System.Drawing.Point(12, 122);
             this.labelErros.Name = "labelErros";
             this.labelErros.Size = new System.Drawing.Size(237, 13);
             this.labelErros.TabIndex = 17;
@@ -77,35 +78,41 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(102, 145);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 145);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(567, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(740, 170);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // textBoxSearch
             // 
+            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBoxSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBoxSearch.CausesValidation = false;
             this.textBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.textBoxSearch.Location = new System.Drawing.Point(100, 94);
+            this.textBoxSearch.Location = new System.Drawing.Point(11, 90);
             this.textBoxSearch.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearch.MaxLength = 200;
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(429, 30);
+            this.textBoxSearch.Size = new System.Drawing.Size(617, 30);
             this.textBoxSearch.TabIndex = 11;
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button1.Image = global::Savage_Hotel_System.Properties.Resources.edit;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(100, 299);
+            this.button1.Location = new System.Drawing.Point(11, 318);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(4);
@@ -114,15 +121,15 @@
             this.button1.Text = "Ver na lista de edição";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.buttonGoToList_Click);
             // 
             // buttonSearch
             // 
+            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.buttonSearch.Image = global::Savage_Hotel_System.Properties.Resources.search1;
             this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonSearch.Location = new System.Drawing.Point(548, 82);
+            this.buttonSearch.Location = new System.Drawing.Point(632, 79);
             this.buttonSearch.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Padding = new System.Windows.Forms.Padding(4);
@@ -135,9 +142,10 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(622, 320);
+            this.pictureBox1.Location = new System.Drawing.Point(719, 339);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 14;
@@ -148,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 381);
+            this.ClientSize = new System.Drawing.Size(763, 383);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelErros);
             this.Controls.Add(this.labelTip);
@@ -157,8 +165,11 @@
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBoxSearch);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Cli_Busca";
-            this.Text = "Cli_Busca";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Savage Hotel - Buscar Clientes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Cli_Busca_FormClosing);
             this.Load += new System.EventHandler(this.Cli_Busca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

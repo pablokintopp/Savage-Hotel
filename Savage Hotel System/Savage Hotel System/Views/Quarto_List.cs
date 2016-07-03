@@ -14,7 +14,7 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Quarto_List : Form
     {
-        private Quarto_Menu MenuQuarto;
+        private Quarto_Menu JanelaQuartoMenu;
         private List<DataGridViewCell> errorCells;
         private List<DataGridViewCell> changedCells;
         private string valorQuandoEntrou;
@@ -25,10 +25,10 @@ namespace Savage_Hotel_System.Views
             InitializeComponent();
         }
 
-        public Quarto_List(Quarto_Menu Menu)
+        public Quarto_List(Quarto_Menu Janela)
         {
             InitializeComponent();
-            this.MenuQuarto = Menu;
+            this.JanelaQuartoMenu = Janela;
         }
 
         public Quarto_List(Quarto_Menu Menu, int idSelected) : this(Menu)
@@ -83,7 +83,7 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            MenuQuarto.Show();
+            JanelaQuartoMenu.Show();
             this.Close();
         }
 
@@ -368,6 +368,11 @@ namespace Savage_Hotel_System.Views
         private void quartoBindingSource_DataError(object sender, BindingManagerDataErrorEventArgs e)
         {
 
+        }
+
+        private void Quarto_List_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaQuartoMenu.Show();
         }
     }
 }

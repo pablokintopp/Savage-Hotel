@@ -14,7 +14,7 @@ namespace Savage_Hotel_System.Views
 {
     public partial class MenuMain : Form
     {
-        private formLogin formLogin;
+        private formLogin JanelaLogin;
         private Employee user;
 
         public MenuMain()
@@ -22,10 +22,10 @@ namespace Savage_Hotel_System.Views
             InitializeComponent();
         }
 
-        public MenuMain(formLogin formLogin, Employee user)
+        public MenuMain(formLogin Janela, Employee user)
         {
             InitializeComponent();
-            this.formLogin = formLogin;
+            this.JanelaLogin = Janela;
             this.user = user;
 
             
@@ -38,7 +38,7 @@ namespace Savage_Hotel_System.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            formLogin.Show();
+            JanelaLogin.Show();
             this.Close();
         }
 
@@ -101,13 +101,6 @@ namespace Savage_Hotel_System.Views
                 {
                     MessageBox.Show("Você não tem permissão para acessar este menu");
                 }
-}
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            Form Quarto = new Quarto_Menu(this);
-            this.Hide();
-            Quarto.Show();
         }
 
         private void iconReserve_Click(object sender, EventArgs e)
@@ -129,6 +122,13 @@ namespace Savage_Hotel_System.Views
 
                 MessageBox.Show("Você não tem permissão para acessar este menu");
             }
+        }
+
+        private void QuartoBox4_Click(object sender, EventArgs e)
+        {
+            Form Quarto = new Quarto_Menu(this);
+            this.Hide();
+            Quarto.Show();
         }
     }
 }

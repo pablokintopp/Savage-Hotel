@@ -14,7 +14,7 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Produto_Pedido : Form
     {
-        private Produto_Menu produto_Menu;
+        private Produto_Menu JanelaProdutoMenu;
         private int idProduto = -1;
         private int idFornecedor = -1;       
         private int quantidade = 1;
@@ -26,10 +26,10 @@ namespace Savage_Hotel_System.Views
             InitializeComponent();
         }
 
-        public Produto_Pedido(Produto_Menu produto_Menu)
+        public Produto_Pedido(Produto_Menu Janela)
         {
             InitializeComponent();
-            this.produto_Menu = produto_Menu;
+            this.JanelaProdutoMenu = Janela;
         }
 
         private void Produto_Pedido_Load(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            produto_Menu.Show();
+            JanelaProdutoMenu.Show();
             this.Hide();
         }
 
@@ -121,6 +121,11 @@ namespace Savage_Hotel_System.Views
         private void produtoGridView_SelectionChanged(object sender, EventArgs e)
         {
             updateProdutoSelecionado();
+        }
+
+        private void Produto_Pedido_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaProdutoMenu.Show();
         }
     }
 }

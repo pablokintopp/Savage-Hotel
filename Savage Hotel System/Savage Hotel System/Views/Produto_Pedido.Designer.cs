@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Produto_Pedido));
             this.pedidosGridView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produtoIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -271,9 +272,10 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(640, 545);
+            this.pictureBox1.Location = new System.Drawing.Point(780, 545);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 44;
@@ -421,8 +423,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelInfo);
             this.Controls.Add(this.produtoGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Produto_Pedido";
-            this.Text = "Produto_Pedido";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Savage Hotel - Pedido de Produtos de Fornecedores";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Produto_Pedido_FormClosing);
             this.Load += new System.EventHandler(this.Produto_Pedido_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pedidosGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoProdutoBindingSource)).EndInit();

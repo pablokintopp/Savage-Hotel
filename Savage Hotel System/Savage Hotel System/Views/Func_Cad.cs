@@ -14,7 +14,7 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Func_Cad : Form
     {
-        private Func_Menu JanelaAnterior;
+        private Func_Menu JanelaFuncMenu;
 
         public Func_Cad()
         {
@@ -24,13 +24,13 @@ namespace Savage_Hotel_System.Views
         public Func_Cad(Func_Menu Janela)
         {
             InitializeComponent();
-            this.JanelaAnterior = Janela;
+            this.JanelaFuncMenu = Janela;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
-            JanelaAnterior.Show();
+            JanelaFuncMenu.Show();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -213,7 +213,7 @@ namespace Savage_Hotel_System.Views
                 if (InserirBanco(gerente) > 0) {
                     MessageBox.Show("Inserido com Sucesso!");
                     this.Close();
-                    this.JanelaAnterior.Show();
+                    this.JanelaFuncMenu.Show();
                 }
                 else
                 {
@@ -292,5 +292,9 @@ namespace Savage_Hotel_System.Views
 
         }
 
+        private void Func_Cad_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaFuncMenu.Show();
+        }
     }
 }

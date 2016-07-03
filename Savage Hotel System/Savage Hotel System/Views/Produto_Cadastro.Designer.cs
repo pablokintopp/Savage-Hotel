@@ -72,6 +72,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
             this.pictureBox1.Location = new System.Drawing.Point(612, 381);
@@ -269,6 +270,7 @@
             this.Name = "Produto_Cadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Savage Hotel - Cadastro de Produto";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Produto_Cadastro_FormClosing);
             this.Load += new System.EventHandler(this.Reserva_Menu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

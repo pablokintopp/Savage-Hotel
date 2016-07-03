@@ -21,17 +21,17 @@ namespace Savage_Hotel_System.Views
         private List<String> columnsName;
         private List<String> columnsNameExibicao;
 
-        private Produto_Menu menu;
+        private Produto_Menu JanelaProdutoMenu;
 
         public Produto_Busca()
         {
             InitializeComponent();
         }
 
-        public Produto_Busca(Produto_Menu prodMenu)
+        public Produto_Busca(Produto_Menu Janela)
         {
             InitializeComponent();
-            this.menu = prodMenu;
+            this.JanelaProdutoMenu = Janela;
         }
 
         private void Produto_Busca_Load(object sender, EventArgs e)
@@ -159,15 +159,15 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            menu.Show();
+            this.Close();
+            JanelaProdutoMenu.Show();
         }
 
         private void buttonGoToList_Click(object sender, EventArgs e)
         {
             DataGridViewCell selected = dataGridView1.SelectedCells[0];
             idSelected = Convert.ToInt32(dataGridView1.Rows[selected.RowIndex].Cells[0].Value);
-            Produto_List lista = new Produto_List(menu, idSelected);
+            Produto_List lista = new Produto_List(JanelaProdutoMenu, idSelected);
             lista.Show();
             this.Hide();
         }
@@ -177,6 +177,11 @@ namespace Savage_Hotel_System.Views
 
             button1.Visible = true;
 
+        }
+
+        private void Produto_Busca_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaProdutoMenu.Show();
         }
     }
 }

@@ -20,17 +20,17 @@ namespace Savage_Hotel_System.Views
         private List<String> columnsName;
         private List<String> columnsNameExibicao;
 
-        private Reserva_Cadastro CadastroReserva;
+        private Reserva_Cadastro JanelaReservaCadastro;
         int quantidadeItensNaGridView = 0;
         public Reserva_IncluirQuarto()
         {
             InitializeComponent();
         }
 
-        public Reserva_IncluirQuarto(Reserva_Cadastro CadastroReserva)
+        public Reserva_IncluirQuarto(Reserva_Cadastro Janela)
         {
             InitializeComponent();
-            this.CadastroReserva = CadastroReserva;
+            this.JanelaReservaCadastro = Janela;
         }
 
         private void quartoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            CadastroReserva.Show();
+            JanelaReservaCadastro.Show();
             this.Close();
         }
 
@@ -129,9 +129,9 @@ namespace Savage_Hotel_System.Views
                 IDQuarto = Convert.ToInt16(quartoDataGridView.Rows[linha].Cells[0].Value);
                 label2.Text = IDQuarto.ToString();
 
-                CadastroReserva.DefinirIDQuarto(IDQuarto);
-                CadastroReserva.refresh();
-                CadastroReserva.Show();
+                JanelaReservaCadastro.DefinirIDQuarto(IDQuarto);
+                JanelaReservaCadastro.refresh();
+                JanelaReservaCadastro.Show();
                 this.Close();
             }
 
@@ -180,6 +180,11 @@ namespace Savage_Hotel_System.Views
             //faz o link do campo de busca com a lista de sugestoes/autocompletar
             textBoxBusca.AutoCompleteCustomSource = result;
 
+        }
+
+        private void Reserva_IncluirQuarto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaReservaCadastro.Show();
         }
     }
 }

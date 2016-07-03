@@ -46,6 +46,12 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.quartoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.quartoDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBoxBusca = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.radioButtonNumeroQuarto = new System.Windows.Forms.RadioButton();
@@ -58,12 +64,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Selecionarbutton = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.quartoBindingNavigator)).BeginInit();
             this.quartoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quartoBindingSource)).BeginInit();
@@ -99,7 +99,7 @@
             this.quartoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.quartoBindingNavigator.Name = "quartoBindingNavigator";
             this.quartoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.quartoBindingNavigator.Size = new System.Drawing.Size(889, 31);
+            this.quartoBindingNavigator.Size = new System.Drawing.Size(667, 25);
             this.quartoBindingNavigator.TabIndex = 0;
             this.quartoBindingNavigator.Text = "bindingNavigator1";
             this.quartoBindingNavigator.Visible = false;
@@ -110,7 +110,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // quartoBindingSource
@@ -126,7 +126,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 28);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -136,7 +136,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 28);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -145,7 +145,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 28);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 22);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -154,27 +154,27 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 28);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 22);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -182,7 +182,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 28);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -191,20 +191,20 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 28);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // quartoBindingNavigatorSaveItem
             // 
             this.quartoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.quartoBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("quartoBindingNavigatorSaveItem.Image")));
             this.quartoBindingNavigatorSaveItem.Name = "quartoBindingNavigatorSaveItem";
-            this.quartoBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 28);
+            this.quartoBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 22);
             this.quartoBindingNavigatorSaveItem.Text = "Save Data";
             this.quartoBindingNavigatorSaveItem.Click += new System.EventHandler(this.quartoBindingNavigatorSaveItem_Click);
             // 
@@ -224,137 +224,16 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.quartoDataGridView.DataSource = this.quartoBindingSource;
-            this.quartoDataGridView.Location = new System.Drawing.Point(16, 186);
-            this.quartoDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quartoDataGridView.Location = new System.Drawing.Point(12, 130);
             this.quartoDataGridView.MultiSelect = false;
             this.quartoDataGridView.Name = "quartoDataGridView";
             this.quartoDataGridView.ReadOnly = true;
             this.quartoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.quartoDataGridView.Size = new System.Drawing.Size(907, 271);
+            this.quartoDataGridView.Size = new System.Drawing.Size(680, 220);
             this.quartoDataGridView.TabIndex = 0;
             this.quartoDataGridView.Click += new System.EventHandler(this.quartoDataGridView_Click);
             this.quartoDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.quartoDataGridView_KeyDown);
             this.quartoDataGridView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.quartoDataGridView_KeyUp);
-            // 
-            // textBoxBusca
-            // 
-            this.textBoxBusca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBoxBusca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBoxBusca.Location = new System.Drawing.Point(16, 128);
-            this.textBoxBusca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxBusca.Name = "textBoxBusca";
-            this.textBoxBusca.Size = new System.Drawing.Size(132, 22);
-            this.textBoxBusca.TabIndex = 2;
-            // 
-            // buttonBuscar
-            // 
-            this.buttonBuscar.Location = new System.Drawing.Point(157, 124);
-            this.buttonBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(100, 28);
-            this.buttonBuscar.TabIndex = 3;
-            this.buttonBuscar.Text = "Buscar";
-            this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
-            // 
-            // radioButtonNumeroQuarto
-            // 
-            this.radioButtonNumeroQuarto.AutoSize = true;
-            this.radioButtonNumeroQuarto.Location = new System.Drawing.Point(16, 15);
-            this.radioButtonNumeroQuarto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.radioButtonNumeroQuarto.Name = "radioButtonNumeroQuarto";
-            this.radioButtonNumeroQuarto.Size = new System.Drawing.Size(147, 21);
-            this.radioButtonNumeroQuarto.TabIndex = 4;
-            this.radioButtonNumeroQuarto.TabStop = true;
-            this.radioButtonNumeroQuarto.Text = "Numero do Quarto";
-            this.radioButtonNumeroQuarto.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonQuantidadeCamaSolteiro
-            // 
-            this.radioButtonQuantidadeCamaSolteiro.AutoSize = true;
-            this.radioButtonQuantidadeCamaSolteiro.Location = new System.Drawing.Point(16, 43);
-            this.radioButtonQuantidadeCamaSolteiro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.radioButtonQuantidadeCamaSolteiro.Name = "radioButtonQuantidadeCamaSolteiro";
-            this.radioButtonQuantidadeCamaSolteiro.Size = new System.Drawing.Size(195, 21);
-            this.radioButtonQuantidadeCamaSolteiro.TabIndex = 5;
-            this.radioButtonQuantidadeCamaSolteiro.TabStop = true;
-            this.radioButtonQuantidadeCamaSolteiro.Text = "Quantidade Cama Solteiro";
-            this.radioButtonQuantidadeCamaSolteiro.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonQuantidadeCamaCasal
-            // 
-            this.radioButtonQuantidadeCamaCasal.AutoSize = true;
-            this.radioButtonQuantidadeCamaCasal.Location = new System.Drawing.Point(17, 73);
-            this.radioButtonQuantidadeCamaCasal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.radioButtonQuantidadeCamaCasal.Name = "radioButtonQuantidadeCamaCasal";
-            this.radioButtonQuantidadeCamaCasal.Size = new System.Drawing.Size(182, 21);
-            this.radioButtonQuantidadeCamaCasal.TabIndex = 6;
-            this.radioButtonQuantidadeCamaCasal.TabStop = true;
-            this.radioButtonQuantidadeCamaCasal.Text = "Quantidade Cama Casal";
-            this.radioButtonQuantidadeCamaCasal.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(880, 459);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 39);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // quartoTableAdapter
-            // 
-            this.quartoTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.QuartoTableAdapter = this.quartoTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Savage_Hotel_System.DataSet.QuartoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(373, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 17);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Linha Selecionada ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(373, 46);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Numero do Quarto Selecionado";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(373, 73);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(220, 17);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Quantidade de Intens Econtrados";
-            // 
-            // Selecionarbutton
-            // 
-            this.Selecionarbutton.Location = new System.Drawing.Point(417, 470);
-            this.Selecionarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Selecionarbutton.Name = "Selecionarbutton";
-            this.Selecionarbutton.Size = new System.Drawing.Size(100, 28);
-            this.Selecionarbutton.TabIndex = 11;
-            this.Selecionarbutton.Text = "Selecionar";
-            this.Selecionarbutton.UseVisualStyleBackColor = true;
-            this.Selecionarbutton.Click += new System.EventHandler(this.Selecionarbutton_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -404,11 +283,122 @@
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 140;
             // 
+            // textBoxBusca
+            // 
+            this.textBoxBusca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBoxBusca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBoxBusca.Location = new System.Drawing.Point(12, 104);
+            this.textBoxBusca.Name = "textBoxBusca";
+            this.textBoxBusca.Size = new System.Drawing.Size(100, 20);
+            this.textBoxBusca.TabIndex = 2;
+            // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.Location = new System.Drawing.Point(118, 101);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscar.TabIndex = 3;
+            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            // 
+            // radioButtonNumeroQuarto
+            // 
+            this.radioButtonNumeroQuarto.AutoSize = true;
+            this.radioButtonNumeroQuarto.Location = new System.Drawing.Point(12, 12);
+            this.radioButtonNumeroQuarto.Name = "radioButtonNumeroQuarto";
+            this.radioButtonNumeroQuarto.Size = new System.Drawing.Size(112, 17);
+            this.radioButtonNumeroQuarto.TabIndex = 4;
+            this.radioButtonNumeroQuarto.TabStop = true;
+            this.radioButtonNumeroQuarto.Text = "Numero do Quarto";
+            this.radioButtonNumeroQuarto.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonQuantidadeCamaSolteiro
+            // 
+            this.radioButtonQuantidadeCamaSolteiro.AutoSize = true;
+            this.radioButtonQuantidadeCamaSolteiro.Location = new System.Drawing.Point(12, 35);
+            this.radioButtonQuantidadeCamaSolteiro.Name = "radioButtonQuantidadeCamaSolteiro";
+            this.radioButtonQuantidadeCamaSolteiro.Size = new System.Drawing.Size(148, 17);
+            this.radioButtonQuantidadeCamaSolteiro.TabIndex = 5;
+            this.radioButtonQuantidadeCamaSolteiro.TabStop = true;
+            this.radioButtonQuantidadeCamaSolteiro.Text = "Quantidade Cama Solteiro";
+            this.radioButtonQuantidadeCamaSolteiro.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonQuantidadeCamaCasal
+            // 
+            this.radioButtonQuantidadeCamaCasal.AutoSize = true;
+            this.radioButtonQuantidadeCamaCasal.Location = new System.Drawing.Point(13, 59);
+            this.radioButtonQuantidadeCamaCasal.Name = "radioButtonQuantidadeCamaCasal";
+            this.radioButtonQuantidadeCamaCasal.Size = new System.Drawing.Size(139, 17);
+            this.radioButtonQuantidadeCamaCasal.TabIndex = 6;
+            this.radioButtonQuantidadeCamaCasal.TabStop = true;
+            this.radioButtonQuantidadeCamaCasal.Text = "Quantidade Cama Casal";
+            this.radioButtonQuantidadeCamaCasal.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
+            this.pictureBox1.Location = new System.Drawing.Point(660, 373);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // quartoTableAdapter
+            // 
+            this.quartoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.QuartoTableAdapter = this.quartoTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Savage_Hotel_System.DataSet.QuartoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(280, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Linha Selecionada ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(280, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Numero do Quarto Selecionado";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(280, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(166, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Quantidade de Intens Econtrados";
+            // 
+            // Selecionarbutton
+            // 
+            this.Selecionarbutton.Location = new System.Drawing.Point(313, 382);
+            this.Selecionarbutton.Name = "Selecionarbutton";
+            this.Selecionarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Selecionarbutton.TabIndex = 11;
+            this.Selecionarbutton.Text = "Selecionar";
+            this.Selecionarbutton.UseVisualStyleBackColor = true;
+            this.Selecionarbutton.Click += new System.EventHandler(this.Selecionarbutton_Click);
+            // 
             // Reserva_IncluirQuarto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 513);
+            this.ClientSize = new System.Drawing.Size(704, 417);
             this.Controls.Add(this.Selecionarbutton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -423,10 +413,10 @@
             this.Controls.Add(this.quartoBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Reserva_IncluirQuarto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Savage Hotel - Busca de Quartos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Reserva_IncluirQuarto_FormClosing);
             this.Load += new System.EventHandler(this.Reserva_Cadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.quartoBindingNavigator)).EndInit();
             this.quartoBindingNavigator.ResumeLayout(false);

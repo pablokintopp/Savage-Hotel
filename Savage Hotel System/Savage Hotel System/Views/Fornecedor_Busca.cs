@@ -14,7 +14,7 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Fornecedor_Busca : Form
     {
-        private Fornecedor_Menu menu;
+        private Fornecedor_Menu JanelaFornecedorMenu;
         private int idSelected = 0;
         //resultado da pre-pesquisa
         private AutoCompleteStringCollection result;
@@ -27,10 +27,10 @@ namespace Savage_Hotel_System.Views
             InitializeComponent();
         }
 
-        public Fornecedor_Busca(Fornecedor_Menu menu)
+        public Fornecedor_Busca(Fornecedor_Menu Janela)
         {
             InitializeComponent();
-            this.menu = menu;
+            this.JanelaFornecedorMenu = Janela;
         }
 
         private void Fornecedor_Busca_Load(object sender, EventArgs e)
@@ -149,14 +149,14 @@ namespace Savage_Hotel_System.Views
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            menu.Show();
+            JanelaFornecedorMenu.Show();
         }
 
         private void buttonGoToList_Click(object sender, EventArgs e)
         {
             DataGridViewCell selected = dataGridView1.SelectedCells[0];
             idSelected = Convert.ToInt32(dataGridView1.Rows[selected.RowIndex].Cells[0].Value);
-            Fornecedor_List lista = new Fornecedor_List(menu, idSelected);
+            Fornecedor_List lista = new Fornecedor_List(JanelaFornecedorMenu, idSelected);
             lista.Show();
             this.Hide();
         }
@@ -166,6 +166,11 @@ namespace Savage_Hotel_System.Views
 
             button1.Visible = true;
 
+        }
+
+        private void Fornecedor_Busca_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaFornecedorMenu.Show();
         }
     }
 }

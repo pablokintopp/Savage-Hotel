@@ -13,7 +13,7 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Reserva_Pedidos : Form
     {
-        private Reserva_Menu reserva_Menu;
+        private Reserva_Menu JanelaReservaMenu;
         private int idProduto = -1;
         private int idReserva = -1;
         private int quantidade = 1;
@@ -23,22 +23,25 @@ namespace Savage_Hotel_System.Views
             InitializeComponent();
         }
 
-        public Reserva_Pedidos(Reserva_Menu reserva_Menu)
+        public Reserva_Pedidos(Reserva_Menu Janela)
         {
             InitializeComponent();
-            this.reserva_Menu = reserva_Menu;
+            this.JanelaReservaMenu = Janela;
         }
 
         private void Reserva_Pedidos_Load(object sender, EventArgs e)
         {
+
             // TODO: This line of code loads data into the 'databaseHotelDataSet6.Produto' table. You can move, or remove it, as needed.
-            this.produtoTableAdapter1.Fill(this.databaseHotelDataSet6.Produto);
+            this.produtoTableAdapter.Busca_Listar(this.dataSetProduto.Produto);
+            
+            // TODO: This line of code loads data into the 'dataSetPedidosReserva.PedidoReserva' table. You can move, or remove it, as needed.
+            //this.pedidoReservaTableAdapter.Listar(this.dataSetPedidosReserva.PedidoReserva);
+
             // TODO: This line of code loads data into the 'databaseHotelDataSet5.Reserva' table. You can move, or remove it, as needed.
-            this.reservaTableAdapter1.Fill(this.databaseHotelDataSet5.Reserva);
-            // TODO: This line of code loads data into the 'databaseHotelDataSet4.PedidoReserva' table. You can move, or remove it, as needed.
-            this.pedidoReservaTableAdapter.Fill(this.databaseHotelDataSet4.PedidoReserva);
+            //this.reservaTableAdapter1.Fill(this.databaseHotelDataSet5.Reserva);
             // TODO: This line of code loads data into the 'dataSetReserva.Reserva' table. You can move, or remove it, as needed.
-            this.reservaTableAdapter.Fill(this.dataSetReserva.Reserva);
+            this.reservaTableAdapter.Busca_Listar(this.dataSetReserva.Reserva);
 
             updateProdutoSelecionado();
             updateReservaSelecionada();
@@ -48,21 +51,27 @@ namespace Savage_Hotel_System.Views
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            reserva_Menu.Show();
+            JanelaReservaMenu.Show();
         }
         public void updateProdutoSelecionado()
         {
-            if (produtoGridView.SelectedRows.Count == 1)
-                idProduto = (int)produtoGridView.SelectedRows[0].Cells[0].Value;
-            else
+            if (produtoDataGridView.SelectedRows.Count == 1) {
+                idProduto = (int)produtoDataGridView.SelectedRows[0].Cells[0].Value;
+            }
+            else {
                 idProduto = -1;
+            }
         }
         public void updateReservaSelecionada()
         {
-            if (reservaGridView.SelectedRows.Count == 1)
-                idReserva = (int)reservaGridView.SelectedRows[0].Cells[0].Value;
+            if (reservaDataGridView.SelectedRows.Count == 1)
+            {
+                idReserva = (int)reservaDataGridView.SelectedRows[0].Cells[0].Value;
+            }
             else
+            {
                 idReserva = -1;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -73,8 +82,18 @@ namespace Savage_Hotel_System.Views
             }else
             {
                 quantidade = (int)numericUpDown1.Value;
-                InserirBanco();
-                this.pedidoReservaTableAdapter.Fill(this.databaseHotelDataSet4.PedidoReserva);
+                if (InserirBanco() > 0)
+                {
+                    MessageBox.Show("Inserido com Sucesso!");
+                    this.Close();
+                    JanelaReservaMenu.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Houve alguma falha na insercao!");
+                }
+                //this.pedidoReservaTableAdapter.Listar(this.dataSetPedidosReserva.PedidoReserva);
+
             }
         }
 
@@ -117,13 +136,49 @@ namespace Savage_Hotel_System.Views
         {
             try
             {
-                this.pedidoReservaTableAdapter.FillBy(this.databaseHotelDataSet4.PedidoReserva);
+                //this.pedidoReservaTableAdapter.Listar(this.dataSetPedidosReserva.PedidoReserva);
             }
             catch (System.Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void pedidoReservaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            //this.pedidoReservaBindingSource.EndEdit();
+            //this.tableAdapterManager.UpdateAll(this.dataSetPedidosReserva);
+
+        }
+
+        private void busca_2ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //this.produtoTableAdapter.busca_2(this.dataSetProduto.Produto, ((int)(System.Convert.ChangeType(param1ToolStripTextBox.Text, typeof(int)))));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void produtoDataGridView_Click(object sender, EventArgs e)
+        {
+            updateProdutoSelecionado();
+        }
+
+        private void reservaDataGridView_Click(object sender, EventArgs e)
+        {
+            updateReservaSelecionada();
+        }
+
+        private void Reserva_Pedidos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaReservaMenu.Show();
         }
     }
 }

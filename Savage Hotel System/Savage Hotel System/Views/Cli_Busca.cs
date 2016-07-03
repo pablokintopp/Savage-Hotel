@@ -14,7 +14,7 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Cli_Busca : Form
     {
-        private Cli_Menu menu;
+        private Cli_Menu JanelaClienteMenu;
         private int idSelected = 0;
         //resultado da pre-pesquisa
         private AutoCompleteStringCollection result;
@@ -27,10 +27,10 @@ namespace Savage_Hotel_System.Views
             InitializeComponent();
         }
 
-        public Cli_Busca(Cli_Menu menu)
+        public Cli_Busca(Cli_Menu Janela)
         {
             InitializeComponent();
-            this.menu = menu;
+            this.JanelaClienteMenu = Janela;
         }
 
         private void Cli_Busca_Load(object sender, EventArgs e)
@@ -148,15 +148,15 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            menu.Show();
+            this.Close();
+            JanelaClienteMenu.Show();
         }
 
         private void buttonGoToList_Click(object sender, EventArgs e)
         {
             DataGridViewCell selected = dataGridView1.SelectedCells[0];
             idSelected = Convert.ToInt32(dataGridView1.Rows[selected.RowIndex].Cells[0].Value);
-            Cli_List lista = new Cli_List(menu, idSelected);
+            Cli_List lista = new Cli_List(JanelaClienteMenu, idSelected);
             lista.Show();
             this.Hide();
         }
@@ -166,6 +166,11 @@ namespace Savage_Hotel_System.Views
 
             button1.Visible = true;
 
+        }
+
+        private void Cli_Busca_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaClienteMenu.Show();
         }
     }
 }

@@ -20,17 +20,17 @@ namespace Savage_Hotel_System.Views
         private List<String> columnsName;
         private List<String> columnsNameExibicao;
 
-        private Reserva_Cadastro CadastroReserva;
+        private Reserva_Cadastro JanelaReservaCadastro;
         int quantidadeItensNaGridView = 0;
         public Reserva_IncluirCliente()
         {
             InitializeComponent();
         }
 
-        public Reserva_IncluirCliente(Reserva_Cadastro CadastroReserva)
+        public Reserva_IncluirCliente(Reserva_Cadastro Janela)
         {
             InitializeComponent();
-            this.CadastroReserva = CadastroReserva;
+            this.JanelaReservaCadastro = Janela;
         }
 
         private void quartoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            CadastroReserva.Show();
+            JanelaReservaCadastro.Show();
             this.Close();
         }
 
@@ -113,9 +113,9 @@ namespace Savage_Hotel_System.Views
                 IDCliente = Convert.ToInt16(clienteDataGridView.Rows[linha].Cells[0].Value);
                 label2.Text = IDCliente.ToString();
 
-                CadastroReserva.DefinirIDCliente(IDCliente);
-                CadastroReserva.refresh();
-                CadastroReserva.Show();
+                JanelaReservaCadastro.DefinirIDCliente(IDCliente);
+                JanelaReservaCadastro.refresh();
+                JanelaReservaCadastro.Show();
                 this.Close();
             }
 
@@ -187,7 +187,11 @@ namespace Savage_Hotel_System.Views
         {
 
         }
-        /////// Método para recarregar para mudanças
+/////// Método para recarregar para mudanças
 
+        private void Reserva_IncluirCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaReservaCadastro.Show();
+        }
     }
 }

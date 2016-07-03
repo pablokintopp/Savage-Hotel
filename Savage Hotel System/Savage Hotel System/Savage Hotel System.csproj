@@ -130,6 +130,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetFuncionario.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\DataSetPedidosReserva.cs">
+      <DependentUpon>DataSetPedidosReserva.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetPedidosReserva.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPedidosReserva.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\DataSetProduto.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -581,6 +589,17 @@
     </None>
     <None Include="DataSet\DataSetFuncionario.xss">
       <DependentUpon>DataSetFuncionario.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetPedidosReserva.xsc">
+      <DependentUpon>DataSetPedidosReserva.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetPedidosReserva.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPedidosReserva.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSetPedidosReserva.xss">
+      <DependentUpon>DataSetPedidosReserva.xsd</DependentUpon>
     </None>
     <None Include="DataSet\DataSetProduto.xsc">
       <DependentUpon>DataSetProduto.xsd</DependentUpon>

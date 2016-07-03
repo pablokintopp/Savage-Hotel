@@ -15,21 +15,21 @@ namespace Savage_Hotel_System.Views
     public partial class Produto_Cadastro : Form
     {
         private int IDFornecedor = -1;
-        private Produto_Menu MenuProduto;
+        private Produto_Menu JanelaProdutoMenu;
         public Produto_Cadastro()
         {
             InitializeComponent();
         }
 
-        public Produto_Cadastro(Produto_Menu Menu)
+        public Produto_Cadastro(Produto_Menu Janela)
         {
             InitializeComponent();
-            this.MenuProduto = Menu;
+            this.JanelaProdutoMenu = Janela;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            MenuProduto.Show();
+            JanelaProdutoMenu.Show();
             this.Close();
         }
         public void definirID(int newID)
@@ -136,7 +136,7 @@ namespace Savage_Hotel_System.Views
                     {
                         MessageBox.Show("Inserido com Sucesso!");
                         this.Close();
-                        MenuProduto.Show();
+                        JanelaProdutoMenu.Show();
                     }
                     else
                     {
@@ -184,6 +184,11 @@ namespace Savage_Hotel_System.Views
         private void textBoxValor_TextChanged(object sender, EventArgs e)
         {
             textBoxValor.BackColor = Color.White;
+        }
+
+        private void Produto_Cadastro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaProdutoMenu.Show();
         }
     }
 }

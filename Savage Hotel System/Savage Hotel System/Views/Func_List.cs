@@ -14,7 +14,7 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Func_List : Form
     {
-        private Func_Menu func_Menu;
+        private Func_Menu JanelaFuncMenu;
         private string valorQuandoEntrou;
         private List<DataGridViewCell> errorCells;
         private List<DataGridViewCell> changedCells;
@@ -24,16 +24,16 @@ namespace Savage_Hotel_System.Views
             InitializeComponent();
         }
 
-        public Func_List(Func_Menu func_Menu)
+        public Func_List(Func_Menu Janela)
         {
             InitializeComponent();
-            this.func_Menu = func_Menu;
+            this.JanelaFuncMenu = Janela;
            
         }
         public Func_List(Func_Menu func_Menu , int idBusca)
         {
             InitializeComponent();
-            this.func_Menu = func_Menu;
+            this.JanelaFuncMenu = func_Menu;
             this.idBusca = idBusca;
 
         }
@@ -85,7 +85,7 @@ namespace Savage_Hotel_System.Views
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
-            func_Menu.Show();
+            JanelaFuncMenu.Show();
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -455,6 +455,11 @@ namespace Savage_Hotel_System.Views
             {
                 MessageBox.Show("Nenhuma Dado deletado", "Selecione pelo menos um campo para escluir a linha!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void Func_List_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaFuncMenu.Show();
         }
     }
 }

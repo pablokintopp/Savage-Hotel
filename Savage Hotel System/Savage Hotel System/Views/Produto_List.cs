@@ -14,7 +14,7 @@ namespace Savage_Hotel_System.Views
 {
     public partial class Produto_List : Form
     {
-        private Produto_Menu MenuProduto;
+        private Produto_Menu JanelaProdutoMenu;
         private int idSelected;
         private string valorQuandoEntrou;
         private List<DataGridViewCell> errorCells;
@@ -25,10 +25,10 @@ namespace Savage_Hotel_System.Views
             InitializeComponent();
         }
 
-        public Produto_List(Produto_Menu Menu)
+        public Produto_List(Produto_Menu Janela)
         {
             InitializeComponent();
-            this.MenuProduto = Menu;
+            this.JanelaProdutoMenu = Janela;
         }
 
         public Produto_List(Produto_Menu Menu, int idSelected) : this(Menu)
@@ -74,7 +74,7 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            MenuProduto.Show();
+            JanelaProdutoMenu.Show();
             this.Close();
         }
 
@@ -330,6 +330,11 @@ namespace Savage_Hotel_System.Views
             {
                 MessageBox.Show("Nenhuma Dado deletado", "Selecione pelo menos um campo para escluir a linha!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void Produto_List_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JanelaProdutoMenu.Show();
         }
     }
 }
