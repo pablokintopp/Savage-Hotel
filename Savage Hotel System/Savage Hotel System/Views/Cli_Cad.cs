@@ -226,7 +226,14 @@ namespace Savage_Hotel_System.Views
 
         private void Cli_Cad_FormClosing(object sender, FormClosingEventArgs e)
         {
-            JanelaClienteMenu.Show();
+            try
+            {
+                JanelaClienteMenu.Show();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

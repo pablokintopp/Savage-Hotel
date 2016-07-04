@@ -174,7 +174,15 @@ namespace Savage_Hotel_System.Views
 
         private void Fornecedor_Cadastro_FormClosing(object sender, FormClosingEventArgs e)
         {
-            JanelaFornecedorMenu.Show();
+            try
+            {
+                JanelaFornecedorMenu.Show();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

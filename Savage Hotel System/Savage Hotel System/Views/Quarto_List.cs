@@ -324,39 +324,46 @@ namespace Savage_Hotel_System.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DataGridViewCell selecionada = quartoDataGridView.SelectedCells[0];
-            if (selecionada != null)
+
+            if (changedCells.Count() == 0)
             {
-                string nomeLinha = quartoDataGridView[1, selecionada.RowIndex].Value.ToString();
-                DialogResult result1 = MessageBox.Show("Tem certeza que deseja deletar " + nomeLinha + " ?", "Remoção irreversível!", MessageBoxButtons.YesNo);
-
-                if (result1 == DialogResult.Yes)
+                DataGridViewCell selecionada = quartoDataGridView.SelectedCells[0];
+                if (selecionada != null)
                 {
+                    string nomeLinha = quartoDataGridView[1, selecionada.RowIndex].Value.ToString();
+                    DialogResult result1 = MessageBox.Show("Tem certeza que deseja deletar " + nomeLinha + " ?", "Remoção irreversível!", MessageBoxButtons.YesNo);
 
-                    //Id no banco da linha para excluir
-                    string idLinha = quartoDataGridView[0, selecionada.RowIndex].Value.ToString();
+                    if (result1 == DialogResult.Yes)
+                    {
 
-                    string queryString = "DELETE FROM " + DataBase.tableQuarto + " Where Id = @idLinha";
-                    //chamando função da query paramateros (querystring, lista parametros, lista valores)
-                    var reader = DataBase.SqlCommand(queryString,
-                        new List<string>() {
+                        //Id no banco da linha para excluir
+                        string idLinha = quartoDataGridView[0, selecionada.RowIndex].Value.ToString();
+
+                        string queryString = "DELETE FROM " + DataBase.tableQuarto + " Where Id = @idLinha";
+                        //chamando função da query paramateros (querystring, lista parametros, lista valores)
+                        var reader = DataBase.SqlCommand(queryString,
+                            new List<string>() {
                                  "@idLinha"
 
-                          }, new List<object>() {
+                              }, new List<object>() {
                                       idLinha
-                    });
+                        });
 
-                    //fechando a query, causa erros se nao fechar
-                    reader.Close();
-                    //remove da view
-                    quartoDataGridView.Rows.Remove(selecionada.OwningRow);
+                        //fechando a query, causa erros se nao fechar
+                        reader.Close();
+                        //remove da view
+                        quartoDataGridView.Rows.Remove(selecionada.OwningRow);
+
+                    }
 
                 }
-
-            }
-            else
+                else
+                {
+                    MessageBox.Show("Nenhuma Dado deletado", "Selecione pelo menos um campo para escluir a linha!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }else
             {
-                MessageBox.Show("Nenhuma Dado deletado", "Selecione pelo menos um campo para escluir a linha!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Salve ou descarte qualquer alteração antes de deletar um Quarto!", "Alterações Pendentes!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -372,7 +379,15 @@ namespace Savage_Hotel_System.Views
 
         private void Quarto_List_FormClosing(object sender, FormClosingEventArgs e)
         {
-            JanelaQuartoMenu.Show();
+            try
+            {
+                JanelaQuartoMenu.Show();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

@@ -154,11 +154,28 @@ namespace Savage_Hotel_System.Views
 
         private void buttonGoToList_Click(object sender, EventArgs e)
         {
-            DataGridViewCell selected = dataGridView1.SelectedCells[0];
-            idSelected = Convert.ToInt32(dataGridView1.Rows[selected.RowIndex].Cells[0].Value);
-            Fornecedor_List lista = new Fornecedor_List(JanelaFornecedorMenu, idSelected);
-            lista.Show();
-            this.Hide();
+            DataGridViewRow selected = null;
+            try
+            {
+                selected = dataGridView1.SelectedRows[0];
+            }
+            catch (Exception exc)
+            {
+
+            }
+             
+            if(selected!= null)
+            {
+                idSelected = Convert.ToInt32(selected.Cells[0].Value);
+                Fornecedor_List lista = new Fornecedor_List(JanelaFornecedorMenu, idSelected);
+                lista.Show();
+                this.Hide();
+
+            }else
+            {
+                MessageBox.Show("Nenhum Fornecedor Selecionado!");
+            }
+            
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -170,7 +187,15 @@ namespace Savage_Hotel_System.Views
 
         private void Fornecedor_Busca_FormClosing(object sender, FormClosingEventArgs e)
         {
-            JanelaFornecedorMenu.Show();
+            try
+            {
+                JanelaFornecedorMenu.Show();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

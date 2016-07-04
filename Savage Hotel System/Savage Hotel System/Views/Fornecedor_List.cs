@@ -162,7 +162,7 @@ namespace Savage_Hotel_System.Views
 
                             //evita o item estar como erro e sucesso ao mesmo tempo
                             changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Este campo possui caracteres inválidos!";
+                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Este campo possui caracteres inválidos! (Digite apenas numeros)";
                         }
                         else //caso seja 2
                         {
@@ -172,7 +172,7 @@ namespace Savage_Hotel_System.Views
 
                             //evita o item estar como erro e sucesso ao mesmo tempo
                             changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Tamanho mínimo do campo não foi satisfeito";
+                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "CNPJ Deve possuir 14 números!";
                         }
                         break;                    
                     
@@ -314,39 +314,46 @@ namespace Savage_Hotel_System.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DataGridViewCell selecionada = dataGridView1.SelectedCells[0];
-            if (selecionada != null)
+            if (changedCells.Count() == 0)
             {
-                string nomeLinha = dataGridView1["nameDataGridViewTextBoxColumn", selecionada.RowIndex].Value.ToString();
-                DialogResult result1 = MessageBox.Show("Tem certeza que deseja deletar " + nomeLinha + " ?", "Remoção irreversível!", MessageBoxButtons.YesNo);
-
-                if (result1 == DialogResult.Yes)
+                DataGridViewCell selecionada = dataGridView1.SelectedCells[0];
+                if (selecionada != null)
                 {
+                    string nomeLinha = dataGridView1["nameDataGridViewTextBoxColumn", selecionada.RowIndex].Value.ToString();
+                    DialogResult result1 = MessageBox.Show("Tem certeza que deseja deletar " + nomeLinha + " ?", "Remoção irreversível!", MessageBoxButtons.YesNo);
 
-                    //Id no banco da linha para excluir
-                    string idLinha = dataGridView1["idDataGridViewTextBoxColumn", selecionada.RowIndex].Value.ToString();
+                    if (result1 == DialogResult.Yes)
+                    {
 
-                    string queryString = "DELETE FROM " + DataBase.tableFornecedor + " Where Id = @idLinha";
-                    //chamando função da query paramateros (querystring, lista parametros, lista valores)
-                    var reader = DataBase.SqlCommand(queryString,
-                        new List<string>() {
+                        //Id no banco da linha para excluir
+                        string idLinha = dataGridView1["idDataGridViewTextBoxColumn", selecionada.RowIndex].Value.ToString();
+
+                        string queryString = "DELETE FROM " + DataBase.tableFornecedor + " Where Id = @idLinha";
+                        //chamando função da query paramateros (querystring, lista parametros, lista valores)
+                        var reader = DataBase.SqlCommand(queryString,
+                            new List<string>() {
                                  "@idLinha"
 
-                          }, new List<object>() {
+                              }, new List<object>() {
                                       idLinha
-                    });
+                        });
 
-                    //fechando a query, causa erros se nao fechar
-                    reader.Close();
-                    //remove da view
-                    dataGridView1.Rows.Remove(selecionada.OwningRow);
+                        //fechando a query, causa erros se nao fechar
+                        reader.Close();
+                        //remove da view
+                        dataGridView1.Rows.Remove(selecionada.OwningRow);
+
+                    }
 
                 }
-
+                else
+                {
+                    MessageBox.Show("Nenhuma Dado deletado", "Selecione pelo menos um campo para escluir a linha!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             else
             {
-                MessageBox.Show("Nenhuma Dado deletado", "Selecione pelo menos um campo para escluir a linha!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Salve ou descarte todas alterações antes de deletar um Fornecedor!", "Alterações Pendentes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -357,7 +364,15 @@ namespace Savage_Hotel_System.Views
 
         private void Fornecedor_List_FormClosing(object sender, FormClosingEventArgs e)
         {
-            JanelaFornecedorMenu.Show();
+            try
+            {
+                JanelaFornecedorMenu.Show();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

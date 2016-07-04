@@ -181,7 +181,15 @@ namespace Savage_Hotel_System.Views
 
         private void Produto_Busca_FormClosing(object sender, FormClosingEventArgs e)
         {
-            JanelaProdutoMenu.Show();
+            try
+            {
+                JanelaProdutoMenu.Show();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

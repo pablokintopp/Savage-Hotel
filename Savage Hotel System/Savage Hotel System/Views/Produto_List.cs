@@ -296,45 +296,59 @@ namespace Savage_Hotel_System.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DataGridViewCell selecionada = produtoDataGridView.SelectedCells[0];
-            if (selecionada != null)
+            if (changedCells.Count() == 0)
             {
-                string nomeLinha = produtoDataGridView["dataGridViewTextBoxColumn1", selecionada.RowIndex].Value.ToString();
-                DialogResult result1 = MessageBox.Show("Tem certeza que deseja remover o Produto de ID: " + nomeLinha + " ?", "Remoção irreversível!", MessageBoxButtons.YesNo);
-
-                if (result1 == DialogResult.Yes)
+                DataGridViewCell selecionada = produtoDataGridView.SelectedCells[0];
+                if (selecionada != null)
                 {
+                    string nomeLinha = produtoDataGridView["dataGridViewTextBoxColumn1", selecionada.RowIndex].Value.ToString();
+                    DialogResult result1 = MessageBox.Show("Tem certeza que deseja remover o Produto de ID: " + nomeLinha + " ?", "Remoção irreversível!", MessageBoxButtons.YesNo);
 
-                    //Id no banco da linha para excluir
-                    string idLinha = produtoDataGridView["dataGridViewTextBoxColumn1", selecionada.RowIndex].Value.ToString();
+                    if (result1 == DialogResult.Yes)
+                    {
 
-                    string queryString = "DELETE FROM " + DataBase.tableProduto + " Where Id = @idLinha";
-                    //chamando função da query paramateros (querystring, lista parametros, lista valores)
-                    var reader = DataBase.SqlCommand(queryString,
-                        new List<string>() {
+                        //Id no banco da linha para excluir
+                        string idLinha = produtoDataGridView["dataGridViewTextBoxColumn1", selecionada.RowIndex].Value.ToString();
+
+                        string queryString = "DELETE FROM " + DataBase.tableProduto + " Where Id = @idLinha";
+                        //chamando função da query paramateros (querystring, lista parametros, lista valores)
+                        var reader = DataBase.SqlCommand(queryString,
+                            new List<string>() {
                                  "@idLinha"
 
-                          }, new List<object>() {
+                              }, new List<object>() {
                                       idLinha
-                    });
+                        });
 
-                    //fechando a query, causa erros se nao fechar
-                    reader.Close();
-                    //remove da view
-                    produtoDataGridView.Rows.Remove(selecionada.OwningRow);
+                        //fechando a query, causa erros se nao fechar
+                        reader.Close();
+                        //remove da view
+                        produtoDataGridView.Rows.Remove(selecionada.OwningRow);
+
+                    }
 
                 }
-
-            }
-            else
+                else
+                {
+                    MessageBox.Show("Nenhuma Dado deletado", "Selecione pelo menos um campo para escluir a linha!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }else
             {
-                MessageBox.Show("Nenhuma Dado deletado", "Selecione pelo menos um campo para escluir a linha!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Salve ou descarte todas alterações antes de deletar um Produto!", "Alterações Pendentes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
         private void Produto_List_FormClosing(object sender, FormClosingEventArgs e)
         {
-            JanelaProdutoMenu.Show();
+            try
+            {
+                JanelaProdutoMenu.Show();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

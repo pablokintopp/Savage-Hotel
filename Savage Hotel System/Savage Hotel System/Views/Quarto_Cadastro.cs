@@ -211,7 +211,15 @@ namespace Savage_Hotel_System.Views
 
         private void Quarto_Cadastro_FormClosing(object sender, FormClosingEventArgs e)
         {
-            JanelaQuartoMenu.Show();
+            try
+            {
+                JanelaQuartoMenu.Show();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

@@ -172,7 +172,12 @@ namespace Savage_Hotel_System.Views
 
         private void Func_Busc_FormClosing(object sender, FormClosingEventArgs e)
         {
-            JanelaFuncMenu.Show();
+            try { 
+                JanelaFuncMenu.Show();
+            }catch(Exception exc)
+            {
+
+            }
         }
     }
 }
