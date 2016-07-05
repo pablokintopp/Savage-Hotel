@@ -243,10 +243,23 @@ namespace Savage_Hotel_System.Views
 
                         break;
                     case "Data Nascimento":
+                        int verificaData = auxfunc.VerificaDataNascimento(valorEditado);
+                        if (verificaData == 0)
+                        {
+                            //remove da lista antes de add para o caso de já existir na lista
+                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
-                        //remove da lista antes de add para o caso de já existir na lista
-                        changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                        changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                        }else
+                        {
+                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Data Inválida Para nascimento!";
+                        }
+
+                        
 
                         break;
                     case "Salario":
