@@ -331,21 +331,23 @@ namespace Savage_Hotel_System.Class
             else {
                 int diaHoje = ((((int)DatadeHoje[0]) - 48) * 10);
                 diaHoje += (((int)DatadeHoje[1]) - 48);
+
                 int mesHoje = ((((int)DatadeHoje[3]) - 48) * 10);
                 mesHoje += (((int)DatadeHoje[4]) - 48);
-                int anoHoje = ((((int)DatadeHoje[7]) - 48) * 1000);
-                anoHoje += ((((int)DatadeHoje[8]) - 48) * 100);
-                anoHoje += ((((int)DatadeHoje[9]) - 48) * 10);
-                anoHoje += (((int)DatadeHoje[8]) - 48);
+
+                int anoHoje = ((((int)DatadeHoje[6]) - 48) * 1000);
+                anoHoje += ((((int)DatadeHoje[7]) - 48) * 100);
+                anoHoje += ((((int)DatadeHoje[8]) - 48) * 10);
+                anoHoje += (((int)DatadeHoje[9]) - 48);
 
                 int diaSelecionado = ((((int)DataSelecionada[0])-48) * 10);
                 diaSelecionado += (((int)DataSelecionada[1])-48);
                 int mesSelecionado = ((((int)DataSelecionada[3]) - 48) * 10);
                 mesSelecionado += (((int)DataSelecionada[4]) - 48);
-                int anoSelecionado = ((((int)DataSelecionada[7]) - 48) * 1000);
-                anoSelecionado += ((((int)DataSelecionada[8]) - 48) * 100);
-                anoSelecionado += ((((int)DataSelecionada[9]) - 48) * 10);
-                anoSelecionado += (((int)DataSelecionada[8]) - 48);
+                int anoSelecionado = ((((int)DataSelecionada[6]) - 48) * 1000);
+                anoSelecionado += ((((int)DataSelecionada[7]) - 48) * 100);
+                anoSelecionado += ((((int)DataSelecionada[8]) - 48) * 10);
+                anoSelecionado += (((int)DataSelecionada[9]) - 48);
 
                 if (anoSelecionado == anoHoje)
                 {
@@ -393,32 +395,54 @@ namespace Savage_Hotel_System.Class
 
 
 
-        //Verificar data de nascimentos
+        //Verificar datas entre reservas
         public int VerificaDataReserva(String DataEntrada,String DataSaida)
         {
+            String DatadeHoje = DateTime.Now.ToString();
             if (DataEntrada == DataSaida)
             {
                 return 1;
             }
             else
             {
+                int diaHoje = ((((int)DatadeHoje[0]) - 48) * 10);
+                diaHoje += (((int)DatadeHoje[1]) - 48);
+                int mesHoje = ((((int)DatadeHoje[3]) - 48) * 10);
+                mesHoje += (((int)DatadeHoje[4]) - 48);
+                int anoHoje = ((((int)DatadeHoje[6]) - 48) * 1000);
+                anoHoje += ((((int)DatadeHoje[7]) - 48) * 100);
+                anoHoje += ((((int)DatadeHoje[8]) - 48) * 10);
+                anoHoje += (((int)DatadeHoje[9]) - 48);
+
                 int diaEntrada = ((((int)DataEntrada[0]) - 48) * 10);
                 diaEntrada += (((int)DataEntrada[1]) - 48);
                 int mesEntrada = ((((int)DataEntrada[3]) - 48) * 10);
                 mesEntrada += (((int)DataEntrada[4]) - 48);
-                int anoEntrada = ((((int)DataEntrada[7]) - 48) * 1000);
-                anoEntrada += ((((int)DataEntrada[8]) - 48) * 100);
-                anoEntrada += ((((int)DataEntrada[9]) - 48) * 10);
-                anoEntrada += (((int)DataEntrada[8]) - 48);
+                int anoEntrada = ((((int)DataEntrada[6]) - 48) * 1000);
+                anoEntrada += ((((int)DataEntrada[7]) - 48) * 100);
+                anoEntrada += ((((int)DataEntrada[8]) - 48) * 10);
+                anoEntrada += (((int)DataEntrada[9]) - 48);
 
                 int diaSaida = ((((int)DataSaida[0]) - 48) * 10);
                 diaSaida += (((int)DataSaida[1]) - 48);
                 int mesSaida = ((((int)DataSaida[3]) - 48) * 10);
                 mesSaida += (((int)DataSaida[4]) - 48);
-                int anoSaida = ((((int)DataSaida[7]) - 48) * 1000);
-                anoSaida += ((((int)DataSaida[8]) - 48) * 100);
-                anoSaida += ((((int)DataSaida[9]) - 48) * 10);
-                anoSaida += (((int)DataSaida[8]) - 48);
+                int anoSaida = ((((int)DataSaida[6]) - 48) * 1000);
+                anoSaida += ((((int)DataSaida[7]) - 48) * 100);
+                anoSaida += ((((int)DataSaida[8]) - 48) * 10);
+                anoSaida += (((int)DataSaida[9]) - 48);
+
+                if ((anoEntrada < anoHoje)||(anoSaida < anoHoje)) {
+                    return 2;
+                }
+                if ((mesEntrada < mesHoje) || (mesSaida < mesHoje))
+                {
+                    return 2;
+                }
+                if ((diaEntrada < diaHoje) || (diaSaida < diaHoje))
+                {
+                    return 2;
+                }
 
                 if (anoSaida == anoEntrada)
                 {
