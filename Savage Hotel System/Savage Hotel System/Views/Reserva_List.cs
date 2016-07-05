@@ -312,7 +312,15 @@ namespace Savage_Hotel_System.Views
 
         private void Reserva_List_FormClosing(object sender, FormClosingEventArgs e)
         {
-            JanelaReservaMenu.Show();
+            try
+            {
+                JanelaReservaMenu.Show();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
