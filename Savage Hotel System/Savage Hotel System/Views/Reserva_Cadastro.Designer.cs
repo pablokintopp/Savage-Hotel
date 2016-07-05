@@ -40,6 +40,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorDiaria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quartoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quarto = new Savage_Hotel_System.DataSet.Quarto();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,6 +69,7 @@
             this.buttonCadastrar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonVerificar = new System.Windows.Forms.Button();
+            this.labelValorTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quartoDataGridView)).BeginInit();
@@ -109,7 +111,7 @@
             this.panel4.Controls.Add(this.label1);
             this.panel4.Location = new System.Drawing.Point(15, 25);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(624, 77);
+            this.panel4.Size = new System.Drawing.Size(624, 105);
             this.panel4.TabIndex = 15;
             // 
             // quartoDataGridView
@@ -126,13 +128,14 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
+            this.dataGridViewTextBoxColumn6,
+            this.ValorDiaria});
             this.quartoDataGridView.DataSource = this.quartoBindingSource;
             this.quartoDataGridView.Location = new System.Drawing.Point(3, 24);
             this.quartoDataGridView.Name = "quartoDataGridView";
             this.quartoDataGridView.ReadOnly = true;
             this.quartoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.quartoDataGridView.Size = new System.Drawing.Size(621, 46);
+            this.quartoDataGridView.Size = new System.Drawing.Size(621, 81);
             this.quartoDataGridView.TabIndex = 15;
             // 
             // dataGridViewTextBoxColumn1
@@ -182,6 +185,13 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Status";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // ValorDiaria
+            // 
+            this.ValorDiaria.DataPropertyName = "ValorDiaria";
+            this.ValorDiaria.HeaderText = "ValorDiaria";
+            this.ValorDiaria.Name = "ValorDiaria";
+            this.ValorDiaria.ReadOnly = true;
             // 
             // quartoBindingSource
             // 
@@ -338,7 +348,7 @@
             this.panelIncluirQuartos.Controls.Add(this.button1);
             this.panelIncluirQuartos.Location = new System.Drawing.Point(8, 148);
             this.panelIncluirQuartos.Name = "panelIncluirQuartos";
-            this.panelIncluirQuartos.Size = new System.Drawing.Size(649, 113);
+            this.panelIncluirQuartos.Size = new System.Drawing.Size(649, 156);
             this.panelIncluirQuartos.TabIndex = 18;
             // 
             // panel1
@@ -399,7 +409,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(270, 365);
+            this.label5.Location = new System.Drawing.Point(448, 326);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 25;
@@ -415,11 +425,21 @@
             this.buttonVerificar.UseVisualStyleBackColor = true;
             this.buttonVerificar.Click += new System.EventHandler(this.buttonVerificar_Click);
             // 
+            // labelValorTotal
+            // 
+            this.labelValorTotal.AutoSize = true;
+            this.labelValorTotal.Location = new System.Drawing.Point(448, 359);
+            this.labelValorTotal.Name = "labelValorTotal";
+            this.labelValorTotal.Size = new System.Drawing.Size(61, 13);
+            this.labelValorTotal.TabIndex = 27;
+            this.labelValorTotal.Text = "Valor Total:";
+            // 
             // Reserva_Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 421);
+            this.Controls.Add(this.labelValorTotal);
             this.Controls.Add(this.buttonCadastrar);
             this.Controls.Add(this.buttonVerificar);
             this.Controls.Add(this.label5);
@@ -483,17 +503,19 @@
         private System.Windows.Forms.Button buttonCadastrar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonVerificar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorDiaria;
+        private System.Windows.Forms.Label labelValorTotal;
     }
 }

@@ -60,6 +60,7 @@ namespace Savage_Hotel_System.Views
             label2.Show();
             label4.Show();
             label5.Show();
+            label10.Show();
 
             //Verifica Descrição
             aux = textBoxDescricao.Text;
@@ -124,6 +125,25 @@ namespace Savage_Hotel_System.Views
             }
             somarerros += retorno;
 
+            //Verifica Valor da Diaria
+            aux = textBoxValorDiaria.Text;
+            retorno = auxfunc.verificavalor(aux);
+            somarerros += retorno;
+            switch (retorno)
+            {
+                case 0:
+                    textBoxValorDiaria.BackColor = Color.LightGreen;
+                    label10.Text = "";
+                    break;
+                case 1:
+                    textBoxValorDiaria.BackColor = Color.IndianRed;
+                    label10.Text = "Possui Caracteres Invalidos!";
+                    break;
+                case 2:
+                    textBoxValorDiaria.BackColor = Color.IndianRed;
+                    label10.Text = "Formato esperado: 00.00";
+                    break;
+            }
 
 
             if (somarerros == 0)
@@ -163,6 +183,7 @@ namespace Savage_Hotel_System.Views
                 textBoxNumeroQuarto.Text,
                 numericUpDown1.Text,
                 numericUpDown2.Text,
+                textBoxValorDiaria.Text,
                 "disponivel"
 
             };
@@ -175,6 +196,7 @@ namespace Savage_Hotel_System.Views
                 "NumeroQuarto",
                 "QuantidadeCamaSolteiro",
                 "QuantidadeCamaCasal",
+                "ValorDiaria",
                 "Status"
             };
             string nomeDaTabela = DataBase.tableQuarto;

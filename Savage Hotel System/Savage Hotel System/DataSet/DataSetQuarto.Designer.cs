@@ -291,6 +291,8 @@ namespace Savage_Hotel_System.DataSet {
             
             private global::System.Data.DataColumn columnStatus;
             
+            private global::System.Data.DataColumn columnValorDiaria;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public QuartoDataTable() {
@@ -374,6 +376,14 @@ namespace Savage_Hotel_System.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ValorDiariaColumn {
+                get {
+                    return this.columnValorDiaria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -409,7 +419,7 @@ namespace Savage_Hotel_System.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QuartoRow AddQuartoRow(string Descricao, string NumeroQuarto, string QuantidadeCamaSolteiro, string QuantidadeCamaCasal, string Status) {
+            public QuartoRow AddQuartoRow(string Descricao, string NumeroQuarto, string QuantidadeCamaSolteiro, string QuantidadeCamaCasal, string Status, string ValorDiaria) {
                 QuartoRow rowQuartoRow = ((QuartoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -417,7 +427,8 @@ namespace Savage_Hotel_System.DataSet {
                         NumeroQuarto,
                         QuantidadeCamaSolteiro,
                         QuantidadeCamaCasal,
-                        Status};
+                        Status,
+                        ValorDiaria};
                 rowQuartoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowQuartoRow);
                 return rowQuartoRow;
@@ -453,6 +464,7 @@ namespace Savage_Hotel_System.DataSet {
                 this.columnQuantidadeCamaSolteiro = base.Columns["QuantidadeCamaSolteiro"];
                 this.columnQuantidadeCamaCasal = base.Columns["QuantidadeCamaCasal"];
                 this.columnStatus = base.Columns["Status"];
+                this.columnValorDiaria = base.Columns["ValorDiaria"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -470,6 +482,8 @@ namespace Savage_Hotel_System.DataSet {
                 base.Columns.Add(this.columnQuantidadeCamaCasal);
                 this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStatus);
+                this.columnValorDiaria = new global::System.Data.DataColumn("ValorDiaria", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValorDiaria);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -695,6 +709,34 @@ namespace Savage_Hotel_System.DataSet {
                     this[this.tableQuarto.StatusColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ValorDiaria {
+                get {
+                    try {
+                        return ((string)(this[this.tableQuarto.ValorDiariaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ValorDiaria\' in table \'Quarto\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableQuarto.ValorDiariaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsValorDiariaNull() {
+                return this.IsNull(this.tableQuarto.ValorDiariaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetValorDiariaNull() {
+                this[this.tableQuarto.ValorDiariaColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -862,6 +904,7 @@ namespace Savage_Hotel_System.DataSet.QuartoTableAdapters {
             tableMapping.ColumnMappings.Add("QuantidadeCamaSolteiro", "QuantidadeCamaSolteiro");
             tableMapping.ColumnMappings.Add("QuantidadeCamaCasal", "QuantidadeCamaCasal");
             tableMapping.ColumnMappings.Add("Status", "Status");
+            tableMapping.ColumnMappings.Add("ValorDiaria", "ValorDiaria");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -916,41 +959,41 @@ SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal,
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCamaCasal, " +
-                "Status FROM dbo.Quarto";
+                "Status, ValorDiaria FROM dbo.Quarto";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCama" +
-                "Casal, Status\r\nFROM            Quarto\r\nWHERE        (NumeroQuarto LIKE @Param1)";
+            this._commandCollection[1].CommandText = "SELECT Descricao, Id, NumeroQuarto, QuantidadeCamaCasal, QuantidadeCamaSolteiro, " +
+                "Status FROM Quarto WHERE (NumeroQuarto LIKE @Param1)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.NChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroQuarto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCama" +
-                "Casal, Status\r\nFROM            Quarto\r\nWHERE        (Id = @Param1)";
+            this._commandCollection[2].CommandText = "SELECT Descricao, Id, NumeroQuarto, QuantidadeCamaCasal, QuantidadeCamaSolteiro, " +
+                "Status, ValorDiaria FROM Quarto WHERE (Id = @Param1)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCama" +
-                "Casal, Status\r\nFROM            Quarto\r\nWHERE        (NumeroQuarto LIKE @Param1) " +
-                "AND (Status LIKE @Param2)";
+            this._commandCollection[3].CommandText = "SELECT Descricao, Id, NumeroQuarto, QuantidadeCamaCasal, QuantidadeCamaSolteiro, " +
+                "Status , ValorDiaria FROM Quarto WHERE (NumeroQuarto LIKE @Param1) AND (Status L" +
+                "IKE @Param2)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.NChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroQuarto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param2", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCama" +
-                "Casal, Status\r\nFROM            Quarto\r\nWHERE        (QuantidadeCamaCasal LIKE @P" +
-                "aram1) AND (Status LIKE @Param2)";
+            this._commandCollection[4].CommandText = "SELECT Descricao, Id, NumeroQuarto, QuantidadeCamaCasal, QuantidadeCamaSolteiro, " +
+                "Status, ValorDiaria FROM Quarto WHERE (QuantidadeCamaCasal LIKE @Param1) AND (St" +
+                "atus LIKE @Param2)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.NChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "QuantidadeCamaCasal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param2", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT        Id, Descricao, NumeroQuarto, QuantidadeCamaSolteiro, QuantidadeCama" +
-                "Casal, Status\r\nFROM            Quarto\r\nWHERE        (QuantidadeCamaSolteiro LIKE" +
-                " @Param1) AND (Status LIKE @Param2)";
+            this._commandCollection[5].CommandText = "SELECT Descricao, Id, NumeroQuarto, QuantidadeCamaCasal, QuantidadeCamaSolteiro, " +
+                "Status, ValorDiaria FROM Quarto WHERE (QuantidadeCamaSolteiro LIKE @Param1) AND " +
+                "(Status LIKE @Param2)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.NChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "QuantidadeCamaSolteiro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param2", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

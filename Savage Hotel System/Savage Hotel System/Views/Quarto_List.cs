@@ -89,7 +89,7 @@ namespace Savage_Hotel_System.Views
 
         private void quartoDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-
+            quartoDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = quartoDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Replace(',', '.');
             //valor atual do campo
             string valorEditado = quartoDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
             // Console.WriteLine("Editou: "+ valorEditado);
@@ -196,6 +196,43 @@ namespace Savage_Hotel_System.Views
                             quartoDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Este campo possui caracteres inválidos ou valor negativo";
                         }
 
+                        break;
+
+                    case "ValorDiaria":
+                        int verifica4 = auxfunc.verificavalor(valorEditado);
+
+
+                        if (verifica4 == 0)
+                        {
+                            //remove da lista antes de add para o caso de já existir na lista
+                            changedCells.Remove(quartoDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Add(quartoDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                            //Remove da lista de erros caso o item estiver lá
+                            errorCells.Remove(quartoDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                        }
+                        else if (verifica4 == 1)
+                        {
+                            //evita dois erros cadastrados para um mesmo item
+                            errorCells.Remove(quartoDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(quartoDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                            //evita o item estar como erro e sucesso ao mesmo tempo
+                            changedCells.Remove(quartoDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            quartoDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Contém caracteres inválidos!";
+                        }
+                        else
+                        {
+                            //evita dois erros cadastrados para um mesmo item
+                            errorCells.Remove(quartoDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(quartoDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+
+                            //evita o item estar como erro e sucesso ao mesmo tempo
+                            changedCells.Remove(quartoDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            quartoDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Somente aceita Formato aceito 0.00";
+
+                        }
                         break;
 
                     default:

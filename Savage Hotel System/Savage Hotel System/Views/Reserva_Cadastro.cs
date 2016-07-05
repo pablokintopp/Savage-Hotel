@@ -18,6 +18,7 @@ namespace Savage_Hotel_System.Views
         private int IDQuarto = -1;
         private int IDCliente = -1;
         private int disponibilidade = -1;
+        private double valorReserva = 0;  
         private Reserva_Menu JanelaMenuReserva;
         public Reserva_Cadastro()
         {
@@ -71,6 +72,7 @@ namespace Savage_Hotel_System.Views
 
             //idTextBox.Text = idquarto.ToString();
             label5.Text = "";
+            labelValorTotal.Visible = false;
             panelIncluirQuartos.Hide();
         }
         public void refresh() {
@@ -144,7 +146,7 @@ namespace Savage_Hotel_System.Views
             //pega os valores das entradas para serem inseridos 
             List<object> parametrosValores = new List<object>()
             {
-                0,
+                valorReserva,
                 dateTimeEntrada.Text,
                 dateTimePickerSaida.Text,
                 IDCliente,
@@ -164,6 +166,18 @@ namespace Savage_Hotel_System.Views
             };
             string nomeDaTabela = DataBase.tableReserva;
             return DataBase.SqlCommandInsert(nomeDaTabela, parametrosNomes, parametrosValores);
+
+        }
+
+        //metodo retorna o valor da reserva usando o valor da diaria do quarto e o numero de dias
+        public double valorTotalReserva()
+        {
+            double dias = (dateTimePickerSaida.Value - dateTimeEntrada.Value).TotalDays;
+            double valorDiaria = Double.Parse( quartoDataGridView.Rows[0].Cells["ValorDiaria"].Value.ToString());
+           
+           
+
+            return dias * valorDiaria;
 
         }
 
@@ -199,6 +213,7 @@ namespace Savage_Hotel_System.Views
 
         private void buttonVerificar_Click(object sender, EventArgs e)
         {
+            labelValorTotal.Visible = false;
             if (IDCliente > -1)
             {
                 if (IDQuarto > -1)
@@ -231,6 +246,13 @@ namespace Savage_Hotel_System.Views
                         int disp = verificarDisponibilidadeQuarto();
                         label5.Text = disp == 0 ? "Disponivel" : "Não disponivel";
                         disponibilidade = disp;
+                        //atualiza valor total
+                        if(disp == 0)
+                        {
+                            valorReserva = valorTotalReserva();
+                            labelValorTotal.Text = "Valor Da Reserva: "+ valorReserva.ToString();
+                            labelValorTotal.Visible = true;
+                        }
                     }
                 }
                 else
