@@ -132,6 +132,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Savage Hotel - Menu do Cliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Cli_Menu_FormClosing);
+            this.Load += new System.EventHandler(this.Cli_Menu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

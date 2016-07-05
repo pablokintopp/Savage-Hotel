@@ -203,8 +203,7 @@ namespace Savage_Hotel_System.Views
             }
             catch (Exception)
             {
-
-                throw;
+                
             }
         }
     }

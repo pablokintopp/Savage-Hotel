@@ -77,7 +77,6 @@
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(217, 20);
             this.textBoxNome.TabIndex = 0;
-            this.textBoxNome.Text = "teste";
             this.textBoxNome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // pictureBox1
@@ -98,7 +97,6 @@
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(217, 20);
             this.textBoxPhone.TabIndex = 1;
-            this.textBoxPhone.Text = "1234561231";
             this.textBoxPhone.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBoxCPF
@@ -107,7 +105,6 @@
             this.textBoxCPF.Name = "textBoxCPF";
             this.textBoxCPF.Size = new System.Drawing.Size(217, 20);
             this.textBoxCPF.TabIndex = 2;
-            this.textBoxCPF.Text = "12345612321";
             this.textBoxCPF.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // dateTimeNascimento
@@ -117,7 +114,7 @@
             this.dateTimeNascimento.Name = "dateTimeNascimento";
             this.dateTimeNascimento.Size = new System.Drawing.Size(218, 20);
             this.dateTimeNascimento.TabIndex = 6;
-            this.dateTimeNascimento.Value = new System.DateTime(2016, 6, 7, 0, 0, 0, 0);
+            this.dateTimeNascimento.Value = new System.DateTime(2016, 7, 4, 0, 0, 0, 0);
             this.dateTimeNascimento.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // comboBoxCargo
@@ -143,7 +140,7 @@
             this.textBoxSalario.Name = "textBoxSalario";
             this.textBoxSalario.Size = new System.Drawing.Size(217, 20);
             this.textBoxSalario.TabIndex = 8;
-            this.textBoxSalario.Text = "1234.00";
+            this.textBoxSalario.Text = "00.00";
             this.textBoxSalario.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // databaseHotelDataSet
@@ -321,7 +318,6 @@
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(206, 20);
             this.textBoxLogin.TabIndex = 9;
-            this.textBoxLogin.Text = "asdfasdf";
             this.textBoxLogin.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // groupBox1
@@ -339,9 +335,10 @@
             // 
             this.textBoxSenha.Location = new System.Drawing.Point(6, 50);
             this.textBoxSenha.Name = "textBoxSenha";
+            this.textBoxSenha.PasswordChar = '*';
             this.textBoxSenha.Size = new System.Drawing.Size(206, 20);
             this.textBoxSenha.TabIndex = 24;
-            this.textBoxSenha.Text = "asdasdf";
+            this.textBoxSenha.UseSystemPasswordChar = true;
             this.textBoxSenha.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label9

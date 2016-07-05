@@ -394,8 +394,7 @@ namespace Savage_Hotel_System.Views
                 JanelaClienteMenu.Show();
             }
             catch (Exception)
-            {
-                throw;
+            {                
             }
         }
     }

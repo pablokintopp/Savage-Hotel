@@ -181,7 +181,10 @@ namespace Savage_Hotel_System.Views
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
 
-            button1.Visible = true;
+            if (dataGridView1.SelectedCells.Count > 0)
+                button1.Visible = true;
+            else
+                button1.Visible = false;
 
         }
 
@@ -194,7 +197,6 @@ namespace Savage_Hotel_System.Views
             catch (Exception)
             {
 
-                throw;
             }
         }
     }

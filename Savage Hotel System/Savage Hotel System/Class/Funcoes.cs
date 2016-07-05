@@ -321,7 +321,9 @@ namespace Savage_Hotel_System.Class
 
         //Verificar data de nascimentos
         public int VerificaDataNascimento(String DataSelecionada) {
-            String DatadeHoje = DateTime.Now.ToString();
+            String DatadeHoje = DateTime.Now.ToString();            
+            Console.WriteLine("DataHoje: " + DatadeHoje + " DataSelecionada: " + DataSelecionada);
+
             if (DatadeHoje == DataSelecionada)
             {
                 return 2;

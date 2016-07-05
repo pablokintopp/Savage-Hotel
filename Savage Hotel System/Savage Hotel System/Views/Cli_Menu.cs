@@ -56,5 +56,10 @@ namespace Savage_Hotel_System.Views
         {
             JanelaMenuMain.Show();
         }
+
+        private void Cli_Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
