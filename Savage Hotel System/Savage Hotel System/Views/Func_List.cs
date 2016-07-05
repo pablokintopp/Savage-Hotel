@@ -235,7 +235,7 @@ namespace Savage_Hotel_System.Views
                         changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                         break;
-                    case "Gerente":
+                    case "Cargo":
 
                         //remove da lista antes de add para o caso de já existir na lista
                         changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);

@@ -51,11 +51,13 @@ namespace Savage_Hotel_System.Views
             columnsNameExibicao.Add("Telefone");
             columnsName.Add("CPF");
             columnsNameExibicao.Add("CPF");
+            columnsName.Add("Office");
+            columnsNameExibicao.Add("Cargo");
             columnsName.Add("Login");
             columnsNameExibicao.Add("Usuario");
 
 
-  
+
             //add cada dado em funcionario a lista do autocompletar result
             while (dataReader.Read())
             {

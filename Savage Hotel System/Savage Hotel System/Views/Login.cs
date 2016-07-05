@@ -63,7 +63,7 @@ namespace Savage_Hotel_System
                 Employee user = new Employee() {
                     ID = (int)dr["Id"],
                     Name = (string)dr["Name"],                                      
-                    IsManager = (int)dr["IsManager"]
+                    Office = (string)dr["Office"]
                 };
                 Form formMainMenu = new MenuMain(this, user);
 

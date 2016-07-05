@@ -37,8 +37,8 @@
             this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.isManagerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Office = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthdayDataGridViewTextBoxColumn = new Savage_Hotel_System.Class.DataGridViewDateTimeColumn();
             this.funcionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -81,8 +81,8 @@
             this.loginDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn,
             this.genderDataGridViewTextBoxColumn,
-            this.isManagerDataGridViewTextBoxColumn,
             this.salaryDataGridViewTextBoxColumn,
+            this.Office,
             this.phoneDataGridViewTextBoxColumn,
             this.birthdayDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.funcionarioBindingSource;
@@ -106,34 +106,35 @@
             // 
             // nameDataGridViewTextBoxColumn
             // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 60;
             // 
             // cPFDataGridViewTextBoxColumn
             // 
+            this.cPFDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cPFDataGridViewTextBoxColumn.DataPropertyName = "CPF";
             this.cPFDataGridViewTextBoxColumn.HeaderText = "CPF";
             this.cPFDataGridViewTextBoxColumn.Name = "cPFDataGridViewTextBoxColumn";
-            this.cPFDataGridViewTextBoxColumn.Width = 52;
             // 
             // loginDataGridViewTextBoxColumn
             // 
+            this.loginDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
             this.loginDataGridViewTextBoxColumn.HeaderText = "Login";
             this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
-            this.loginDataGridViewTextBoxColumn.Width = 58;
             // 
             // passwordDataGridViewTextBoxColumn
             // 
+            this.passwordDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
             this.passwordDataGridViewTextBoxColumn.HeaderText = "Senha";
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.Width = 63;
             // 
             // genderDataGridViewTextBoxColumn
             // 
+            this.genderDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
             this.genderDataGridViewTextBoxColumn.HeaderText = "Genero";
             this.genderDataGridViewTextBoxColumn.Items.AddRange(new object[] {
@@ -143,41 +144,43 @@
             this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
             this.genderDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.genderDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.genderDataGridViewTextBoxColumn.Width = 67;
-            // 
-            // isManagerDataGridViewTextBoxColumn
-            // 
-            this.isManagerDataGridViewTextBoxColumn.DataPropertyName = "IsManager";
-            this.isManagerDataGridViewTextBoxColumn.FalseValue = "0";
-            this.isManagerDataGridViewTextBoxColumn.HeaderText = "Gerente";
-            this.isManagerDataGridViewTextBoxColumn.Name = "isManagerDataGridViewTextBoxColumn";
-            this.isManagerDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.isManagerDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.isManagerDataGridViewTextBoxColumn.TrueValue = "1";
-            this.isManagerDataGridViewTextBoxColumn.Width = 70;
             // 
             // salaryDataGridViewTextBoxColumn
             // 
+            this.salaryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
             this.salaryDataGridViewTextBoxColumn.HeaderText = "Salario";
             this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
-            this.salaryDataGridViewTextBoxColumn.Width = 64;
+            // 
+            // Office
+            // 
+            this.Office.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Office.DataPropertyName = "Office";
+            this.Office.HeaderText = "Cargo";
+            this.Office.Items.AddRange(new object[] {
+            "Faxineira",
+            "Gerente",
+            "Porteiro",
+            "Recepcionista"});
+            this.Office.Name = "Office";
+            this.Office.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Office.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // phoneDataGridViewTextBoxColumn
             // 
+            this.phoneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
             this.phoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
             this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.Width = 74;
             // 
             // birthdayDataGridViewTextBoxColumn
             // 
+            this.birthdayDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "Birthday";
             this.birthdayDataGridViewTextBoxColumn.HeaderText = "Data Nascimento";
             this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
             this.birthdayDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.birthdayDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.birthdayDataGridViewTextBoxColumn.Width = 105;
             // 
             // funcionarioBindingSource
             // 
@@ -411,16 +414,17 @@
         private System.Windows.Forms.Label labelAlteracoes;
         private System.Windows.Forms.Label labelErros;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isManagerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cPFDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn genderDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isManagerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn salaryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Office;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private Class.DataGridViewDateTimeColumn birthdayDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label1;
     }
 }

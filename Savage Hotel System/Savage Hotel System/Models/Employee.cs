@@ -20,6 +20,6 @@ namespace Savage_Hotel_System.Models
 
         public double Salary { get; set; }
 
-        public int IsManager { get; set; }
+        public string Office { get; set; }
     }
 }

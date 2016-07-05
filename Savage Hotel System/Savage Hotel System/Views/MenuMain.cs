@@ -65,7 +65,7 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if (user.IsManager == 1)
+            if (user.Office == "Gerente")
             {
                 Form Func = new Func_Menu(this);
                 this.Hide();
@@ -93,7 +93,7 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            if(user.IsManager == 1) { 
+            if(user.Office == "Gerente") { 
                 Form Fornecedor = new Fornecedor_Menu(this);
                 this.Hide();
                 Fornecedor.Show();
@@ -112,7 +112,7 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            if (user.IsManager == 1)
+            if (user.Office == "Gerente")
             {
                 Form ProdutosMenu = new Produto_Menu(this);
                 this.Hide();

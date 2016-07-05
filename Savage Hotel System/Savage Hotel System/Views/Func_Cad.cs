@@ -49,7 +49,6 @@ namespace Savage_Hotel_System.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int gerente = 0;
             int retorno = 0;
             int somarerros = 0;
             Funcoes auxfunc = new Funcoes();
@@ -156,10 +155,7 @@ namespace Savage_Hotel_System.Views
                 somarerros += 1;
             }
             else {
-                label14.Text = "";
-                if (comboBoxCargo.Text == "Gerente") {
-                    gerente = 1;
-                }
+                label14.Text = comboBoxCargo.Text;
             }
                        
             //Verifica Salário
@@ -210,7 +206,7 @@ namespace Savage_Hotel_System.Views
             }
 
             if (somarerros == 0) {
-                if (InserirBanco(gerente) > 0) {
+                if (InserirBanco() > 0) {
                     MessageBox.Show("Inserido com Sucesso!");
                     this.Close();
                     this.JanelaFuncMenu.Show();
@@ -254,7 +250,7 @@ namespace Savage_Hotel_System.Views
         }
 
         //Metodo que chama a insercao do banco passando como parametros o nome da tabela a ser inserido, os nomes das colunas e respectivos valores
-        private int InserirBanco(int gerente)
+        private int InserirBanco()
         {
             Console.WriteLine("DATA: "+ dateTimeNascimento.Value.ToString("dd/MM/yyyy"));
             //pega os valores das entradas para serem inseridos 
@@ -265,7 +261,7 @@ namespace Savage_Hotel_System.Views
                 textBoxCPF.Text,
                 radioButton1.Checked ? "M":"F",
                 dateTimeNascimento.Value.ToString("dd/MM/yyyy"),
-                gerente,
+                comboBoxCargo.Text,
                 textBoxSalario.Text,
                 textBoxLogin.Text,
                 textBoxSenha.Text
@@ -281,7 +277,7 @@ namespace Savage_Hotel_System.Views
                 "CPF",
                 "Gender",
                 "Birthday",
-                "IsManager",
+                "Office",
                 "Salary",
                 "Login",
                 "Password"
