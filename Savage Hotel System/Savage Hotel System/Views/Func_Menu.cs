@@ -40,7 +40,7 @@ namespace Savage_Hotel_System.Views
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Form Lista = new Func_List(this,3);
+            Form Lista = new Func_List(this);
             this.Hide();
             Lista.Show();
         }

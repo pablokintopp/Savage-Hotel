@@ -416,6 +416,7 @@
             // 
             // dataGridViewTextBoxColumn27
             // 
+            this.dataGridViewTextBoxColumn27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn27.DataPropertyName = "Id";
             this.dataGridViewTextBoxColumn27.HeaderText = "Id";
             this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
@@ -440,6 +441,7 @@
             // 
             // dataGridViewTextBoxColumn30
             // 
+            this.dataGridViewTextBoxColumn30.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn30.DataPropertyName = "IdFornecedor";
             this.dataGridViewTextBoxColumn30.HeaderText = "IdFornecedor";
             this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
@@ -448,6 +450,7 @@
             // 
             // dataGridViewTextBoxColumn31
             // 
+            this.dataGridViewTextBoxColumn31.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn31.DataPropertyName = "Name";
             this.dataGridViewTextBoxColumn31.HeaderText = "Name";
             this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
@@ -456,6 +459,7 @@
             // 
             // dataGridViewTextBoxColumn32
             // 
+            this.dataGridViewTextBoxColumn32.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn32.DataPropertyName = "Expr1";
             this.dataGridViewTextBoxColumn32.HeaderText = "Expr1";
             this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";

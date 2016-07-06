@@ -18,7 +18,7 @@ namespace Savage_Hotel_System.Views
         private string valorQuandoEntrou;
         private List<DataGridViewCell> errorCells;
         private List<DataGridViewCell> changedCells;
-        private int idBusca = 0;
+        private int idBusca = -1;
         public Func_List()
         {
             InitializeComponent();
@@ -40,6 +40,8 @@ namespace Savage_Hotel_System.Views
 
         private void Func_List_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'databaseHotelDataSet1.Funcionario' table. You can move, or remove it, as needed.
+            this.funcionarioTableAdapter.Fill(this.databaseHotelDataSet1.Funcionario);
             errorCells = new List<DataGridViewCell>();
             changedCells = new List<DataGridViewCell>();
             labelErros.Visible = false;
@@ -48,18 +50,19 @@ namespace Savage_Hotel_System.Views
             this.funcionarioTableAdapter.Fill(this.databaseHotelDataSet1.Funcionario);
 
             //Desabilitando o update automatico do banco pois queremos validar antes.
-            this.dataGridView1.DataBindings.DefaultDataSourceUpdateMode = DataSourceUpdateMode.Never;
+            this.funcionarioDataGridView.DataBindings.DefaultDataSourceUpdateMode = DataSourceUpdateMode.Never;
            
             //caso veio do menu de busca seleciona linha com o id da busca
             if(idBusca > 0)
             {
-                dataGridView1[0, 0].Selected = false;
-               foreach(DataGridViewRow row in dataGridView1.Rows)
+                funcionarioDataGridView.ClearSelection();
+               funcionarioDataGridView[0, 0].Selected = false;
+               foreach(DataGridViewRow row in funcionarioDataGridView.Rows)
                 {
                     if(Convert.ToInt32( row.Cells[0].Value )== idBusca)
                     {
-                        dataGridView1[0, row.Index].Selected = true;
-                        dataGridView1.Rows[row.Index].Selected = true;
+                        funcionarioDataGridView[0, row.Index].Selected = true;
+                        funcionarioDataGridView.Rows[row.Index].Selected = true;
                         
                         break;
                     }
@@ -73,11 +76,11 @@ namespace Savage_Hotel_System.Views
         {
         }
 
-        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        private void funcionarioDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             
             //Para CASO a pessoa desista de editar a coluna            
-            valorQuandoEntrou = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+            valorQuandoEntrou = funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
 
             Console.WriteLine("Entrou: "+ valorQuandoEntrou);
         }
@@ -88,11 +91,11 @@ namespace Savage_Hotel_System.Views
             JanelaFuncMenu.Show();
         }
 
-        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void funcionarioDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             
            //valor atual do campo
-            string valorEditado = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+            string valorEditado = funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
             // Console.WriteLine("Editou: "+ valorEditado);
 
             //Cores para quando houver erros ou alterações
@@ -104,7 +107,7 @@ namespace Savage_Hotel_System.Views
             if (valorEditado != valorQuandoEntrou)
             {
                 //Pegando o nome da coluna onde houve alteração
-                string colTitulo = dataGridView1.Columns[e.ColumnIndex].HeaderText;
+                string colTitulo = funcionarioDataGridView.Columns[e.ColumnIndex].HeaderText;
                 Funcoes auxfunc = new Funcoes();
                 
                 //validando conforme  a coluna
@@ -117,29 +120,29 @@ namespace Savage_Hotel_System.Views
                         if (verifica == 0)
                         {
                             //remove da lista antes de add para o caso de já existir na lista
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                             //Remove da lista de erros caso o item estiver lá
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);                          
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);                          
 
                         }else if(verifica == 1){
                             //evita dois erros cadastrados para um mesmo item
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                             //evita o item estar como erro e sucesso ao mesmo tempo
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);                          
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Este campo possui caracteres inválidos!";
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);                          
+                            funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Este campo possui caracteres inválidos!";
                         }else //caso seja 2
                         {
                             //evita dois erros cadastrados para um mesmo item
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                             //evita o item estar como erro e sucesso ao mesmo tempo
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Tamanho mínimo do campo não foi satisfeito";
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Tamanho mínimo do campo não foi satisfeito";
                         }
                         
                         break;
@@ -149,32 +152,32 @@ namespace Savage_Hotel_System.Views
                         if (verifica2 == 0)
                         {
                             //remove da lista antes de add para o caso de já existir na lista
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                             //Remove da lista de erros caso o item estiver lá
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                         }
                         else if (verifica2 == 1)
                         {
                             //evita dois erros cadastrados para um mesmo item
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                             //evita o item estar como erro e sucesso ao mesmo tempo
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Este campo possui caracteres inválidos!";
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Este campo possui caracteres inválidos!";
                         }
                         else //caso seja 2
                         {
                             //evita dois erros cadastrados para um mesmo item
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                             //evita o item estar como erro e sucesso ao mesmo tempo
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "CPF deve possuir 11 digitos";
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "CPF deve possuir 11 digitos";
                         }
                         break;
                     case "Login":
@@ -183,22 +186,22 @@ namespace Savage_Hotel_System.Views
                         if (valorEditado.Length > 4)
                         {
                             //remove da lista antes de add para o caso de já existir na lista
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                             //Remove da lista de erros caso o item estiver lá
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                         }
                         else
                         {
                             //evita dois erros cadastrados para um mesmo item
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                             //evita o item estar como erro e sucesso ao mesmo tempo
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Deve conter no mínimo 5 caracteres";
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Deve conter no mínimo 5 caracteres";
                         }
                         
                         break;
@@ -209,37 +212,37 @@ namespace Savage_Hotel_System.Views
                         if (valorEditado.Length > 4)
                         {
                             //remove da lista antes de add para o caso de já existir na lista
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                             //Remove da lista de erros caso o item estiver lá
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                         }
                         else
                         {
                             //evita dois erros cadastrados para um mesmo item
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                             //evita o item estar como erro e sucesso ao mesmo tempo
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Deve conter no mínimo 5 caracteres";
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Deve conter no mínimo 5 caracteres";
                         }
 
                         break;
                     case "Genero":
                         
                         //remove da lista antes de add para o caso de já existir na lista
-                        changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                        changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                        changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                        changedCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                         break;
                     case "Cargo":
 
                         //remove da lista antes de add para o caso de já existir na lista
-                        changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                        changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                        changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                        changedCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                         break;
                     case "Data Nascimento":
@@ -247,16 +250,16 @@ namespace Savage_Hotel_System.Views
                         if (verificaData == 0)
                         {
                             //remove da lista antes de add para o caso de já existir na lista
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                         }else
                         {
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Data Inválida Para nascimento!";
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Data Inválida Para nascimento!";
                         }
 
                         
@@ -268,31 +271,31 @@ namespace Savage_Hotel_System.Views
                         if (verifica3 == 0)
                         {
                             //remove da lista antes de add para o caso de já existir na lista
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                             //Remove da lista de erros caso o item estiver lá
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                         }
                         else if(verifica3 == 1)
                         {
                             //evita dois erros cadastrados para um mesmo item
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                             //evita o item estar como erro e sucesso ao mesmo tempo
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Contém caracteres inválidos!";
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Contém caracteres inválidos!";
                         }else
                         {
                             //evita dois erros cadastrados para um mesmo item
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                             //evita o item estar como erro e sucesso ao mesmo tempo
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Tamnho mínimo não satisfeito!";
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Tamnho mínimo não satisfeito!";
 
                         }
 
@@ -303,32 +306,32 @@ namespace Savage_Hotel_System.Views
                         if (verifica4 == 0)
                         {
                             //remove da lista antes de add para o caso de já existir na lista
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            changedCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            changedCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                             //Remove da lista de erros caso o item estiver lá
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                         }
                         else if (verifica4 == 1)
                         {
                             //evita dois erros cadastrados para um mesmo item
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                             //evita o item estar como erro e sucesso ao mesmo tempo
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Contém caracteres inválidos!";
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Contém caracteres inválidos!";
                         }
                         else
                         {
                             //evita dois erros cadastrados para um mesmo item
-                            errorCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            errorCells.Add(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            errorCells.Add(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
 
                             //evita o item estar como erro e sucesso ao mesmo tempo
-                            changedCells.Remove(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Telefone deve conter 10 digitos";
+                            changedCells.Remove(funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                            funcionarioDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = "Telefone deve conter 10 digitos";
 
                         }
 
@@ -385,7 +388,7 @@ namespace Savage_Hotel_System.Views
                         //Valor alterado
                         string novoValor = cell.Value.ToString();
                         //Id no banco da linha alterada para usar no update
-                        string idLinha = dataGridView1["idDataGridViewTextBoxColumn", cell.RowIndex].Value.ToString();
+                        string idLinha = funcionarioDataGridView["idDataGridViewTextBoxColumn", cell.RowIndex].Value.ToString();
 
                         string queryString = "UPDATE "+DataBase.tableFuncionario+" SET " + nomeColuna +" = @novoValor Where Id = @idLinha";
                         //chamando função da query paramateros (querystring, lista parametros, lista valores)
@@ -410,7 +413,7 @@ namespace Savage_Hotel_System.Views
                     }                                   
                     
                     MessageBox.Show("Todas alterações foram salvas!", "Alterações realizadas co Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dataGridView1.Refresh();
+                    funcionarioDataGridView.Refresh();
                     changedCells.Clear();
                 }
                 else
@@ -436,17 +439,17 @@ namespace Savage_Hotel_System.Views
         {
             if(changedCells.Count() == 0)
             {
-                DataGridViewCell selecionada = dataGridView1.SelectedCells[0];
+                DataGridViewCell selecionada = funcionarioDataGridView.SelectedCells[0];
                 if (selecionada != null)
                 {
-                    string nomeLinha = dataGridView1["nameDataGridViewTextBoxColumn", selecionada.RowIndex].Value.ToString();
+                    string nomeLinha = funcionarioDataGridView["nameDataGridViewTextBoxColumn", selecionada.RowIndex].Value.ToString();
                     DialogResult result1 = MessageBox.Show("Tem certeza que deseja deletar " + nomeLinha + " ?", "Remoção irreversível!", MessageBoxButtons.YesNo);
 
                     if (result1 == DialogResult.Yes)
                     {
 
                         //Id no banco da linha para excluir
-                        string idLinha = dataGridView1["idDataGridViewTextBoxColumn", selecionada.RowIndex].Value.ToString();
+                        string idLinha = funcionarioDataGridView["idDataGridViewTextBoxColumn", selecionada.RowIndex].Value.ToString();
 
                         string queryString = "DELETE FROM " + DataBase.tableFuncionario + " Where Id = @idLinha";
                         //chamando função da query paramateros (querystring, lista parametros, lista valores)
@@ -461,7 +464,7 @@ namespace Savage_Hotel_System.Views
                         //fechando a query, causa erros se nao fechar
                         reader.Close();
                         //remove da view
-                        dataGridView1.Rows.Remove(selecionada.OwningRow);
+                        funcionarioDataGridView.Rows.Remove(selecionada.OwningRow);
 
                     }
 
@@ -488,6 +491,14 @@ namespace Savage_Hotel_System.Views
             {
 
             }
+        }
+
+        private void funcionarioBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.funcionarioBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.databaseHotelDataSet1);
+
         }
     }
 }
