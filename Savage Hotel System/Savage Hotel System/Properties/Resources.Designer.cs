@@ -63,6 +63,16 @@ namespace Savage_Hotel_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1467795605_shop_26 {
+            get {
+                object obj = ResourceManager.GetObject("1467795605_shop-26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap apply {
             get {
                 object obj = ResourceManager.GetObject("apply", resourceCulture);

@@ -56,7 +56,7 @@
             // labelTip
             // 
             this.labelTip.AutoSize = true;
-            this.labelTip.Location = new System.Drawing.Point(99, 68);
+            this.labelTip.Location = new System.Drawing.Point(22, 49);
             this.labelTip.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTip.Name = "labelTip";
             this.labelTip.Size = new System.Drawing.Size(182, 13);
@@ -67,7 +67,7 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.labelTitle.Location = new System.Drawing.Point(96, 28);
+            this.labelTitle.Location = new System.Drawing.Point(19, 9);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(230, 25);
@@ -87,7 +87,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(740, 170);
+            this.dataGridView1.Size = new System.Drawing.Size(681, 228);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -103,20 +103,21 @@
             this.textBoxSearch.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearch.MaxLength = 200;
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(617, 30);
+            this.textBoxSearch.Size = new System.Drawing.Size(558, 30);
             this.textBoxSearch.TabIndex = 11;
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button1.Image = global::Savage_Hotel_System.Properties.Resources.edit;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(11, 318);
+            this.button1.Location = new System.Drawing.Point(11, 376);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(4);
-            this.button1.Size = new System.Drawing.Size(256, 53);
+            this.button1.Size = new System.Drawing.Size(264, 53);
             this.button1.TabIndex = 18;
             this.button1.Text = "Ver na lista de edição";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -129,7 +130,7 @@
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.buttonSearch.Image = global::Savage_Hotel_System.Properties.Resources.search1;
             this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonSearch.Location = new System.Drawing.Point(632, 79);
+            this.buttonSearch.Location = new System.Drawing.Point(573, 79);
             this.buttonSearch.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Padding = new System.Windows.Forms.Padding(4);
@@ -145,7 +146,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(719, 339);
+            this.pictureBox1.Location = new System.Drawing.Point(660, 397);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 14;
@@ -156,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 383);
+            this.ClientSize = new System.Drawing.Size(704, 441);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelErros);
             this.Controls.Add(this.labelTip);

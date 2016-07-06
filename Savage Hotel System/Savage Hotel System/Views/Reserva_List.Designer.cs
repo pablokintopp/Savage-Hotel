@@ -61,7 +61,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(781, 363);
+            this.pictureBox1.Location = new System.Drawing.Point(660, 397);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 7;
@@ -86,10 +86,10 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.reservaDataGridView.DataSource = this.reservaBindingSource;
-            this.reservaDataGridView.Location = new System.Drawing.Point(12, 127);
+            this.reservaDataGridView.Location = new System.Drawing.Point(12, 124);
             this.reservaDataGridView.Name = "reservaDataGridView";
             this.reservaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.reservaDataGridView.Size = new System.Drawing.Size(801, 220);
+            this.reservaDataGridView.Size = new System.Drawing.Size(680, 220);
             this.reservaDataGridView.TabIndex = 8;
             this.reservaDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.reservaDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
@@ -183,7 +183,7 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Image = global::Savage_Hotel_System.Properties.Resources.delete;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(519, 19);
+            this.button3.Location = new System.Drawing.Point(461, 19);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(238, 52);
             this.button3.TabIndex = 14;
@@ -208,7 +208,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::Savage_Hotel_System.Properties.Resources.apply1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(358, 19);
+            this.button1.Location = new System.Drawing.Point(323, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 52);
             this.button1.TabIndex = 11;
@@ -255,7 +255,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 407);
+            this.ClientSize = new System.Drawing.Size(704, 441);
             this.Controls.Add(this.labelErros);
             this.Controls.Add(this.labelAlteracoes);
             this.Controls.Add(this.label1);

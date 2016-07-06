@@ -47,7 +47,7 @@
             this.textBoxSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBoxSearch.CausesValidation = false;
             this.textBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.textBoxSearch.Location = new System.Drawing.Point(156, 88);
+            this.textBoxSearch.Location = new System.Drawing.Point(69, 100);
             this.textBoxSearch.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearch.MaxLength = 200;
             this.textBoxSearch.Name = "textBoxSearch";
@@ -60,7 +60,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(156, 141);
+            this.dataGridView1.Location = new System.Drawing.Point(69, 153);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -73,7 +73,7 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.labelTitle.Location = new System.Drawing.Point(152, 22);
+            this.labelTitle.Location = new System.Drawing.Point(65, 34);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(275, 25);
@@ -83,7 +83,7 @@
             // labelTip
             // 
             this.labelTip.AutoSize = true;
-            this.labelTip.Location = new System.Drawing.Point(155, 62);
+            this.labelTip.Location = new System.Drawing.Point(68, 74);
             this.labelTip.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTip.Name = "labelTip";
             this.labelTip.Size = new System.Drawing.Size(210, 13);
@@ -95,7 +95,7 @@
             this.labelErros.AutoSize = true;
             this.labelErros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelErros.ForeColor = System.Drawing.Color.Red;
-            this.labelErros.Location = new System.Drawing.Point(155, 119);
+            this.labelErros.Location = new System.Drawing.Point(68, 131);
             this.labelErros.Name = "labelErros";
             this.labelErros.Size = new System.Drawing.Size(237, 13);
             this.labelErros.TabIndex = 9;
@@ -107,7 +107,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button1.Image = global::Savage_Hotel_System.Properties.Resources.edit;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(156, 293);
+            this.button1.Location = new System.Drawing.Point(69, 305);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(4);
@@ -124,7 +124,7 @@
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.buttonSearch.Image = global::Savage_Hotel_System.Properties.Resources.search1;
             this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonSearch.Location = new System.Drawing.Point(604, 76);
+            this.buttonSearch.Location = new System.Drawing.Point(517, 88);
             this.buttonSearch.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Padding = new System.Windows.Forms.Padding(4);
@@ -140,7 +140,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(807, 337);
+            this.pictureBox1.Location = new System.Drawing.Point(573, 409);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 3;
@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(851, 381);
+            this.ClientSize = new System.Drawing.Size(704, 441);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelErros);
             this.Controls.Add(this.labelTip);

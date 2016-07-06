@@ -98,7 +98,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(620, 377);
+            this.pictureBox1.Location = new System.Drawing.Point(643, 397);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 1;
@@ -346,7 +346,7 @@
             // 
             this.panelIncluirQuartos.Controls.Add(this.panel4);
             this.panelIncluirQuartos.Controls.Add(this.button1);
-            this.panelIncluirQuartos.Location = new System.Drawing.Point(8, 148);
+            this.panelIncluirQuartos.Location = new System.Drawing.Point(26, 146);
             this.panelIncluirQuartos.Name = "panelIncluirQuartos";
             this.panelIncluirQuartos.Size = new System.Drawing.Size(649, 156);
             this.panelIncluirQuartos.TabIndex = 18;
@@ -355,7 +355,7 @@
             // 
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Location = new System.Drawing.Point(8, 14);
+            this.panel1.Location = new System.Drawing.Point(26, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(649, 110);
             this.panel1.TabIndex = 19;
@@ -363,7 +363,7 @@
             // dateTimeEntrada
             // 
             this.dateTimeEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeEntrada.Location = new System.Drawing.Point(20, 326);
+            this.dateTimeEntrada.Location = new System.Drawing.Point(42, 333);
             this.dateTimeEntrada.Name = "dateTimeEntrada";
             this.dateTimeEntrada.Size = new System.Drawing.Size(108, 20);
             this.dateTimeEntrada.TabIndex = 20;
@@ -372,7 +372,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 307);
+            this.label3.Location = new System.Drawing.Point(45, 314);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 13);
             this.label3.TabIndex = 21;
@@ -381,7 +381,7 @@
             // dateTimePickerSaida
             // 
             this.dateTimePickerSaida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerSaida.Location = new System.Drawing.Point(141, 326);
+            this.dateTimePickerSaida.Location = new System.Drawing.Point(163, 333);
             this.dateTimePickerSaida.Name = "dateTimePickerSaida";
             this.dateTimePickerSaida.Size = new System.Drawing.Size(108, 20);
             this.dateTimePickerSaida.TabIndex = 22;
@@ -390,7 +390,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(138, 307);
+            this.label4.Location = new System.Drawing.Point(160, 314);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 13);
             this.label4.TabIndex = 23;
@@ -398,7 +398,7 @@
             // 
             // buttonCadastrar
             // 
-            this.buttonCadastrar.Location = new System.Drawing.Point(292, 381);
+            this.buttonCadastrar.Location = new System.Drawing.Point(314, 388);
             this.buttonCadastrar.Name = "buttonCadastrar";
             this.buttonCadastrar.Size = new System.Drawing.Size(75, 23);
             this.buttonCadastrar.TabIndex = 24;
@@ -409,7 +409,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(448, 326);
+            this.label5.Location = new System.Drawing.Point(470, 333);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 25;
@@ -417,7 +417,7 @@
             // 
             // buttonVerificar
             // 
-            this.buttonVerificar.Location = new System.Drawing.Point(273, 323);
+            this.buttonVerificar.Location = new System.Drawing.Point(295, 330);
             this.buttonVerificar.Name = "buttonVerificar";
             this.buttonVerificar.Size = new System.Drawing.Size(146, 23);
             this.buttonVerificar.TabIndex = 26;
@@ -428,7 +428,7 @@
             // labelValorTotal
             // 
             this.labelValorTotal.AutoSize = true;
-            this.labelValorTotal.Location = new System.Drawing.Point(448, 359);
+            this.labelValorTotal.Location = new System.Drawing.Point(470, 366);
             this.labelValorTotal.Name = "labelValorTotal";
             this.labelValorTotal.Size = new System.Drawing.Size(61, 13);
             this.labelValorTotal.TabIndex = 27;
@@ -438,7 +438,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 421);
+            this.ClientSize = new System.Drawing.Size(704, 441);
             this.Controls.Add(this.labelValorTotal);
             this.Controls.Add(this.buttonCadastrar);
             this.Controls.Add(this.buttonVerificar);

@@ -48,7 +48,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(361, 147);
+            this.label3.Location = new System.Drawing.Point(201, 368);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 13;
@@ -57,7 +57,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(206, 147);
+            this.label2.Location = new System.Drawing.Point(377, 189);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 11;
@@ -66,7 +66,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 147);
+            this.label1.Location = new System.Drawing.Point(200, 189);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 13);
             this.label1.TabIndex = 10;
@@ -75,7 +75,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(532, 147);
+            this.label4.Location = new System.Drawing.Point(372, 368);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 13);
             this.label4.TabIndex = 15;
@@ -85,7 +85,7 @@
             // 
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = global::Savage_Hotel_System.Properties.Resources.Produto_Pedido;
-            this.pictureBox5.Location = new System.Drawing.Point(511, 12);
+            this.pictureBox5.Location = new System.Drawing.Point(351, 233);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(128, 128);
             this.pictureBox5.TabIndex = 14;
@@ -96,7 +96,7 @@
             // 
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::Savage_Hotel_System.Properties.Resources.Produto_lista;
-            this.pictureBox4.Location = new System.Drawing.Point(343, 12);
+            this.pictureBox4.Location = new System.Drawing.Point(183, 233);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(128, 128);
             this.pictureBox4.TabIndex = 12;
@@ -107,7 +107,7 @@
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::Savage_Hotel_System.Properties.Resources.Produto_busca;
-            this.pictureBox3.Location = new System.Drawing.Point(179, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(350, 54);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(128, 128);
             this.pictureBox3.TabIndex = 9;
@@ -118,7 +118,7 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::Savage_Hotel_System.Properties.Resources.Produto_add;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(183, 54);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(128, 128);
             this.pictureBox2.TabIndex = 8;
@@ -130,7 +130,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(695, 164);
+            this.pictureBox1.Location = new System.Drawing.Point(660, 397);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 7;
@@ -142,7 +142,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(739, 208);
+            this.ClientSize = new System.Drawing.Size(704, 441);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.label3);

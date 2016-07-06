@@ -62,9 +62,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button1.Location = new System.Drawing.Point(30, 35);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(253, 23);
+            this.button1.Size = new System.Drawing.Size(253, 38);
             this.button1.TabIndex = 0;
             this.button1.Text = "Incluir Fornecedor";
             this.button1.UseVisualStyleBackColor = true;
@@ -75,7 +76,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(612, 381);
+            this.pictureBox1.Location = new System.Drawing.Point(660, 397);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 1;
@@ -86,7 +87,7 @@
             // 
             this.panel1.Controls.Add(this.fornecedorDataGridView);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 41);
+            this.panel1.Location = new System.Drawing.Point(30, 79);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(632, 71);
             this.panel1.TabIndex = 15;
@@ -105,7 +106,7 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.fornecedorDataGridView.DataSource = this.fornecedorBindingSource;
-            this.fornecedorDataGridView.Location = new System.Drawing.Point(3, 21);
+            this.fornecedorDataGridView.Location = new System.Drawing.Point(3, 19);
             this.fornecedorDataGridView.Name = "fornecedorDataGridView";
             this.fornecedorDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.fornecedorDataGridView.Size = new System.Drawing.Size(626, 46);
@@ -212,7 +213,7 @@
             this.panel2.Controls.Add(this.textBoxNome);
             this.panel2.Controls.Add(this.textBoxValor);
             this.panel2.Enabled = false;
-            this.panel2.Location = new System.Drawing.Point(12, 129);
+            this.panel2.Location = new System.Drawing.Point(30, 167);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(629, 100);
             this.panel2.TabIndex = 20;
@@ -237,7 +238,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(285, 372);
+            this.button2.Location = new System.Drawing.Point(313, 333);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 21;
@@ -248,7 +249,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(285, 353);
+            this.label6.Location = new System.Drawing.Point(313, 314);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 22;
@@ -258,7 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 425);
+            this.ClientSize = new System.Drawing.Size(704, 441);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel2);

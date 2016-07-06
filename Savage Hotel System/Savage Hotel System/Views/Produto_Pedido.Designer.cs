@@ -96,7 +96,7 @@
             this.valorTotalDataGridViewTextBoxColumn,
             this.dataDataGridViewTextBoxColumn});
             this.pedidosGridView.DataSource = this.pedidoProdutoBindingSource;
-            this.pedidosGridView.Location = new System.Drawing.Point(29, 363);
+            this.pedidosGridView.Location = new System.Drawing.Point(30, 298);
             this.pedidosGridView.Name = "pedidosGridView";
             this.pedidosGridView.ReadOnly = true;
             this.pedidosGridView.Size = new System.Drawing.Size(643, 150);
@@ -275,7 +275,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(780, 545);
+            this.pictureBox1.Location = new System.Drawing.Point(660, 457);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 44;
@@ -285,12 +285,12 @@
             // button1
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.button1.Image = global::Savage_Hotel_System.Properties.Resources.apply1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(29, 272);
+            this.button1.Location = new System.Drawing.Point(399, 238);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(227, 52);
+            this.button1.Size = new System.Drawing.Size(198, 50);
             this.button1.TabIndex = 43;
             this.button1.Text = "REGISTRAR PEDIDO";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -301,7 +301,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(31, 340);
+            this.label5.Location = new System.Drawing.Point(32, 275);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 20);
             this.label5.TabIndex = 45;
@@ -410,7 +410,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 589);
+            this.ClientSize = new System.Drawing.Size(704, 501);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateTimePedido);
             this.Controls.Add(this.label5);

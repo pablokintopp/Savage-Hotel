@@ -40,7 +40,7 @@
             // 
             // textBoxLogin
             // 
-            this.textBoxLogin.Location = new System.Drawing.Point(227, 123);
+            this.textBoxLogin.Location = new System.Drawing.Point(276, 149);
             this.textBoxLogin.MaxLength = 255;
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(211, 20);
@@ -49,7 +49,7 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(227, 159);
+            this.textBoxPassword.Location = new System.Drawing.Point(276, 185);
             this.textBoxPassword.MaxLength = 32;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(211, 20);
@@ -61,7 +61,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label1.Location = new System.Drawing.Point(142, 123);
+            this.label1.Location = new System.Drawing.Point(191, 149);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 20);
             this.label1.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label2.Location = new System.Drawing.Point(142, 159);
+            this.label2.Location = new System.Drawing.Point(191, 185);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 20);
             this.label2.TabIndex = 3;
@@ -80,7 +80,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(227, 225);
+            this.button1.Location = new System.Drawing.Point(276, 251);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 41);
             this.button1.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button2.Location = new System.Drawing.Point(330, 225);
+            this.button2.Location = new System.Drawing.Point(379, 251);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 41);
             this.button2.TabIndex = 5;
@@ -104,7 +104,7 @@
             // 
             this.labelStatus.AutoSize = true;
             this.labelStatus.ForeColor = System.Drawing.Color.Red;
-            this.labelStatus.Location = new System.Drawing.Point(271, 84);
+            this.labelStatus.Location = new System.Drawing.Point(320, 110);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(61, 13);
             this.labelStatus.TabIndex = 6;
@@ -117,7 +117,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(611, 387);
+            this.ClientSize = new System.Drawing.Size(704, 441);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

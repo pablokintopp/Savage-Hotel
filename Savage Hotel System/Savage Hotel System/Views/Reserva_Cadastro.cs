@@ -150,7 +150,8 @@ namespace Savage_Hotel_System.Views
                 dateTimeEntrada.Text,
                 dateTimePickerSaida.Text,
                 IDCliente,
-                IDQuarto
+                IDQuarto,
+                "pendente"
 
             };
 
@@ -162,7 +163,8 @@ namespace Savage_Hotel_System.Views
                 "InicioReserva",
                 "FimReserva",
                 "IdCLiente",
-                "IdQuarto"
+                "IdQuarto",
+                "Pagamento"
             };
             string nomeDaTabela = DataBase.tableReserva;
             return DataBase.SqlCommandInsert(nomeDaTabela, parametrosNomes, parametrosValores);

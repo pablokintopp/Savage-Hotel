@@ -87,7 +87,7 @@
             // 
             this.labelInfo.AutoSize = true;
             this.labelInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInfo.Location = new System.Drawing.Point(14, 39);
+            this.labelInfo.Location = new System.Drawing.Point(14, 46);
             this.labelInfo.Name = "labelInfo";
             this.labelInfo.Size = new System.Drawing.Size(314, 13);
             this.labelInfo.TabIndex = 1;
@@ -97,7 +97,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(280, 26);
             this.label1.TabIndex = 3;
@@ -105,7 +105,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(298, 275);
+            this.numericUpDown1.Location = new System.Drawing.Point(298, 365);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             10,
             0,
@@ -129,7 +129,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(112, 60);
+            this.label2.Location = new System.Drawing.Point(112, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 20);
             this.label2.TabIndex = 28;
@@ -139,7 +139,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(408, 60);
+            this.label3.Location = new System.Drawing.Point(408, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 20);
             this.label3.TabIndex = 29;
@@ -149,7 +149,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(177, 275);
+            this.label4.Location = new System.Drawing.Point(177, 365);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 20);
             this.label4.TabIndex = 30;
@@ -161,7 +161,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::Savage_Hotel_System.Properties.Resources.apply1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(369, 256);
+            this.button1.Location = new System.Drawing.Point(378, 346);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(210, 52);
             this.button1.TabIndex = 33;
@@ -173,7 +173,7 @@
             // labelStatus
             // 
             this.labelStatus.AutoSize = true;
-            this.labelStatus.Location = new System.Drawing.Point(14, 280);
+            this.labelStatus.Location = new System.Drawing.Point(55, 365);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(59, 13);
             this.labelStatus.TabIndex = 34;
@@ -184,7 +184,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(588, 272);
+            this.pictureBox1.Location = new System.Drawing.Point(597, 362);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 35;
@@ -297,12 +297,12 @@
             this.dataGridViewTextBoxColumn25,
             this.dataGridViewTextBoxColumn26});
             this.reservaDataGridView.DataSource = this.reservaBindingSource;
-            this.reservaDataGridView.Location = new System.Drawing.Point(300, 83);
+            this.reservaDataGridView.Location = new System.Drawing.Point(300, 140);
             this.reservaDataGridView.MultiSelect = false;
             this.reservaDataGridView.Name = "reservaDataGridView";
             this.reservaDataGridView.ReadOnly = true;
             this.reservaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.reservaDataGridView.Size = new System.Drawing.Size(279, 150);
+            this.reservaDataGridView.Size = new System.Drawing.Size(320, 150);
             this.reservaDataGridView.TabIndex = 36;
             this.reservaDataGridView.Click += new System.EventHandler(this.reservaDataGridView_Click);
             // 
@@ -405,7 +405,7 @@
             this.dataGridViewTextBoxColumn31,
             this.dataGridViewTextBoxColumn32});
             this.produtoDataGridView.DataSource = this.produtoBindingSource;
-            this.produtoDataGridView.Location = new System.Drawing.Point(17, 83);
+            this.produtoDataGridView.Location = new System.Drawing.Point(17, 140);
             this.produtoDataGridView.MultiSelect = false;
             this.produtoDataGridView.Name = "produtoDataGridView";
             this.produtoDataGridView.ReadOnly = true;
@@ -466,7 +466,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 320);
+            this.ClientSize = new System.Drawing.Size(704, 441);
             this.Controls.Add(this.produtoDataGridView);
             this.Controls.Add(this.reservaDataGridView);
             this.Controls.Add(this.pictureBox1);

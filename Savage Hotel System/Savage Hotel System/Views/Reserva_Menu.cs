@@ -70,5 +70,12 @@ namespace Savage_Hotel_System.Views
             this.Hide();
             PedidosLista.Show();
         }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            Form Pagamento = new Reserva_Pagamento(this);
+            this.Hide();
+            Pagamento.Show();
+        }
     }
 }

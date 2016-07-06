@@ -345,6 +345,12 @@
     <Compile Include="Views\Reserva_Cadastro.Designer.cs">
       <DependentUpon>Reserva_Cadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reserva_Pagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reserva_Pagamento.Designer.cs">
+      <DependentUpon>Reserva_Pagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reserva_Pedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -451,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reserva_Cadastro.resx">
       <DependentUpon>Reserva_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reserva_Pagamento.resx">
+      <DependentUpon>Reserva_Pagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reserva_Pedidos.resx">
       <DependentUpon>Reserva_Pedidos.cs</DependentUpon>
@@ -656,6 +665,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DatabaseHotel.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\1467795605_shop-26.png" />
     <Content Include="Resources\apply.png" />
     <None Include="Resources\Produto_Pedido.png" />
     <None Include="Resources\reservaPedido.png" />

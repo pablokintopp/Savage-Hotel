@@ -65,7 +65,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(567, 227);
+            this.dataGridView1.Size = new System.Drawing.Size(597, 227);
             this.dataGridView1.TabIndex = 27;
             // 
             // textBoxSearch
@@ -80,7 +80,7 @@
             this.textBoxSearch.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearch.MaxLength = 200;
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(457, 38);
+            this.textBoxSearch.Size = new System.Drawing.Size(487, 38);
             this.textBoxSearch.TabIndex = 26;
             this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDownHandler);
             // 
@@ -91,7 +91,7 @@
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.buttonSearch.Image = global::Savage_Hotel_System.Properties.Resources.search1;
             this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonSearch.Location = new System.Drawing.Point(505, 85);
+            this.buttonSearch.Location = new System.Drawing.Point(535, 85);
             this.buttonSearch.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Padding = new System.Windows.Forms.Padding(4);
@@ -107,7 +107,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Savage_Hotel_System.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(630, 357);
+            this.pictureBox1.Location = new System.Drawing.Point(660, 357);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 29;
@@ -118,7 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 401);
+            this.ClientSize = new System.Drawing.Size(704, 401);
             this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.pictureBox1);
